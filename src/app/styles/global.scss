@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+}

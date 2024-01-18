@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import sass from "./styles/index.module.scss";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>PhyBooks</h1>
+      <Header />
     </main>
   );
 }
