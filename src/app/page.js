@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <h1>PhyBooks</h1>
-      <p>dev</p>
     </main>
   );
 }
