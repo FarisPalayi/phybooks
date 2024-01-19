@@ -1,5 +1,34 @@
-@use '../variables' as *;
+@use "../variables" as *;
+@use "../functions" as *;
 
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(19) rem(27) rem(18) rem(38); // precise design values
+  padding: rem(19) rem(30); // rounded values
+  background-color: $bg-color;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+
+  & > button {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.sidebar {
+  &Hidden {
+    display: none; // add !important if necessary
+  }
 }

@@ -1,7 +1,11 @@
-@use 'variables' as *;
+@use "variables" as *;
+@use "functions" as *;
 
 body {
+  margin: 0;
+  padding: 0;
   background-color: $bg-color;
+  background-color: lighten($color: $bg-color, $amount: 10%);
   color: $text-color;
 }
 
