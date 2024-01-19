@@ -1,12 +1,12 @@
 @use "../variables" as *;
 @use "../functions" as *;
+@use "../mixins" as *;
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: rem(19) rem(27) rem(18) rem(38); // precise design values
-  padding: rem(19) rem(30); // rounded values
+  padding: rem(13) rem(30); // rounded values
   background-color: $bg-color;
 }
 
@@ -15,11 +15,13 @@
 }
 
 .iconContainer {
-  display: flex;
-  align-items: center;
-  gap: rem(20);
+  @include flex-center;
+  // gap: rem(20);
 
   & > button {
+    @include flex-center;
+    width: rem(40);
+    height: rem(40);
     padding: 0;
     background: none;
     border: none;

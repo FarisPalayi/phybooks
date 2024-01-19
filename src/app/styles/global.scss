@@ -1,9 +1,9 @@
 @use "variables" as *;
 @use "functions" as *;
+@use "mixins" as *;
 
 body {
   margin: 0;
-  background-color: $bg-color;
   background-color: $bg-color;
   color: $text-color;
 }
