@@ -16,7 +16,7 @@
 
 .iconContainer {
   @include flex-center;
-  // gap: rem(20);
+  gap: rem(6);
 
   & > button {
     @include flex-center;
