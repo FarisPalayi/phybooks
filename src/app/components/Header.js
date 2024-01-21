@@ -9,10 +9,7 @@ import Sidebar from "./Sidebar";
 export default function Header() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-    console.log(isSidebarOpen);
-  };
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
   return (
     <header className={header.header}>
@@ -30,7 +27,7 @@ export default function Header() {
         >
           <MenuIcon width={30} height={30} />
         </button>
-        <Sidebar isSidebarOpen={isSidebarOpen}/>
+        <Sidebar isSidebarOpen={isSidebarOpen} />
       </div>
     </header>
   );
