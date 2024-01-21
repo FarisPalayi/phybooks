@@ -37,9 +37,36 @@
   min-width: rem(200);
   width: fit-content;
   height: calc(100vh - var(--header-height));
-  
+  padding: rem(20);
+
   &Hidden {
     display: none; // add !important if necessary
+  }
+}
+
+.nav {
+  --nav-spacing: 20px;
+
+  & .navBtn {
+    @include reset-button;
+  }
+}
+
+.navList,
+.navItem,
+.navSubList {
+  @include flex-column;
+  gap: var(--nav-spacing);
+}
+
+.navList {
+  .navItem {
+  }
+}
+
+.navSubList {
+  .navSubItem {
+    margin-left: rem(20);
   }
 }
 

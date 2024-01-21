@@ -15,7 +15,7 @@ export default function Sidebar({ isSidebarOpen }) {
     return navItems.map((item, index) => {
       if (typeof item === "string") {
         return (
-          <li key={index} className="sidebar__nav-item">
+          <li key={index} className={styles.navItem}>
             <Link href="#">{item}</Link>
           </li>
         );
@@ -24,17 +24,17 @@ export default function Sidebar({ isSidebarOpen }) {
       if (typeof item === "object") {
         if (Object.keys(item).length > 1)
           throw new Error("Sidebar: Object must have only one key");
-        
+
         const navItem = Object.keys(item)[0];
         const navItemList = item[navItem];
 
         return (
-          <li key={index} className="nav-item">
-            <button className="nav__toggle-btn">{navItem}</button>
-            <ul className="nav__sublist hide">
+          <li key={index} className={styles.navItem}>
+            <button className={styles.navBtn}>{navItem}</button>
+            <ul className={styles.navSubList}>
               {navItemList.map((subItem, subIndex) => (
-                <li key={subIndex} className="nav__subitem">
-                  <Link href="#" className="nav__link">{subItem}</Link>
+                <li key={subIndex} className={styles.navSubItem}>
+                  <Link href="#">{subItem}</Link>
                 </li>
               ))}
             </ul>
@@ -48,8 +48,8 @@ export default function Sidebar({ isSidebarOpen }) {
     <div
       className={`${styles.sidebar} ${!isSidebarOpen && styles.sidebarHidden}`}
     >
-      <nav className="sidebar__nav">
-        <ul className="sidebar__nav-list">{renderNavItems(navItems)}</ul>
+      <nav className={styles.nav}>
+        <ul className={styles.navList}>{renderNavItems(navItems)}</ul>
       </nav>
     </div>
   );

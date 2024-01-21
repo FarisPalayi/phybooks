@@ -1,3 +1,12 @@
+@mixin flex-row {
+  display: flex;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -12,4 +21,13 @@
 @mixin flex-column-center {
   display: flex;
   align-items: center;
+}
+
+@mixin reset-button {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  text-align: left;
 }
