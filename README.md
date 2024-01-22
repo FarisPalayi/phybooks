@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Followed Conventions
+
+The naming of classes for styling is a hybrid of the BEM methodology and camelCase:
+
+```html
+<div class="block">
+  <div class="block__element"></div>
+  <div class="block__elementDescriptiveName"></div>
+  <!-- 👇"omitting '--modifier' for easier CSS module class names(when used)."-->
+  <div class="block__elementModifier"></div>
+</div>
+```
