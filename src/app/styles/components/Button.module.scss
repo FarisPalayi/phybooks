@@ -21,14 +21,27 @@
   }
 
   &.secondary {
+    position: relative;
+    background-color: white;
     border: 1px solid #007cf0;
+    border: 1px solid transparent;
     background-color: transparent;
-    border-image: linear-gradient(170deg, #007cf0, #00dfd8);
-    border-image-slice: 1;
-    border-radius: 10px;
-    overflow: hidden;
+    background: black;
 
-    &::after {
+    /*The background extends to the outside edge of the padding. No background is drawn beneath the border.*/
+    background-clip: padding-box;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: -1px; /* same as border width */
+      border-radius: inherit; /* inherit container box's radius */
+      background: linear-gradient(170deg, #007cf0, #00dfd8);
+      z-index: -1;
     }
   }
 }
