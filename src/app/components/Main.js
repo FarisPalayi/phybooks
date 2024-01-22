@@ -15,8 +15,8 @@ export default function Main() {
           all tailored to support your academic success at Calcut University.
         </p>
         <div className={styles.intro__btnGroup}>
-          <Button />
-          <Button />
+          <Button btnText="Browse by subject" btnType="primary" btnLink="#" />
+          <Button btnText="Browse by semester" btnType="secondary" btnLink="#" />
         </div>
       </section>
     </main>
