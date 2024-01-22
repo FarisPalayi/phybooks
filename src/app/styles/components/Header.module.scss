@@ -18,8 +18,8 @@
 
   & > button {
     @include flex-center;
-    width: rem(40);
-    height: rem(40);
+    width: rem(40); // TODO: remove explicit width
+    height: rem(40); // TODO: remove explicit height
     padding: 0;
     background: none;
     border: none;
@@ -28,7 +28,6 @@
 }
 
 .sidebar {
-  --header-height: 66px;
   position: absolute;
   inset: var(--header-height) 0 0 auto;
   background-color: lighten($bg-color, 10%);
@@ -44,10 +43,6 @@
 
 .nav {
   --nav-spacing: 20px;
-
-  & .nav__btn {
-    @include reset-button;
-  }
 }
 
 .nav__list,

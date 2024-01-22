@@ -1,5 +1,10 @@
 @use "./abstracts/" as *;
 
+:root {
+  --header-height: 66px; // update this value if necessary
+  --black-blue-grad: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%)
+}
+
 body {
   margin: 0;
   background-color: $bg-color;
@@ -15,4 +20,12 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  @include reset-button;
 }
