@@ -15,7 +15,7 @@ export default function Sidebar({ isSidebarOpen }) {
     return navItems.map((item, index) => {
       if (typeof item === "string") {
         return (
-          <li key={index} className={styles.navItem}>
+          <li key={index} className={styles.nav__Item}>
             <Link href="#">{item}</Link>
           </li>
         );
@@ -29,11 +29,11 @@ export default function Sidebar({ isSidebarOpen }) {
         const navItemList = item[navItem];
 
         return (
-          <li key={index} className={styles.navItem}>
-            <button className={styles.navBtn}>{navItem}</button>
-            <ul className={styles.navSubList}>
+          <li key={index} className={styles.nav__item}>
+            <button className={styles.nav__btn}>{navItem}</button>
+            <ul className={styles.nav__sublist}>
               {navItemList.map((subItem, subIndex) => (
-                <li key={subIndex} className={styles.navSubItem}>
+                <li key={subIndex} className={styles.nav__subitem}>
                   <Link href="#">{subItem}</Link>
                 </li>
               ))}
@@ -49,7 +49,7 @@ export default function Sidebar({ isSidebarOpen }) {
       className={`${styles.sidebar} ${!isSidebarOpen && styles.sidebarHidden}`}
     >
       <nav className={styles.nav}>
-        <ul className={styles.navList}>{renderNavItems(navItems)}</ul>
+        <ul className={styles.nav__list}>{renderNavItems(navItems)}</ul>
       </nav>
     </div>
   );

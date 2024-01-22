@@ -18,7 +18,7 @@ export default function Header() {
       </Link>
 
       <div className={header.iconContainer}>
-        <button className="">
+        <button>
           <Image src="/images/search.svg" alt="" width={24} height={24} />
         </button>
         <button

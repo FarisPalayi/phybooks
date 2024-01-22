@@ -9,7 +9,7 @@ const MenuIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      className={styles.menuTopLine}
+      className={styles.menu__topLine}
       d="M4 9H26"
       stroke="#C5C5C5"
       strokeWidth={2}
@@ -17,7 +17,7 @@ const MenuIcon = () => (
       strokeLinejoin="round"
     />
     <path
-      className={styles.menuBottomLine}
+      className={styles.menu__bottomLine}
       d="M4 21H26"
       stroke="#C5C5C5"
       strokeWidth={2}

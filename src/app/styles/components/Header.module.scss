@@ -47,41 +47,45 @@
 .nav {
   --nav-spacing: 20px;
 
-  & .navBtn {
+  & .nav__btn {
     @include reset-button;
   }
 }
 
-.navList,
-.navItem,
-.navSubList {
+.nav__list,
+.nav__item,
+.nav__sublist {
   @include flex-column;
   gap: var(--nav-spacing);
 }
 
-// .navList {
-//   .navItem {
+// .nav__list {
+//   .nav__item {
 //   }
 // }
 
-.navSubList {
-  .navSubItem {
+.nav__sublist {
+  .nav__subitem {
     margin-left: rem(20);
+  }
+
+  & a {
+    width: 100%;
   }
 }
 
-.menuTopLine,
-.menuBottomLine {
+.menu__topLine,
+.menu__bottomLine {
   transform-origin: left;
   transition: 200ms ease-out transform;
 }
 
 .closeMenu {
-  .menuTopLine {
+  .menu__topLine {
     transform: rotate(45deg) translate(-5px, -4px);
   }
 
-  .menuBottomLine {
+  .menu__bottomLine {
     transform: rotate(-45deg) translate(-5px, 4px);
   }
 }
