@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import styles from "../styles/components/Header.module.scss";
 
@@ -15,7 +14,7 @@ export default function Sidebar({ isSidebarOpen }) {
     return navItems.map((item, index) => {
       if (typeof item === "string") {
         return (
-          <li key={index} className={styles.nav__Item}>
+          <li key={index} className={styles.nav__item}>
             <Link href="#">{item}</Link>
           </li>
         );
