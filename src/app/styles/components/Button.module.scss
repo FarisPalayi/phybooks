@@ -31,7 +31,7 @@
     /*The background extends to the outside edge of the padding. No background is drawn beneath the border.*/
     background-clip: padding-box;
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       top: 0;
