@@ -1,6 +1,7 @@
 @use "../abstracts/" as *;
 
 .main {
+  @include flex-column;
+  gap: rem(136);
   margin: 0 rem(27);
 }
-

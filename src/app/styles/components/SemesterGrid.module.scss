@@ -1,1 +1,44 @@
 @use "../abstracts/" as *;
+
+.semester {
+  margin-bottom: rem(100); //! remove this 
+}
+
+.semesterTitle {
+  font-size: rem(23);
+  font-weight: 500;
+  margin-bottom: rem(66);
+
+  & span {
+    @include grad-text;
+    font-weight: 600;
+  }
+}
+
+.semesterGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  //* grid-template-columns: repeat(auto-fit, minmax(rem(145), 1fr));
+  gap: rem(24);
+  grid-auto-rows: max-content;
+
+  font-size: rem(16);
+  background-color: $bg-color;
+  border-radius: rem(6);
+  box-shadow: 0 0 rem(20) rgba(0, 0, 0, 0.1);
+  isolation: isolate; // important for border gradient to work
+}
+
+.gridItem {
+  display: block;
+  padding: rem(25);
+  text-align: center;
+  color: white;
+  background-color: $bg-color;
+
+  @include border-grad {
+    border-image: linear-gradient($black-blue-grad);
+  }
+
+  border-radius: rem(7);
+}
