@@ -4,9 +4,8 @@
   @include flex-column-center;
   gap: rem(65);
   width: 100%;
-  min-height: rem(400); // just a random value
-  height: calc(100vh - var(--header-height));
-  max-height: rem(715); //! wrap it in mobile view media query if necessary
+  min-height: min(calc(100vh - var(--header-height)), rem(715));
+  max-height: rem(715); //* wrap it in mobile view media query if necessary
   padding: 0 rem(5);
 }
 
@@ -20,10 +19,7 @@
   letter-spacing: -0.1275rem;
 
   &Part2 {
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: var(--black-blue-grad);
+    @include grad-text;
   }
 }
 

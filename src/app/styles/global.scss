@@ -5,10 +5,15 @@
   --black-blue-grad: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%)
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   margin: 0;
   background-color: $bg-color;
   color: $text-color;
+  font-size: 100%;
 }
 
 a {
@@ -28,4 +33,9 @@ p {
 
 button {
   @include reset-button;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  text-align: center;
 }
