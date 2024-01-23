@@ -1,4 +1,4 @@
-@use "./abstracts/" as *;
+@use "../abstracts/" as *;
 
 .btn {
   @include reset-button;
@@ -21,9 +21,7 @@
   }
 
   &.secondary {
-    background-color: white;
-    background-color: transparent;
-
+    background: black;
     @include border-grad;
   }
 }
