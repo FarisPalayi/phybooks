@@ -10,8 +10,8 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0c122c",
-  appleMObileWebAppStatusBarStyle: "#0c122c",
+  themeColor: "#000000",
+  appleMObileWebAppStatusBarStyle: "#000000",
 };
 
 export default function RootLayout({ children }) {
