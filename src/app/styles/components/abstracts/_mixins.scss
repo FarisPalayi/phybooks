@@ -32,3 +32,31 @@
   color: inherit;
   text-align: left;
 }
+
+@mixin border-grad(
+  $border-width: 1px,
+  $grad-color: (
+    #007cf0,
+    #00dfd8,
+  ),
+  $grad-dir: 170deg
+) {
+  position: relative;
+  border: $border-width solid nth($grad-color, 1);
+  border: $border-width solid transparent;
+  /*The background extends to the outside edge of the padding. No background is drawn beneath the border.*/
+  background-clip: padding-box;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: -($border-width); /* same as border width */
+    border-radius: inherit; /* inherit container box's radius */
+    background: linear-gradient($grad-dir, $grad-color);
+    z-index: -1;
+  }
+}
