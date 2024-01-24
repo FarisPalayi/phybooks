@@ -47,4 +47,3 @@ The naming of classes for styling is a hybrid of the BEM methodology and camelCa
   <div class="block__elementModifier"></div>
 </div>
 ```
-
