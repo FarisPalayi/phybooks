@@ -13,13 +13,14 @@
 }
 
 .subjectGrid {
-  @include flex-column;
+  @include flex-column-center;
   gap: rem(34);
   font-size: rem(16);
-  isolation: isolate; // important for border gradient to work
+  isolation: isolate;
 }
 
 .gridItem {
+  width: 80%;
   padding: rem(22);
   text-align: center;
   color: white;

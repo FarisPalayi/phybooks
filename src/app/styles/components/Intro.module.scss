@@ -35,4 +35,5 @@
 .intro__btnGroup {
   @include flex-column-center;
   gap: rem(23);
+  width: 100%;
 }
