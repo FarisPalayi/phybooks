@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "../styles/components/SemesterGrid.module.scss";
 
-export function SemesterGrid() {
+export default function SemesterGrid() {
   const semesterInRoman = ["I", "II", "III", "IV", "V", "VI"];
 
   return (

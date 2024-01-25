@@ -1,17 +1,13 @@
 @use "../abstracts/" as *;
 
 .semester {
-  margin-bottom: rem(100); //! remove this
 }
 
 .semesterTitle {
-  font-size: rem(23);
-  font-weight: 500;
   margin-bottom: rem(66);
 
-  & span {
+  & > span {
     @include grad-text;
-    font-weight: 600;
   }
 }
 
@@ -25,7 +21,6 @@
   font-size: rem(16);
   background-color: $bg-color;
   border-radius: rem(6);
-  box-shadow: 0 0 rem(20) rgba(0, 0, 0, 0.1);
   isolation: isolate; // important for border gradient to work
 }
 
@@ -37,7 +32,7 @@
   background-color: $bg-color;
 
   @include border-grad($border-width: 0.5px) {
-    border-image: linear-gradient($black-blue-grad);
+    border-image: linear-gradient($black-blue-grad-border);
   }
 
   border-radius: rem(7);

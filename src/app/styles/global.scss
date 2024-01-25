@@ -2,7 +2,8 @@
 
 :root {
   --header-height: 66px; // update this value if necessary
-  --black-blue-grad: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%)
+  --black-blue-grad: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%);
+  --purple-pink-grad: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%);
 }
 
 html {
@@ -35,7 +36,21 @@ button {
   @include reset-button;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   text-align: center;
+}
+
+h2 {
+  font-size: rem(23);
+  font-weight: 500;
+
+  & > span {
+    font-weight: 600;
+  }
 }

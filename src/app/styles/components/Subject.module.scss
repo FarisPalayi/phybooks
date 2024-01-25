@@ -1,0 +1,51 @@
+@use "../abstracts/" as *;
+
+.subject {
+  margin-bottom: rem(100); //! remove this
+}
+
+.subjectTitle {
+  margin-bottom: rem(66);
+
+  & > span {
+    @include grad-text(var(--purple-pink-grad));
+  }
+}
+
+.subjectGrid {
+  @include flex-column;
+  gap: rem(34);
+  font-size: rem(16);
+  isolation: isolate; // important for border gradient to work
+}
+
+.gridItem {
+  padding: rem(22);
+  text-align: center;
+  color: white;
+  background-color: $bg-color;
+
+  @include border-grad(
+    $border-width: 0.5px,
+    $grad-color: $rose-pink-grad-border
+  );
+
+  border-radius: rem(7);
+}
+
+.showMore {
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+  gap: rem(10);
+  margin-top: rem(50);
+  width: 100%; // important
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--purple-pink-grad);
+  }
+}
