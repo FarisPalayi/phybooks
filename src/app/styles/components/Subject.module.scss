@@ -27,7 +27,8 @@
 
   @include border-grad(
     $border-width: 0.5px,
-    $grad-color: $rose-pink-grad-border
+    $grad-color: $rose-pink-grad-border,
+    $grad-dir: 90deg
   );
 
   border-radius: rem(7);
