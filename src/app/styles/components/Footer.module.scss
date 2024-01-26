@@ -20,3 +20,37 @@
     background-size: cover;
   }
 }
+
+.footer__content {
+  @include flex-column-center;
+  gap: rem(35);
+  padding: rem(35) rem(20);
+}
+
+.footer__logo {
+  margin-top: rem(12);
+}
+
+.footer__list {
+  @include flex-column-center;
+  gap: rem(10);
+}
+
+.footer__item {
+  width: 100%;
+}
+
+.footer__link {
+  display: inline-block;
+  width: 100%;
+  color: inherit;
+}
+
+.footer__copy {
+  padding: rem(10);
+  text-align: center;
+  font-size: rem(11.11);
+  line-height: rem(24);
+  letter-spacing: 0.00831rem;
+  color: #636363;
+}
