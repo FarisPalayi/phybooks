@@ -3,6 +3,7 @@
 .catalog {
   @include flex-row-center;
   text-align: center;
+  margin-bottom: rem(136); // same as main gap
 }
 
 .catalogLink {
