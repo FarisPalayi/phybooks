@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "../styles/components/CatalogLink.module.scss";
+import Link from "next/link";
 
 export default function CatalogLink() {
   return (
     <div className={styles.catalog}>
-      <a href="#" className={styles.catalog__link}>
+      <Link href="#" className={styles.catalog__link}>
         <span className={styles.bookIcon}>
           <Image src={"/images/book.svg"} width={13} height={13} alt="" />
         </span>
@@ -17,7 +18,7 @@ export default function CatalogLink() {
             alt=""
           />
         </span>
-      </a>
+      </Link>
     </div>
   );
 }

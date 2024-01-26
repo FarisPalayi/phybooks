@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../styles/components/Subject.module.scss";
 
 export default function Subject() {
@@ -16,9 +17,9 @@ export default function Subject() {
       </h2>
       <div className={styles.subject__grid}>
         {subjects.map((sub, i) => (
-          <a href="/books" className={styles.gridItem} key={i}>
+          <Link href="/books" className={styles.gridItem} key={i}>
             {sub}
-          </a>
+          </Link>
         ))}
       </div>
       <button className={styles.showMore}>Show more</button>

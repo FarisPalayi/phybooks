@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../styles/components/SemesterGrid.module.scss";
 
 export default function SemesterGrid() {
@@ -10,9 +11,9 @@ export default function SemesterGrid() {
       </h2>
       <div className={styles.semester__grid}>
         {semesterInRoman.map((semNum, i) => (
-          <a href="/books" className={styles.gridItem} key={i}>
+          <Link href="/books" className={styles.gridItem} key={i}>
             Semester {semNum}
-          </a>
+          </Link>
         ))}
       </div>
     </section>
