@@ -12,7 +12,7 @@ export default function Intro() {
       </h1>
       <p className={styles.intro__description}>
         PhyBooks gives access to a selection of core B.Sc Physics textbooks, all
-        tailored to support your academic success at Calcut University.
+        tailored to support your academic success at Calicut University.
       </p>
       <div className={styles.intro__btnGroup}>
         <Button btnText="Browse by subject" btnType="primary" btnLink="#" />
