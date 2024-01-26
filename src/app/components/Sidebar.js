@@ -4,7 +4,7 @@ import styles from "../styles/components/Header.module.scss";
 export default function Sidebar({ isSidebarOpen }) {
   const navItems = [
     "Favorites",
-    { Settings: ["Theme", "UI"] },
+    { Settings: ["Theme", "Mode"] },
     "Contact Us",
     "Source Code",
     "About",
