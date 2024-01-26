@@ -24,12 +24,14 @@ export default function Header() {
       </Link>
 
       <div className={header.iconContainer}>
-        <button>
+        <button aria-label="search" title="search">
           <Image src="/images/search.svg" alt="" width={24} height={24} />
         </button>
         <button
           onClick={toggleSidebar}
           className={isSidebarOpen ? header.closeMenu : undefined}
+          aria-label="menu"
+          title="menu"
         >
           <MenuIcon width={30} height={30} />
         </button>
