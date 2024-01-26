@@ -5,10 +5,10 @@ export default function SemesterGrid() {
 
   return (
     <section className={styles.semester} id="semester">
-      <h2 className={styles.semesterTitle}>
+      <h2 className={styles.semester__title}>
         Browse by <span>Semester</span>
       </h2>
-      <div className={styles.semesterGrid}>
+      <div className={styles.semester__grid}>
         {semesterInRoman.map((semNum, i) => (
           <a href="#" className={styles.gridItem} key={i}>
             Semester {semNum}

@@ -11,10 +11,10 @@ export default function Subject() {
 
   return (
     <section className={styles.subject} id="subject">
-      <h2 className={styles.subjectTitle}>
+      <h2 className={styles.subject__title}>
         Browse by <span>Subject</span>
       </h2>
-      <div className={styles.subjectGrid}>
+      <div className={styles.subject__grid}>
         {subjects.map((sub, i) => (
           <a href="#" className={styles.gridItem} key={i}>
             {sub}

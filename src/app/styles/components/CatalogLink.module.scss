@@ -6,7 +6,7 @@
   margin-bottom: rem(136); // same as main gap
 }
 
-.catalogLink {
+.catalog__link {
   @include flex-center;
   font-size: rem(13.3);
   line-height: rem(24);

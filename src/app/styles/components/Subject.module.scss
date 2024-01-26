@@ -3,7 +3,7 @@
 .subject {
 }
 
-.subjectTitle {
+.subject__title {
   margin-bottom: rem(66);
 
   & > span {
@@ -11,7 +11,7 @@
   }
 }
 
-.subjectGrid {
+.subject__grid {
   @include flex-column-center;
   gap: rem(34);
   font-size: rem(16);
