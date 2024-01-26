@@ -4,7 +4,6 @@ export default function Subject() {
   const subjects = [
     "Quantum Mechanics",
     "Thermodynamics",
-    "Electromagnetism",
     "Optics",
     "Electronics",
     "Nuclear Physics",

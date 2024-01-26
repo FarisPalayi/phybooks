@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.catalog {
+  @include flex-row-center;
+  text-align: center;
+  margin-bottom: rem(150); //! remove this
+}
+
+.catalogLink {
+  @include flex-center;
+  font-size: rem(13.3);
+  line-height: rem(24);
+  letter-spacing: rem(0.133);
+  color: white;
+  border: solid 2px #2a272a;
+  border-radius: rem(54);
+  padding: rem(10) rem(20);
+
+  & .bookIcon,
+  & .nextIcon {
+    display: inline-block;
+    // align-self: center;
+  }
+
+  & .bookIcon {
+    margin: 0 rem(30) 0 rem(5);
+  }
+
+  & .nextIcon {
+    margin: 0 0 0 rem(20);
+  }
+}
