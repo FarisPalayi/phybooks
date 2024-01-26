@@ -14,7 +14,13 @@ export default function Header() {
   return (
     <header className={header.header}>
       <Link href="#" className={header.logo}>
-        <Image src="/images/logo.svg" alt="" width={130} height={25} priority />
+        <Image
+          src="/images/logo.svg"
+          alt="PhyBooks"
+          width={130}
+          height={25}
+          priority
+        />
       </Link>
 
       <div className={header.iconContainer}>
