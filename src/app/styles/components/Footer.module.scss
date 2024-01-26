@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.footer {
+  --waves-height: 6.25rem;
+  position: relative;
+  color: #c5c5c5;
+  padding: 0 rem(20);
+  text-align: center;
+  height: 100px;
+  margin-top: var(--waves-height);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--waves-height));
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: url("/images/footer-waves.svg") bottom no-repeat;
+    background-size: cover;
+  }
+}
