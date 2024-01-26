@@ -8,18 +8,6 @@ export default function Footer() {
   //! deal with the background image
   return (
     <footer className={styles.footer}>
-      <Image
-        alt=""
-        src={waves}
-        placeholder="blur"
-        quality={100}
-        fill
-        sizes="100vw"
-        style={{
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-      />
       <div className={styles.footer__content}>
         <Link href="/" className={styles.footer__logo}>
           <Image
