@@ -16,7 +16,7 @@ export default function Subject() {
       </h2>
       <div className={styles.subject__grid}>
         {subjects.map((sub, i) => (
-          <a href="#" className={styles.gridItem} key={i}>
+          <a href="/books" className={styles.gridItem} key={i}>
             {sub}
           </a>
         ))}

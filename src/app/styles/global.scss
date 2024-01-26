@@ -16,6 +16,7 @@ body {
   background-color: $bg-color;
   color: $text-color;
   font-size: 100%;
+  @include flex-column;
 }
 
 a {
@@ -54,4 +55,11 @@ h2 {
   & > span {
     font-weight: 600;
   }
+}
+
+main {
+  @include flex-column;
+  gap: rem(136);
+  margin: 0 rem(27);
+  flex: 1;
 }

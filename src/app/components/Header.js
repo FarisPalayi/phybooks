@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <header className={header.header}>
-      <Link href="#" className={header.logo}>
+      <Link href="/" className={header.logo}>
         <Image
           src="/images/logo.svg"
           alt="PhyBooks"
