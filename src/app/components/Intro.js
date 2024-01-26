@@ -15,8 +15,8 @@ export default function Intro() {
         tailored to support your academic success at Calicut University.
       </p>
       <div className={styles.intro__btnGroup}>
-        <Button btnText="Browse by subject" btnType="primary" btnLink="#semester" />
-        <Button btnText="Browse by semester" btnType="secondary" btnLink="#subject" />
+        <Button btnText="Browse by subject" btnType="primary" btnLink="#subject" />
+        <Button btnText="Browse by semester" btnType="secondary" btnLink="#semester" />
       </div>
     </section>
   );
