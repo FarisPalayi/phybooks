@@ -16,6 +16,7 @@
   @include flex-column-center;
   gap: rem(34);
   font-size: rem(16);
+  word-wrap: break-word;
   isolation: isolate;
 }
 

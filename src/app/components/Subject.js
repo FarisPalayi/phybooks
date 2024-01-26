@@ -11,7 +11,7 @@ export default function Subject() {
   ];
 
   return (
-    <section className={styles.subject}>
+    <section className={styles.subject} id="subject">
       <h2 className={styles.subjectTitle}>
         Browse by <span>Subject</span>
       </h2>

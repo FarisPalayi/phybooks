@@ -4,7 +4,7 @@ export default function SemesterGrid() {
   const semesterInRoman = ["I", "II", "III", "IV", "V", "VI"];
 
   return (
-    <section className={styles.semester}>
+    <section className={styles.semester} id="semester">
       <h2 className={styles.semesterTitle}>
         Browse by <span>Semester</span>
       </h2>

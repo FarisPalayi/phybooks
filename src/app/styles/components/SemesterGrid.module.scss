@@ -21,6 +21,7 @@
   font-size: rem(16);
   background-color: $bg-color;
   border-radius: rem(6);
+  word-wrap: break-word;
   isolation: isolate; // important for border gradient to work
 }
 
