@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
+  const navItems = ["Privacy Policy", "Terms & Conditions", "About Us"];
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__content}>
@@ -16,21 +18,13 @@ export default function Footer() {
           />
         </Link>
         <ul className={styles.footer__list}>
-          <li className={styles.footer__item}>
-            <a className={styles.footer__link} href="#">
-              Privacy Policy
-            </a>
-          </li>
-          <li className={styles.footer__item}>
-            <a className={styles.footer__link} href="#">
-              Terms & Conditions
-            </a>
-          </li>
-          <li className={styles.footer__item}>
-            <a className={styles.footer__link} href="#">
-              About Us
-            </a>
-          </li>
+          {navItems.map((item, index) => (
+            <li className={styles.footer__item} key={index}>
+              <Link href="#" className={styles.footer__link}>
+                {item}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
 
