@@ -14,7 +14,7 @@
 .semester__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  //* grid-template-columns: repeat(auto-fit, minmax(rem(145), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(rem(145), 1fr));
   gap: rem(24);
   grid-auto-rows: max-content;
 
@@ -37,4 +37,8 @@
   }
 
   border-radius: rem(7);
+
+  &:hover {
+    transform: scale(1); // just to create a new stacking context
+  }
 }
