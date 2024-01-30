@@ -22,7 +22,7 @@ export default function Subject() {
           </Link>
         ))}
       </div>
-      <button className={styles.showMore}>Show more</button>
+      <button className={styles.showMore}>show more</button>
     </section>
   );
 }
