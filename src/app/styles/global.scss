@@ -9,6 +9,7 @@
 html {
   font-size: 100%;
   scroll-behavior: smooth;
+  scroll-padding: var(--header-height);
 }
 
 body {
