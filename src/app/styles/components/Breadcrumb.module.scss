@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.breadcrumb {
+  --breadcrumb-gap: 2.4rem; // 32px
+  display: flex;
+  gap: var(--breadcrumb-gap);
+  width: max-content;
+  padding: rem(10) rem(23);
+  background-color: #12151c;
+  border-radius: rem(4);
+}
+
+.breadcrumb__item {
+  --arrow-width: 1.125rem; // 18px, intrinsic width of the arrow icon
+
+  position: relative;
+  font-size: rem(12.8);
+
+  &:not(:last-child)::after {
+    position: absolute;
+    content: url("/images/chevron-right-cyan.svg");
+    color: cyan;
+    transform: translate(calc((var(--breadcrumb-gap) - var(--arrow-width)) / 2), 1px);
+  }
+}
