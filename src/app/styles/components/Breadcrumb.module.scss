@@ -12,14 +12,14 @@
 }
 
 .breadcrumb__item {
-  --separator-width: 0.5rem;
+  --separator-width: 18px;
 
   position: relative;
   font-size: rem(12.8);
 
   &:not(:last-child)::after {
     position: absolute;
-    content: "/"; // can also use the chevron-right-cyan icon
+    content: url("/images/chevron-right-cyan.svg"); // can also use the chevron-right-cyan icon
     color: cyan;
     transform: translate(
       calc((var(--breadcrumb-gap) - var(--separator-width)) / 2),
