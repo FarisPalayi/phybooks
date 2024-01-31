@@ -14,10 +14,12 @@ export default function Page() {
         style={{
           display: "flex",
           gap: "80px",
+          marginTop: "2rem",
           flexWrap: "wrap",
           justifyContent: "center",
         }}
       >
+        <BookCard />
         <BookCard />
         <BookCard />
       </section>
