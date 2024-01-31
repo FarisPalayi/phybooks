@@ -7,12 +7,6 @@ export default function Lyrics() {
 
   return (
     <div style={{ fontSize: "10.5pt" }}>
-      <button
-        className={`${styles.btn} ${styles.secondary}`}
-        onClick={() => setShow(!show)}
-      >
-        Show Lyrics
-      </button>
       <div hidden={show}>
         <br />
         ആരാധികേ...
@@ -46,6 +40,12 @@ export default function Lyrics() {
         <br />
         <br />
       </div>
+      <button
+        className={`${styles.btn} ${styles.secondary}`}
+        onClick={() => setShow(!show)}
+      >
+        {show ? "Show": "Hide"} Lyrics
+      </button>
     </div>
   );
 }
