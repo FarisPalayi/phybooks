@@ -1,6 +1,7 @@
 @use "../abstracts/" as *;
 
 .book__card {
+  position: relative;
   @include flex-column-center;
   gap: rem(25);
   background-color: #12151c;
@@ -9,6 +10,18 @@
   max-width: rem(375);
   width: max-content;
   padding: rem(25);
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #007cf0, #00dfd8);
+  }
 }
 
 .book__title {

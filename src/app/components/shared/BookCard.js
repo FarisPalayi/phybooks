@@ -5,9 +5,9 @@ import styles from "../../styles/components/BookCard.module.scss";
 export default function BookCard() {
   const fallbackBook = {
     id: 1,
-    title: "Harry Potter",
-    author: "J.K. Rowling",
-    published: "26 June 1997",
+    title: "Electronics",
+    author: "Prof. Inasu CA",
+    published: "August 29, 2021",
     image: {
       url: "/images/book-cover.png",
       width: 126,
@@ -51,6 +51,7 @@ export default function BookCard() {
         <Link href="#" className={styles.btn}>
           Read Online
         </Link>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link href="#" className={styles.book__link}>
           Download
         </Link>
