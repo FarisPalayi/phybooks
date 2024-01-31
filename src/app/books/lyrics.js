@@ -1,6 +1,6 @@
 export default function Lyrics() {
   return (
-    <div style={{ fontSize: "10.5pt", paddingLeft: 4 }}>
+    <div style={{ fontSize: "10.5pt"}}>
       <br />
       ആരാധികേ...
       <br />
