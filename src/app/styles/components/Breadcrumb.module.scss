@@ -12,7 +12,7 @@
 }
 
 .breadcrumb__item {
-  --arrow-width: 0.5rem; // 18px, intrinsic width of the arrow icon
+  --separator-width: 0.5rem;
 
   position: relative;
   font-size: rem(12.8);
@@ -22,7 +22,7 @@
     content: "/"; // can also use the chevron-right-cyan icon
     color: cyan;
     transform: translate(
-      calc((var(--breadcrumb-gap) - var(--arrow-width)) / 2),
+      calc((var(--breadcrumb-gap) - var(--separator-width)) / 2),
       1px
     );
   }
