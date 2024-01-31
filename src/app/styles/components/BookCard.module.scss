@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.book__card {
+  @include flex-column-center;
+  gap: rem(25);
+  background-color: #12151c;
+  border-radius: rem(4);
+  min-width: rem(279); //! hardcoded value, should be changed
+  max-width: rem(375);
+  width: max-content;
+  padding: rem(25);
+}
+
+.book__title {
+}
+
+.book__image {
+}
+
+.book__info {
+}
+
+.book__author {
+}
+
+.book__date {
+}
+
+.btnGroup {
+  &btn {
+  }
+}
