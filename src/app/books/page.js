@@ -1,7 +1,7 @@
 import Breadcrumb from "../components/Breadcrumb";
 
 export default function Page() {
-  const category = "Semester VI";
+  const category = "Semester 5";
 
   return (
     <main className="main" style={{ gap: 60 }}>

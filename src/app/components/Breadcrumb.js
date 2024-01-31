@@ -12,9 +12,14 @@ export default function Breadcrumb() {
         </li>
 
         {pathnames.map((item, index) => {
+          const isLast = index === pathnames.length - 1;
           return (
-            <li key={index} className={styles.breadcrumb__item}>
-              <Link href={item}>{item}</Link>
+            <li
+              key={index}
+              className={`${styles.breadcrumb__item} ${isLast && styles.breadcrumb__itemActive}`}
+              aria-current={isLast ? "page" : ""}
+            >
+              {isLast ? item : <Link href="/">{item}</Link>}
             </li>
           );
         })}
