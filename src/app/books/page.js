@@ -13,7 +13,7 @@ export default function Page() {
       <section
         style={{
           display: "flex",
-          gap: "2rem",
+          gap: "80px",
           flexWrap: "wrap",
           justifyContent: "center",
         }}
