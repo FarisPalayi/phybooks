@@ -16,7 +16,7 @@ export default function Breadcrumb() {
           return (
             <li
               key={index}
-              className={`${styles.breadcrumb__item} ${isLast && styles.breadcrumb__itemActive}`}
+              className={styles.breadcrumb__item}
               aria-current={isLast ? "page" : ""}
             >
               {isLast ? item : <Link href="/">{item}</Link>}

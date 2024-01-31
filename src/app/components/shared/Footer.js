@@ -1,7 +1,6 @@
-import styles from "../styles/components/Footer.module.scss";
+import styles from "../../styles/components/Footer.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import waves from "../../../public/images/footer-waves.png";
 
 export default function Footer() {
   const navItems = ["Privacy Policy", "Terms & Conditions", "About Us"];
