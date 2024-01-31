@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/components/Subject.module.scss";
+import styles from "../../styles/components/Subject.module.scss";
 
 export default function Subject() {
   const subjects = [

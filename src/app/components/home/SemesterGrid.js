@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/components/SemesterGrid.module.scss";
+import styles from "../../styles/components/SemesterGrid.module.scss";
 
 export default function SemesterGrid() {
   const semesterInRoman = ["I", "II", "III", "IV", "V", "VI"];

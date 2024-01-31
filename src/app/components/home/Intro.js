@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./shared/Button";
-import styles from "../styles/components/Intro.module.scss";
+import Button from "../shared/Button";
+import styles from "../../styles/components/Intro.module.scss";
 
 export default function Intro() {
   return (
