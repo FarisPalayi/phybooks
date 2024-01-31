@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import header from "../styles/components/Header.module.scss";
+import header from "../../styles/components/Header.module.scss";
 import { useState } from "react";
 import Link from "next/link";
-import MenuIcon from "./icons/MenuIcon.js";
+import MenuIcon from "../icons/MenuIcon.js";
 import Sidebar from "./Sidebar";
 
 export default function Header() {

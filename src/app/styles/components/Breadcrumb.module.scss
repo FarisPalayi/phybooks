@@ -11,15 +11,23 @@
 }
 
 .breadcrumb__item {
-  --arrow-width: 1.125rem; // 18px, intrinsic width of the arrow icon
+  --arrow-width: 0.5rem; // 18px, intrinsic width of the arrow icon
 
   position: relative;
   font-size: rem(12.8);
 
   &:not(:last-child)::after {
     position: absolute;
-    content: url("/images/chevron-right-cyan.svg");
+    content: "/";
     color: cyan;
-    transform: translate(calc((var(--breadcrumb-gap) - var(--arrow-width)) / 2), 1px);
+    transform: translate(
+      calc((var(--breadcrumb-gap) - var(--arrow-width)) / 2),
+      1px
+    );
+  }
+
+  > a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 }
