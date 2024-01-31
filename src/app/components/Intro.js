@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button";
+import Button from "./shared/Button";
 import styles from "../styles/components/Intro.module.scss";
 
 export default function Intro() {
@@ -15,8 +15,16 @@ export default function Intro() {
         tailored to support your academic success at Calicut University.
       </p>
       <div className={styles.intro__btnGroup}>
-        <Button btnText="Browse by subject" btnType="primary" btnLink="#subject" />
-        <Button btnText="Browse by semester" btnType="secondary" btnLink="#semester" />
+        <Button
+          btnText="Browse by subject"
+          btnType="primary"
+          btnLink="#subject"
+        />
+        <Button
+          btnText="Browse by semester"
+          btnType="secondary"
+          btnLink="#semester"
+        />
       </div>
     </section>
   );

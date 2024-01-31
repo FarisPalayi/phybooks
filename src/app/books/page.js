@@ -1,4 +1,4 @@
-import Breadcrumb from "../components/Breadcrumb";
+import Breadcrumb from "../components/shared/Breadcrumb";
 
 export default function Page() {
   const category = "Semester 5";

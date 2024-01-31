@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/components/Breadcrumb.module.scss";
+import styles from "../../styles/components/Breadcrumb.module.scss";
 
 export default function Breadcrumb() {
   const pathnames = ["Semester VI", "Textbooks"];
