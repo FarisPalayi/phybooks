@@ -6,7 +6,7 @@
   gap: var(--breadcrumb-gap);
   width: max-content;
   padding: rem(10) rem(23);
-  background-color: #12151c;
+  // background-color: #12151c;
   border-radius: rem(4);
 }
 
@@ -18,7 +18,7 @@
 
   &:not(:last-child)::after {
     position: absolute;
-    content: "/";
+    content: "/"; // can also use the chevron-right-cyan icon
     color: cyan;
     transform: translate(
       calc((var(--breadcrumb-gap) - var(--arrow-width)) / 2),
