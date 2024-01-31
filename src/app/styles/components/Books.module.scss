@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+// main container for the page
+.books {
+  gap: rem(40);
+  padding: rem(55) rem(5);
+}
+
+.books__header {
+  font-size: rem(27.5);
+  font-weight: 500;
+  letter-spacing: -0.05rem;
+}
