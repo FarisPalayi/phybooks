@@ -1,17 +1,21 @@
 @use "../abstracts/" as *;
 
+$bg-book-card-color: #12151c;
+
 .book__card {
   position: relative;
   @include flex-column-center;
   gap: rem(25);
-  background-color: #12151c;
-  border-radius: rem(4);
   min-width: rem(279); //! hardcoded value, should be changed
   max-width: rem(375);
   width: max-content;
   padding: rem(25);
+
+  background-color: #12151c;
+  border-radius: rem(4);
   isolation: isolate;
   overflow: hidden;
+  text-align: center;
 
   &::before {
     content: "";
@@ -19,12 +23,18 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
+    height: rem(2);
     background: linear-gradient(45deg, #007cf0, #00dfd8);
+  }
+
+  & div:nth-last-child(2) {
+    margin-bottom: rem(37);
   }
 }
 
 .book__title {
+  font-size: rem(19.2);
+  font-weight: 400;
 }
 
 .book__image {
@@ -34,12 +44,57 @@
 }
 
 .book__author {
+  font-size: rem(14.33);
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.00894rem;
 }
 
 .book__date {
+  color: #ced5d691;
+  font-size: rem(13.3);
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.00831rem;
 }
 
 .btnGroup {
-  &btn {
+  @include flex-row;
+  gap: rem(20);
+
+  font-size: rem(12);
+
+  & .book__link {
+    @include border-grad($border-width: rem(0.5));
+    border-radius: rem(3);
+    color: white;
+    padding: rem(4) rem(16);
+    background-color: $bg-book-card-color;
+  }
+}
+
+.book__openChapter {
+  @include flex-row-center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &__btn {
+    @include flex-column-center;
+    gap: rem(5);
+    padding: rem(10);
+  }
+
+  &__text {
+    color: #c6c6c6;
+    font-size: rem(11);
+    font-weight: 400;
+  }
+
+  &__icon {
+  }
+
+  &:hover {
   }
 }
