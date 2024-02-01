@@ -79,22 +79,24 @@ $bg-book-card-color: #12151c;
   bottom: 0;
   left: 0;
   right: 0;
+  color: #c6c6c6;
 
   &__btn {
     @include flex-column-center;
     gap: rem(5);
     padding: rem(10);
+    transition: color 150ms;
+
+    &:hover {
+      color: lighten(#c6c6c6, 10%);
+    }
   }
 
   &__text {
-    color: #c6c6c6;
     font-size: rem(11);
     font-weight: 400;
   }
 
   &__icon {
-  }
-
-  &:hover {
   }
 }
