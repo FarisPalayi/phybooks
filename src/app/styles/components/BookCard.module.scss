@@ -60,9 +60,10 @@ $bg-book-card-color: #12151c;
 }
 
 .btnGroup {
-  @include flex-row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: rem(20);
-
+  padding: 0 rem(5);
   font-size: rem(12);
 
   & .book__link {
