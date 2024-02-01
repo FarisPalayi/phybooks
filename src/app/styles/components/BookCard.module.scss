@@ -86,7 +86,7 @@ $bg-book-card-color: #12151c;
   &__btn {
     @include flex-column-center;
     gap: rem(5);
-    width: 100%;
+    flex-grow: 1;
     padding: rem(10);
     transition: color 150ms;
 
