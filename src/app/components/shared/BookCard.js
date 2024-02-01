@@ -48,16 +48,20 @@ export default function BookCard() {
         <p className={styles.book__date}>{published}</p>
       </div>
       <div className={styles.btnGroup}>
-        <Link href="#" className={styles.btn}>
+        <Link href="#" className={styles.book__link}>
           Read Online
         </Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link href="#" className={styles.book__link}>
           Download
         </Link>
       </div>
-      <div>
-        <p>See full chapters</p>
+      <div className={styles.book__openChapter}>
+        <button className={styles.book__openChapter__btn}>
+          <span className={styles.book__openChapter__text}>See full chapters</span>
+          <span className={styles.book__openChapter__icon}>
+            <Image src="/images/arrow-bottom.svg" alt="" width={8} height={4} />
+          </span>
+        </button>
       </div>
     </article>
   );
