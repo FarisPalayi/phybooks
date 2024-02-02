@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .footer {
-  --waves-height: 6.25rem;
+  --waves-height: max(100px, 17vw); // no upper limit, maybe use diff img in desktop
   position: relative;
   color: #c5c5c5;
   padding: 0 rem(20);
@@ -11,10 +11,10 @@
   &::before {
     content: "";
     position: absolute;
-    top: calc(-1 * var(--waves-height));
+    bottom: 100%;
     left: 0;
     right: 0;
-    height: 100px;
+    height: var(--waves-height);
     background: url("/images/footer-waves.svg") bottom no-repeat;
     background-size: cover;
   }
