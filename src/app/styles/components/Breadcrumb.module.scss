@@ -5,10 +5,16 @@
   display: flex;
   gap: var(--breadcrumb-gap);
   width: max-content;
-  padding: rem(10) rem(23);
-  padding-left: 0;
-  // background-color: #12151c;
-  // border-radius: rem(4);
+  padding: rem(8) rem(15);
+
+  &Primary {
+    padding-left: 0;
+  }
+
+  &Secondary {
+    background-color: #12151c;
+    border-radius: rem(4);
+  }
 }
 
 .breadcrumb__item {
@@ -18,9 +24,9 @@
   font-size: rem(12.8);
 
   &:not(:last-child)::after {
-    position: absolute;
-    content: "/"; // can also use the chevron-right-cyan icon
+    content: "·";
     color: cyan;
+    position: absolute;
     transform: translate(
       calc((var(--breadcrumb-gap) - var(--separator-width)) / 2),
       1px
@@ -30,5 +36,20 @@
   > a:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+}
+
+.breadcrumbPrimary .breadcrumb__item {
+  &:not(:last-child)::after {
+    content: "/";
+  }
+}
+
+.breadcrumbSecondary .breadcrumb__item {
+  --separator-width: 1.125rem; // svg icon width is 18px = 1.125rem
+
+  &:not(:last-child)::after {
+    content: url("/images/chevron-right-cyan.svg");
+    color: #2d2d2d;
   }
 }

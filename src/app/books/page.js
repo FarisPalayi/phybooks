@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <main className={`main ${styles.books}`}>
       <h1 className={styles.books__header}> {category} Textbooks</h1>
-      <Breadcrumb />
+      <Breadcrumb variant="Secondary" />
       <section
         style={{
           display: "flex",
