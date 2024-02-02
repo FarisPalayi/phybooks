@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../../styles/components/BookCard.module.scss";
+import ActionButton from "./ActionButton";
 
-export default function BookCard( { book }) {
+export default function BookCard({ book }) {
   const { title, author, image, published, chapters, id } = book;
 
   return (
@@ -22,16 +22,14 @@ export default function BookCard( { book }) {
         <p className={styles.book__date}>{published}</p>
       </div>
       <div className={styles.btnGroup}>
-        <Link href="#" className={styles.book__link}>
-          Read Online
-        </Link>
-        <Link href="#" className={styles.book__link}>
-          Download
-        </Link>
+        <ActionButton text="Download" variant="download" />
+        <ActionButton text="Read Online" variant="read" />
       </div>
       <div className={styles.book__openChapter}>
         <button className={styles.book__openChapter__btn}>
-          <span className={styles.book__openChapter__text}>See full chapters</span>
+          <span className={styles.book__openChapter__text}>
+            See full chapters
+          </span>
           <span className={styles.book__openChapter__icon}>
             <Image src="/images/arrow-bottom.svg" alt="" width={8} height={4} />
           </span>

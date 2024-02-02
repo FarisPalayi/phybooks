@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+.btn {
+  @include flex-center;
+  gap: rem(12);
+  border-radius: rem(3);
+  color: white;
+  padding: rem(5) rem(16);
+  background-color: $bg-book-card-color;
+  font-size: rem(12);
+
+  @include border-grad(
+    $border-width: rem(0.6),
+    $grad-color: (
+      #238ef1,
+      #1eb18e,
+    ),
+    $grad-dir: 148deg
+  );
+
+  &.download {
+  }
+
+  &.read {
+  }
+}
