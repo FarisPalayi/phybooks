@@ -1,7 +1,5 @@
 @use "../abstracts/" as *;
 
-$bg-book-card-color: #12151c;
-
 .book__card {
   position: relative;
   @include flex-column-center;
@@ -64,15 +62,6 @@ $bg-book-card-color: #12151c;
   grid-template-columns: 1fr 1fr;
   gap: rem(20);
   padding: 0 rem(5);
-  font-size: rem(12);
-
-  & .book__link {
-    @include border-grad($border-width: rem(0.5));
-    border-radius: rem(3);
-    color: white;
-    padding: rem(4) rem(16);
-    background-color: $bg-book-card-color;
-  }
 }
 
 .book__openChapter {
