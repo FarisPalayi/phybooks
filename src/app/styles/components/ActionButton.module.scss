@@ -7,7 +7,8 @@
   color: white;
   padding: rem(5) rem(16);
   background-color: $bg-book-card-color;
-  font-size: rem(12);
+  font-size: rem(11);
+  text-align: left;
 
   @include border-grad(
     $border-width: rem(0.6),
