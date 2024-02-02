@@ -1,12 +1,14 @@
 import Link from "next/link";
 import styles from "../../styles/components/Breadcrumb.module.scss";
 
-export default function Breadcrumb() {
-  const pathnames = ["Semester VI", "Textbooks"];
+export default function Breadcrumb({ variant }) {
+  const pathnames = ["Semester 5"];
+
+  if (variant !== "Primary" && variant !== "Secondary") variant = "Primary";
 
   return (
     <nav aria-label="breadcrumb">
-      <ol className={styles.breadcrumb}>
+      <ol className={`${styles.breadcrumb} ${styles[`breadcrumb${variant}`]}`}>
         <li className={styles.breadcrumb__item}>
           <Link href="/">Home</Link>
         </li>
