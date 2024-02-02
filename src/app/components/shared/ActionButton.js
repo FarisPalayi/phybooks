@@ -3,7 +3,6 @@ import styles from "../../styles/components/ActionButton.module.scss";
 import Image from "next/image";
 
 export default function ActionButton({ variant, text }) {
-  console.log(variant);
   const iconPath =
     variant === "read" ? "images/book-open.svg" : "images/download.svg";
 
