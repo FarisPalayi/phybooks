@@ -2,34 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/components/BookCard.module.scss";
 
-export default function BookCard() {
-  const fallbackBook = {
-    id: 1,
-    title: "Electronics",
-    author: "Prof. Inasu CA",
-    published: "August 29, 2021",
-    image: {
-      url: "/images/book-cover.png",
-      width: 126,
-      height: 165,
-    },
-    chapters: [
-      {
-        title: "Transistors and Diodes",
-        pdf: "/chapters/chapter-1.pdf",
-      },
-      {
-        title: "Semiconductors",
-        pdf: "/chapters/chapter-2.pdf",
-      },
-      {
-        title: "Integrated Circuits",
-        pdf: "/chapters/chapter-3.pdf",
-      },
-    ],
-  };
-
-  const { title, author, image, published, chapters, id } = fallbackBook;
+export default function BookCard( { book }) {
+  const { title, author, image, published, chapters, id } = book;
 
   return (
     <article className={styles.book__card}>
