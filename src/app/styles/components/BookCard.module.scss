@@ -58,8 +58,8 @@
 }
 
 .btnGroup {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: rem(20);
   padding: 0 rem(5);
 }
