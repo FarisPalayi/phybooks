@@ -2,6 +2,7 @@
 
 .btn {
   @include flex-center;
+  flex-grow: 1;
   gap: rem(12);
   border-radius: rem(3);
   color: white;
