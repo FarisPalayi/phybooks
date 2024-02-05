@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import MenuIcon from "../icons/MenuIcon.js";
 import Sidebar from "./Sidebar";
+import Overlay from "./Overlay";
 
 export default function Header() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -35,8 +36,10 @@ export default function Header() {
         >
           <MenuIcon width={30} height={30} />
         </button>
-        <Sidebar isSidebarOpen={isSidebarOpen} />
       </div>
+      
+      <Sidebar isSidebarOpen={isSidebarOpen} />
+      <Overlay isSidebarOpen={isSidebarOpen} onClick={toggleSidebar} />
     </header>
   );
 }

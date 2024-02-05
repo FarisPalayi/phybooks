@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/components/Sidebar.module.scss";
+import Overlay from "./Overlay";
 
 export default function Sidebar({ isSidebarOpen }) {
   const navItems = [
@@ -44,12 +45,16 @@ export default function Sidebar({ isSidebarOpen }) {
   };
 
   return (
-    <div
-      className={`${styles.sidebar} ${!isSidebarOpen && styles.sidebarHidden}`}
-    >
-      <nav className={styles.nav}>
-        <ul className={styles.nav__list}>{renderNavItems(navItems)}</ul>
-      </nav>
-    </div>
+    <>
+      <div
+        className={`${styles.sidebar} ${
+          !isSidebarOpen ? styles.sidebarHidden : ""
+        }`}
+      >
+        <nav className={styles.nav}>
+          <ul className={styles.nav__list}>{renderNavItems(navItems)}</ul>
+        </nav>
+      </div>
+    </>
   );
 }
