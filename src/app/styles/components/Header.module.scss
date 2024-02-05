@@ -31,47 +31,6 @@
   }
 }
 
-.sidebar {
-  position: absolute;
-  inset: var(--header-height) 0 0 auto;
-  background-color: lighten($bg-color, 10%);
-  min-width: rem(200);
-  width: fit-content;
-  height: calc(100vh - var(--header-height));
-  padding: rem(20);
-  z-index: 2;
-
-  &Hidden {
-    display: none; // add !important if necessary
-  }
-}
-
-.nav {
-  --nav-spacing: 20px;
-}
-
-.nav__list,
-.nav__item,
-.nav__sublist {
-  @include flex-column;
-  gap: var(--nav-spacing);
-}
-
-// .nav__list {
-//   .nav__item {
-//   }
-// }
-
-.nav__sublist {
-  .nav__subitem {
-    margin-left: rem(20);
-  }
-
-  & a {
-    width: 100%;
-  }
-}
-
 .menu__topLine,
 .menu__bottomLine {
   transform-origin: left;

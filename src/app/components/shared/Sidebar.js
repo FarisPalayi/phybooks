@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../../styles/components/Header.module.scss";
+import styles from "../../styles/components/Sidebar.module.scss";
 
 export default function Sidebar({ isSidebarOpen }) {
   const navItems = [
