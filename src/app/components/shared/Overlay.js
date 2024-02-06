@@ -1,7 +1,13 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function Overlay({ isSidebarOpen, onClick }) {
-  isSidebarOpen
-    ? (document.body.style.overflowY = "hidden")
-    : (document.body.style.overflowY = "auto");
+  useEffect(() => {
+    isSidebarOpen && typeof window !== "undefined"
+      ? (document.body.style.overflowY = "hidden")
+      : (document.body.style.overflowY = "auto");
+  }, [isSidebarOpen]);
 
   return (
     <div
