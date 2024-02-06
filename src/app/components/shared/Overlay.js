@@ -1,5 +1,6 @@
+"use client"
 export default function Overlay({ isSidebarOpen, onClick }) {
-  isSidebarOpen
+  isSidebarOpen && typeof window !== "undefined"
     ? (document.body.style.overflowY = "hidden")
     : (document.body.style.overflowY = "auto");
 
