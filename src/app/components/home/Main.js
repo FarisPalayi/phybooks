@@ -3,6 +3,7 @@ import SemesterGrid from "./SemesterGrid";
 import Intro from "./Intro.js";
 import Subject from "./Subject.js";
 import CatalogLink from "../shared/CatalogLink";
+import Toast from "../shared/Toast";
 
 export default function Main() {
   return (
@@ -11,6 +12,7 @@ export default function Main() {
       <SemesterGrid />
       <Subject />
       <CatalogLink />
+      <Toast />
     </main>
   );
 }

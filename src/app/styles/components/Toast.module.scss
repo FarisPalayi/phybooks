@@ -1,0 +1,53 @@
+@use "../abstracts/" as *;
+
+.toastWrapper,
+.toast,
+.toast__icon,
+.toast__text,
+.toast__close {
+  // border: 1px solid dimgray;
+}
+
+.toastWrapper {
+  --main-margin: 0 1.6875rem;
+  border-color: gray;
+  position: fixed;
+  inset: auto 0 2rem 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: rem(500);
+  padding: var(--main-margin);
+}
+
+.toast {
+  border-color: palevioletred;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem;
+  border-radius: rem(3);
+
+  &Success {
+    background-color: #32cd32;
+  }
+
+  &Warning {
+    background-color: #daa520;
+  }
+
+  &Error {
+    background-color: #ff0000;
+  }
+}
+
+.toast__icon {
+  border-color: yellow;
+}
+
+.toast__text {
+  border-color: rgb(255, 26, 26);
+}
+
+.toast__close {
+  border-color: rgb(255, 94, 255);
+}
