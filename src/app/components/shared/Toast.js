@@ -2,6 +2,7 @@ import styles from "../../styles/components/Toast.module.scss";
 
 export default function Toast({ state, info }) {
   state = "Error"; //!
+  
   if (state !== "Success" && state !== "Warning" && state !== "Error")
     state = "Warning";
 
@@ -17,7 +18,7 @@ export default function Toast({ state, info }) {
           <p>{info}</p>
         </span>
         <span className={styles.toast__close}>
-          <div>close</div>
+          <button>close</button>
         </span>
       </div>
     </article>

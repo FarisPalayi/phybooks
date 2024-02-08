@@ -17,6 +17,7 @@
   width: 100%;
   max-width: rem(500);
   padding: var(--main-margin);
+  z-index: 2;
 }
 
 .toast {
@@ -26,6 +27,7 @@
   gap: 0.6rem;
   padding: 0.4rem 1rem;
   border-radius: rem(3);
+  overflow: auto;
 
   &Success {
     background-color: #32cd32;
