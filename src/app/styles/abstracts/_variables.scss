@@ -1,5 +1,47 @@
+@use "./functions" as *;
+
 $bg-color: #000000;
 $text-color: #ffffff;
 $black-blue-grad-border: 92deg, #007cf0 -2.85%, #00dfd8 84.03%; // this and variable --black-blue-grad are slightly different
 $rose-pink-grad-border: #286fca, #ff0080;
 $bg-book-card-color: #12151c;
+
+$font-sizes: (
+  primary: rem(16),
+  primary-900: rem(27.5),
+  primary-800: rem(19.2),
+  primary-700: rem(15),
+  primary-600: rem(14.33),
+  primary-500: rem(14),
+  primary-400: rem(13.3),
+  primary-300: rem(12.8),
+  primary-200: rem(11.11),
+  primary-100: rem(11),
+);
+
+$colors: (
+  black: #000000,
+  white: #ffffff,
+  bg-header: #00000073,
+  bg-primary-btn: #d9d9d9,
+  bg-card: #12151c,
+  //? miscellaneous use
+  bg-card-date: #ced5d691,
+  bg-open-chapter: #c6c6c6,
+
+  text-primary: #ffffff,
+  //?
+  text-primary-100: #c5c5c5,
+  //?
+  text-copyright: #636363,
+  text-desc: #a3a3a3,
+  text-footer: #c5c5c5,
+);
+
+$grads: (
+  grad-primary: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%),
+  grad-primary-border: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%),
+  grad-secondary: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%),
+  grad-secondary-border: linear-gradient(#286fca, #ff0080),
+);
+ 
