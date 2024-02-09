@@ -69,7 +69,7 @@
   }
 }
 
-// apply hover effects only non-touch devices
+// apply hover effects only on non-touch devices
 @mixin hover {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
