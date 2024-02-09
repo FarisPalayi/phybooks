@@ -24,17 +24,3 @@
   word-wrap: break-word;
   isolation: isolate; // important for border gradient to work
 }
-
-.gridItem {
-  display: block;
-  padding: rem(25);
-  text-align: center;
-  color: white;
-  background-color: $bg-color;
-
-  @include border-grad($border-width: 0.5px) {
-    border-image: linear-gradient($black-blue-grad-border);
-  }
-
-  border-radius: rem(7);
-}

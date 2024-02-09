@@ -1,0 +1,28 @@
+@use "../abstracts/" as *;
+
+.linkCell {
+  text-align: center;
+  display: block;
+  color: white;
+  background-color: $bg-color;
+  border-radius: rem(7);
+
+  &Primary {
+    padding: rem(25);
+
+    @include border-grad($border-width: 0.5px) {
+      border-image: linear-gradient($black-blue-grad-border);
+    }
+  }
+
+  &Secondary {
+    width: 80%;
+    padding: rem(22);
+
+    @include border-grad(
+      $border-width: 0.5px,
+      $grad-color: $rose-pink-grad-border,
+      $grad-dir: 90deg
+    );
+  }
+}

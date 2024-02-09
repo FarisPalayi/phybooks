@@ -19,22 +19,6 @@
   isolation: isolate;
 }
 
-.gridItem {
-  width: 80%;
-  padding: rem(22);
-  text-align: center;
-  color: white;
-  background-color: $bg-color;
-
-  @include border-grad(
-    $border-width: 0.5px,
-    $grad-color: $rose-pink-grad-border,
-    $grad-dir: 90deg
-  );
-
-  border-radius: rem(7);
-}
-
 .showMore {
   @include flex-row;
   justify-content: center;
