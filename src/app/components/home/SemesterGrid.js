@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "../../styles/components/SemesterGrid.module.scss";
 import LinkCell from "../shared/LinkCell";
 
