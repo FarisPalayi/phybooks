@@ -3,31 +3,83 @@ import Lyrics from "./lyrics";
 import BookCard from "../components/shared/BookCard";
 import styles from "../styles/components/Books.module.scss";
 
-const fallbackBook = {
-  id: 1,
-  title: "Electronics",
-  author: "Prof. Inasu CA",
-  published: "August 29, 2021",
-  image: {
-    url: "/images/book-cover.png",
-    width: 126,
-    height: 165,
+const placeholderBooks = [
+  {
+    id: 1,
+    title: "Electronics",
+    author: "Prof. Inasu CA",
+    published: "August 29, 2021",
+    image: {
+      url: "/images/book-cover.png",
+      width: 126,
+      height: 165,
+    },
+    chapters: [
+      {
+        title: "Transistors and Diodes",
+        pdf: "/chapters/chapter-1.pdf",
+      },
+      {
+        title: "Semiconductors",
+        pdf: "/chapters/chapter-2.pdf",
+      },
+      {
+        title: "Integrated Circuits",
+        pdf: "/chapters/chapter-3.pdf",
+      },
+    ],
   },
-  chapters: [
-    {
-      title: "Transistors and Diodes",
-      pdf: "/chapters/chapter-1.pdf",
+  {
+    id: 2,
+    title: "Material Science",
+    author: "Dr. P Sethumadhavan",
+    published: "August 29, 2021",
+    image: {
+      url: "/images/book-cover-material-science.jpg",
+      width: 126,
+      height: 165,
     },
-    {
-      title: "Semiconductors",
-      pdf: "/chapters/chapter-2.pdf",
+    chapters: [
+      {
+        title: "Transistors and Diodes",
+        pdf: "/chapters/chapter-1.pdf",
+      },
+      {
+        title: "Semiconductors",
+        pdf: "/chapters/chapter-2.pdf",
+      },
+      {
+        title: "Integrated Circuits",
+        pdf: "/chapters/chapter-3.pdf",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Electronics",
+    author: "Prof. Inasu CA",
+    published: "August 29, 2021",
+    image: {
+      url: "/images/book-cover.png",
+      width: 126,
+      height: 165,
     },
-    {
-      title: "Integrated Circuits",
-      pdf: "/chapters/chapter-3.pdf",
-    },
-  ],
-};
+    chapters: [
+      {
+        title: "Transistors and Diodes",
+        pdf: "/chapters/chapter-1.pdf",
+      },
+      {
+        title: "Semiconductors",
+        pdf: "/chapters/chapter-2.pdf",
+      },
+      {
+        title: "Integrated Circuits",
+        pdf: "/chapters/chapter-3.pdf",
+      },
+    ],
+  },
+];
 
 export default function Page() {
   const category = "Semester 5";
@@ -45,9 +97,9 @@ export default function Page() {
           justifyContent: "center",
         }}
       >
-        <BookCard book={fallbackBook} />
-        <BookCard book={fallbackBook} />
-        <BookCard book={fallbackBook} />
+        {placeholderBooks.map((book) => (
+          <BookCard key={book.id} book={book} />
+        ))}
       </section>
       <Lyrics />
     </main>
