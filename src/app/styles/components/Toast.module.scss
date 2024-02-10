@@ -30,15 +30,16 @@
   overflow: auto;
 
   &Success {
+    // maybe use gradient
     background-color: #32cd32;
   }
 
   &Warning {
-    background-color: #daa520;
+    background-color: #e5aa15;
   }
 
   &Error {
-    background-color: #ff0000;
+    background-color: #ff2828;
   }
 }
 
@@ -47,7 +48,7 @@
 }
 
 .toast__text {
-  border-color: rgb(255, 26, 26);
+  border-color: rgb(26, 244, 255);
 }
 
 .toast__close {

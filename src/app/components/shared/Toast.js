@@ -1,8 +1,6 @@
 import styles from "../../styles/components/Toast.module.scss";
 
-export default function Toast({ state, info }) {
-  state = "Error"; //!
-  
+export default function Toast({ state = "Error", info }) {
   if (state !== "Success" && state !== "Warning" && state !== "Error")
     state = "Warning";
 
