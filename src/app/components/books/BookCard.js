@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../../styles/components/BookCard.module.scss";
-import ActionButton from "./ActionButton";
+import ActionButton from "../shared/ActionButton";
 
 export default function BookCard({ book }) {
   const { title, author, image, published, chapters, id } = book;

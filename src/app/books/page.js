@@ -1,6 +1,6 @@
 import Breadcrumb from "../components/shared/Breadcrumb";
 import Lyrics from "./lyrics";
-import BookCard from "../components/shared/BookCard";
+import BookCard from "../components/books/BookCard";
 import styles from "../styles/components/Books.module.scss";
 
 const placeholderBooks = [
