@@ -31,7 +31,12 @@ export default function BookCard({ book }) {
             See full chapters
           </span>
           <span className={styles.book__openChapter__icon}>
-            <Image src="/images/arrow-bottom.svg" alt="" width={8} height={4} />
+            <Image
+              src="/images/chevron-bottom-cyan-small.svg"
+              alt=""
+              width={8}
+              height={4}
+            />
           </span>
         </button>
       </div>

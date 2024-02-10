@@ -33,7 +33,7 @@ const placeholderBooks = [
     id: 2,
     title: "Material Science",
     author: "Dr. P Sethumadhavan",
-    published: "August 29, 2021",
+    published: "September 2, 2022",
     image: {
       url: "/images/book-cover-material-science.jpg",
       width: 126,
