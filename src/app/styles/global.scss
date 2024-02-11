@@ -25,7 +25,8 @@ a {
   display: inline-block;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -64,4 +65,39 @@ h2 {
   margin: 0 rem(27);
   flex: 1;
   margin-top: var(--header-height);
+}
+
+:root {
+  --background: black;
+  --accents-1: #111;
+  --accents-2: #333;
+  --accents-3: #444;
+  --accents-4: #666;
+  --accents-5: #888;
+  --accents-6: #999;
+  --accents-7: #eaeaea;
+  --accents-8: #fafafa;
+  --foreground: white;
+}
+
+.dark-card {
+  &::before {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      var(--accents-2) 0deg,
+      var(--accents-2) 176deg,
+      #61dafb 193deg,
+      var(--accents-2) 217deg,
+      var(--accents-2) 1turn
+    );
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 }
