@@ -1,4 +1,7 @@
+"use client";
 import Image from "next/image";
+import ActionButton from "../shared/ActionButton";
+import styles from "../../styles/components/BookCard.module.scss";
 
 export default function DarkCard({ text }) {
   return (
@@ -34,6 +37,18 @@ export default function DarkCard({ text }) {
           <li>Author: Pro. Inasu CA</li>
           <li>August 19, 2012</li>
         </ul>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            margin: "1rem",
+          }}
+          className="dark-action-btn"
+        >
+          <ActionButton text="Download" variant="download" />
+          <ActionButton text="Read Online" variant="read" />
+        </div>
       </div>
     </a>
   );
