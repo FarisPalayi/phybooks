@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import ActionButton from "../shared/ActionButton";
-import styles from "../../styles/components/BookCard.module.scss";
 
-export default function DarkCard({ text }) {
+export default function DarkCard() {
   return (
     <a
       href="#"
@@ -23,18 +22,18 @@ export default function DarkCard({ text }) {
         textAlign: "center",
       }}
     >
-      <span style={{ display: "block", marginBottom: "15px" }}>{text}</span>
+      <span style={{ display: "block", marginBottom: "15px" }}>Electronics</span>
       <Image
         src="/images/book-cover.png"
         alt=""
-        width={126}
-        height={165}
+        width="126"
+        height="165"
         priority
         style={{ margin: "2rem auto" }}
       />
       <div style={{ color: "var(--accents-5)" }}>
         <ul>
-          <li>Author: Pro. Inasu CA</li>
+          <li>Author: Prof. Inasu CA</li>
           <li>August 19, 2012</li>
         </ul>
         <div

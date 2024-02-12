@@ -89,7 +89,7 @@ export default function Page() {
     <main className={`main ${styles.books}`}>
       <h1 className={styles.books__header}> {category} Textbooks</h1>
       <Breadcrumb variant="Secondary" />
-      {/* <section
+      <section
         style={{
           display: "flex",
           gap: "80px",
@@ -101,11 +101,11 @@ export default function Page() {
         {placeholderBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
-      </section> */}
+      </section>
       {/* <Lyrics /> */}
-      <DarkCard text="Quantum Mechanics" />
-      <DarkCard text="Electronics" />
-      <DarkCard text="Optics" />
+      <DarkCard />
+      <DarkCard />
+      <DarkCard />
     </main>
   );
 }
