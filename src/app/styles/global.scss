@@ -84,11 +84,11 @@ h2 {
   &::before {
     background: conic-gradient(
       from 180deg at 50% 50%,
-      var(--accents-2) 0deg,
-      var(--accents-2) 176deg,
+      #181c27 0deg,
+      #181c27 176deg,
       #61dafb 193deg,
-      var(--accents-2) 217deg,
-      var(--accents-2) 1turn
+      #181c27 217deg,
+      #181c27 1turn
     );
     content: "";
     position: absolute;
