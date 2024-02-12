@@ -98,14 +98,14 @@ export default function Page() {
           justifyContent: "center",
         }}
       >
-        {placeholderBooks.map((book) => (
+        {/* {placeholderBooks.map((book) => (
           <BookCard key={book.id} book={book} />
-        ))}
+        ))} */}
+        <DarkCard />
+        <DarkCard />
+        <DarkCard />
       </section>
       {/* <Lyrics /> */}
-      <DarkCard />
-      <DarkCard />
-      <DarkCard />
     </main>
   );
 }
