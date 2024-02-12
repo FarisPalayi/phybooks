@@ -27,6 +27,7 @@ $colors: (
   bg-card: #12151c,
   //? miscellaneous use
   bg-card-date: #ced5d691,
+  //? remove transparency
   bg-open-chapter: #c6c6c6,
 
   text-primary: #ffffff,
@@ -36,6 +37,26 @@ $colors: (
   text-copyright: #636363,
   text-desc: #a3a3a3,
   text-footer: #c5c5c5,
+  success: #32cd32,
+  warning: #daa520,
+  error: #ff0000,
+);
+
+$colors-size: (
+  black: #000000,
+  black-translucent: #00000073,
+  black-tinted: #12151c,
+  gray-tinted-translucent: #ced5d691,
+  gray-500: #636363,
+  gray: #808080,
+  gray-400: #a3a3a3,
+  gray-300: #c4c4c4,
+  gray-200: #c7c7c7,
+  gray-100: #d9d9d9,
+  white: #ffffff,
+  success: #32cd32,
+  warning: #daa520,
+  error: #ff0000,
 );
 
 $grads: (
@@ -44,4 +65,3 @@ $grads: (
   grad-secondary: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%),
   grad-secondary-border: linear-gradient(#286fca, #ff0080),
 );
- 

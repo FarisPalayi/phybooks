@@ -16,14 +16,16 @@ export default function DarkCard() {
         padding: "24px",
         color: "var(--foreground)",
         boxShadow:
-          "0 1px 0 1px rgba(0,0,0,.02),0 4px 6px rgba(0,0,0,.02),inset 0 0 0 6px var(--accents-1)",
+          "0 1px 0 1px rgba(0,0,0,.02),0 4px 6px rgba(0,0,0,.02),inset 0 0 0 6px #090a0c",
         transition: "background .15s ease",
-        background: "linear-gradient(180deg,#242424,#121212 65.62%)",
+        // background: "linear-gradient(180deg,#242424,#121212 65.62%)",
         background: "linear-gradient(180deg,rgb(23,27,37),rgb(9,10,12) 65.62%)",
         textAlign: "center",
       }}
     >
-      <span style={{ display: "block", marginBottom: "15px" }}>Electronics</span>
+      <span style={{ display: "block", marginBottom: "15px" }}>
+        Electronics
+      </span>
       <Image
         src="/images/book-cover.png"
         alt=""
