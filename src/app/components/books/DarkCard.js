@@ -19,6 +19,7 @@ export default function DarkCard() {
           "0 1px 0 1px rgba(0,0,0,.02),0 4px 6px rgba(0,0,0,.02),inset 0 0 0 6px var(--accents-1)",
         transition: "background .15s ease",
         background: "linear-gradient(180deg,#242424,#121212 65.62%)",
+        background: "linear-gradient(180deg,rgb(23,27,37),rgb(9,10,12) 65.62%)",
         textAlign: "center",
       }}
     >
@@ -26,8 +27,8 @@ export default function DarkCard() {
       <Image
         src="/images/book-cover.png"
         alt=""
-        width="126"
-        height="165"
+        width={126}
+        height={165}
         priority
         style={{ margin: "2rem auto" }}
       />
