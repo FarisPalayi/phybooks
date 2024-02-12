@@ -4,8 +4,7 @@ import ActionButton from "../shared/ActionButton";
 
 export default function DarkCard() {
   return (
-    <a
-      href="#"
+    <div
       className="dark-card"
       style={{
         position: "relative",
@@ -52,6 +51,6 @@ export default function DarkCard() {
           <ActionButton text="Read Online" variant="read" />
         </div>
       </div>
-    </a>
+    </div>
   );
 }
