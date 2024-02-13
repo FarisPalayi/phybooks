@@ -10,4 +10,17 @@
   font-size: rem(27.5);
   font-weight: 500;
   letter-spacing: -0.05rem;
+
+  > span {
+    @include grad-text;
+    font-weight: 600;
+  }
+}
+
+.books__grid {
+  display: flex;
+  gap: 80px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }

@@ -87,26 +87,19 @@ export default function Page() {
 
   return (
     <main className={`main ${styles.books}`}>
-      <h1 className={styles.books__header}> {category} Textbooks</h1>
+      <h1 className={styles.books__header}>
+        {category} <span>Textbooks</span>
+      </h1>
       <Breadcrumb variant="Secondary" />
-      <section
-        style={{
-          display: "flex",
-          gap: "80px",
-          marginTop: "2rem",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
+      <section className={styles.books__grid}>
         {/* {placeholderBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))} */}
-
         {placeholderBooks.map((book) => (
           <DarkCard key={book.id} book={book} />
         ))}
       </section>
-      {/* <Lyrics /> */}
+      <Lyrics />
     </main>
   );
 }
