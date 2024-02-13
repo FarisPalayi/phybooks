@@ -11,7 +11,7 @@
   &.primary {
     position: relative;
     background: var(--accents-8);
-    color: $bg-color;
+    color: var(--background);
 
     &::before {
       display: inline-block;
