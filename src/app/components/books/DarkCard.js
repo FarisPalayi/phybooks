@@ -1,4 +1,5 @@
 "use client";
+import styles from "../../styles/components/DarkCard.module.scss";
 import Image from "next/image";
 import ActionButton from "../shared/ActionButton";
 
