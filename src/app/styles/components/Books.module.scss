@@ -19,7 +19,7 @@
 
 .books__grid {
   display: flex;
-  gap: 80px;
+  gap: rem(80);
   margin-top: 2rem;
   flex-wrap: wrap;
   justify-content: center;
