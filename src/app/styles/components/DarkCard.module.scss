@@ -19,6 +19,8 @@
   // background: linear-gradient(180deg,#242424,#121212 65.62%);
 
   &::before {
+    --card-border-color: #181c27;
+    --glow-color: #61dafb;
     content: "";
     position: absolute;
     inset: 0;
@@ -26,11 +28,11 @@
 
     background: conic-gradient(
       from 180deg at 50% 50%,
-      #181c27 0deg,
-      #181c27 176deg,
-      #61dafb 193deg,
-      #181c27 217deg,
-      #181c27 1turn
+      var(--card-border-color) 0deg,
+      var(--card-border-color) 176deg,
+      var(--glow-color) 193deg,
+      var(--card-border-color) 217deg,
+      var(--card-border-color) 1turn
     );
 
     border-radius: inherit;
@@ -52,6 +54,7 @@
 
 .darkCard__image {
   & img {
+    border-radius: rem(1.5);
     margin: 0 auto;
   }
 }
@@ -80,6 +83,7 @@
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+  margin-bottom: rem(2);
 
   & > * {
     background-color: #171a21 !important;
