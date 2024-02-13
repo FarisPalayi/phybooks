@@ -20,8 +20,8 @@ export default function DarkCard({ book }) {
       </div>
       <div className={styles.darkCard__info}>
         <ul>
-          <li>Author: {author}</li>
-          <li>{published}</li>
+          <li className={styles.darkCard__author}>Author: {author}</li>
+          <li className={styles.darkCard__date}>{published}</li>
         </ul>
       </div>
       <div className={styles.darkCard__btnGroup}>

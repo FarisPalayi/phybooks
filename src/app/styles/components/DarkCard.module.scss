@@ -1,19 +1,29 @@
+@use "../abstracts/" as *;
+
 .darkCard {
   position: relative;
+  @include flex-column-center;
+  gap: rem(25);
   width: 100%;
-  max-width: 500px;
-  min-height: 190px;
-  border-radius: 12px;
-  padding: 24px;
+  min-width: rem(279); //! hardcoded value, should be changed
+  max-width: rem(310);
+  padding: rem(30);
+
   color: var(--foreground);
+  background: linear-gradient(180deg, rgb(23, 27, 37), rgb(9, 10, 12) 65.62%);
+  border-radius: rem(12);
+  text-align: center;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.02), 0 4px 6px rgba(0, 0, 0, 0.02),
     inset 0 0 0 6px #090a0c;
   transition: background 0.15s ease;
   // background: linear-gradient(180deg,#242424,#121212 65.62%);
-  background: linear-gradient(180deg, rgb(23, 27, 37), rgb(9, 10, 12) 65.62%);
-  text-align: center;
 
   &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.2px;
+
     background: conic-gradient(
       from 180deg at 50% 50%,
       #181c27 0deg,
@@ -22,11 +32,8 @@
       #181c27 217deg,
       #181c27 1turn
     );
-    content: "";
-    position: absolute;
-    inset: 0;
+
     border-radius: inherit;
-    padding: 1.2px;
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -38,12 +45,14 @@
 
 .darkCard__title {
   display: block;
-  margin-bottom: 15px;
+  font-size: rem(19.2);
+  font-weight: 400;
+  margin: rem(3) 0 rem(1) 0;
 }
 
 .darkCard__image {
   & img {
-    margin: 2rem auto;
+    margin: 0 auto;
   }
 }
 
@@ -51,11 +60,26 @@
   color: var(--accents-5);
 }
 
+.darkCard__author {
+  font-size: rem(15);
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.00894rem;
+}
+
+.darkCard__date {
+  color: #ced5d691;
+  font-size: rem(14);
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0.00831rem;
+}
+
 .darkCard__btnGroup {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 1rem;
+  width: 100%;
 
   & > * {
     background-color: #171a21 !important;
