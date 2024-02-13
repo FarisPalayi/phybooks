@@ -1,0 +1,63 @@
+.darkCard {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-height: 190px;
+  border-radius: 12px;
+  padding: 24px;
+  color: var(--foreground);
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.02), 0 4px 6px rgba(0, 0, 0, 0.02),
+    inset 0 0 0 6px #090a0c;
+  transition: background 0.15s ease;
+  // background: linear-gradient(180deg,#242424,#121212 65.62%);
+  background: linear-gradient(180deg, rgb(23, 27, 37), rgb(9, 10, 12) 65.62%);
+  text-align: center;
+
+  &::before {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #181c27 0deg,
+      #181c27 176deg,
+      #61dafb 193deg,
+      #181c27 217deg,
+      #181c27 1turn
+    );
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+.darkCard__title {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.darkCard__image {
+  & img {
+    margin: 2rem auto;
+  }
+}
+
+.darkCard__info {
+  color: var(--accents-5);
+}
+
+.darkCard__btnGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+
+  & > * {
+    background-color: #171a21 !important;
+  }
+}

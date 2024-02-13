@@ -101,9 +101,10 @@ export default function Page() {
         {/* {placeholderBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))} */}
-        <DarkCard />
-        <DarkCard />
-        <DarkCard />
+
+        {placeholderBooks.map((book) => (
+          <DarkCard key={book.id} book={book} />
+        ))}
       </section>
       {/* <Lyrics /> */}
     </main>

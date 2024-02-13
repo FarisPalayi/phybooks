@@ -6,6 +6,19 @@
   --purple-pink-grad: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%);
 }
 
+:root {
+  --background: black;
+  --accents-1: #111;
+  --accents-2: #333;
+  --accents-3: #444;
+  --accents-4: #666;
+  --accents-5: #888;
+  --accents-6: #999;
+  --accents-7: #eaeaea;
+  --accents-8: #fafafa;
+  --foreground: white;
+}
+
 html {
   font-size: 100%;
   scroll-behavior: smooth;
