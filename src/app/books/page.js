@@ -92,9 +92,9 @@ export default function Page() {
       </h1>
       <Breadcrumb variant="Secondary" />
       <section className={styles.books__grid}>
-        {/* {placeholderBooks.map((book) => (
+        {placeholderBooks.map((book) => (
           <BookCard key={book.id} book={book} />
-        ))} */}
+        ))}
         {placeholderBooks.map((book) => (
           <DarkCard key={book.id} book={book} />
         ))}
