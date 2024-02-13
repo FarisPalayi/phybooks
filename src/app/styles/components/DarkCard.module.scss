@@ -60,10 +60,10 @@
 }
 
 .darkCard__info {
-  color: var(--accents-5);
 }
 
 .darkCard__author {
+  color: var(--accents-7);
   font-size: rem(15);
   font-weight: 400;
   line-height: 1.5rem;
@@ -71,7 +71,7 @@
 }
 
 .darkCard__date {
-  color: #ced5d691;
+  color: var(--accents-5);
   font-size: rem(14);
   font-weight: 400;
   line-height: 1.5rem;
