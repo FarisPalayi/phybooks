@@ -19,7 +19,7 @@
   grid-auto-rows: max-content;
 
   font-size: rem(16);
-  background-color: $bg-color;
+  background-color: var(--background);
   border-radius: rem(6);
   word-wrap: break-word;
   isolation: isolate; // important for border gradient to work

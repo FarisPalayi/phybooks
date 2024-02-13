@@ -4,7 +4,7 @@ $bg-color: #000000;
 $text-color: #ffffff;
 $black-blue-grad-border: 92deg, #007cf0 -2.85%, #00dfd8 84.03%; // this and variable --black-blue-grad are slightly different
 $rose-pink-grad-border: #286fca, #ff0080;
-$bg-book-card-color: #12151c;
+
 
 $font-sizes: (
   primary: rem(16),
@@ -40,6 +40,7 @@ $colors: (
   success: #32cd32,
   warning: #daa520,
   error: #ff0000,
+  error-light: #f33,
 );
 
 $colors-size: (

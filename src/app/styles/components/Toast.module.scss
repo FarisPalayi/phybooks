@@ -30,16 +30,15 @@
   overflow: auto;
 
   &Success {
-    // maybe use gradient
-    background-color: #32cd32;
+    background-color: var(--success);
   }
 
   &Warning {
-    background-color: #e5aa15;
+    background-color: var(--warning);
   }
 
   &Error {
-    background-color: #ff0000;
+    background-color: var(--error-light);
   }
 }
 

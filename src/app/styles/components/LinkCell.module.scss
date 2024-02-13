@@ -3,13 +3,13 @@
 .linkCell {
   text-align: center;
   display: block;
-  color: white;
-  background-color: $bg-color;
+  color: var(--foreground);
+  background-color: var(--background);
   border-radius: rem(7);
   transition: background-color 200ms;
 
   @include hover {
-    background-color: rgba(255, 255, 255, 0.235);
+    opacity: 0.9;
   }
 
   &Primary {

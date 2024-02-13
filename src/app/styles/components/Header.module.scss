@@ -7,7 +7,7 @@
   padding: rem(13) rem(30); // rounded values
   position: fixed;
   width: 100%;
-  background-color: rgba($bg-color, 0.45);
+  background-color: rgba(var(--background), 0.45);
   backdrop-filter: blur(10px);
   z-index: 3;
 }

@@ -4,6 +4,7 @@
   --header-height: 66px; // update this value if necessary
   --black-blue-grad: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%);
   --purple-pink-grad: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%);
+  --bg-color-book-card: #12151c;
 }
 
 :root {
@@ -17,6 +18,11 @@
   --accents-7: #eaeaea;
   --accents-8: #fafafa;
   --foreground: white;
+  --cyan: #61dafb;
+  --success: #32cd32;
+  --warning: #daa520;
+  --error: #ff0000;
+  --error-light: #f33;
 }
 
 html {

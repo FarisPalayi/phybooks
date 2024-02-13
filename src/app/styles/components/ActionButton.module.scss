@@ -5,11 +5,12 @@
   flex-grow: 1;
   gap: rem(12);
   border-radius: rem(3);
-  color: white;
+  color: var(--foreground);
   padding: rem(8) rem(16);
-  background-color: $bg-book-card-color;
+  background-color: var(--bg-color-book-card);
   font-size: rem(11);
   text-align: left;
+  transition: background-color 0.15s ease;
 
   @include border-grad(
     $border-width: rem(0.6),
@@ -19,6 +20,10 @@
     ),
     $grad-dir: 148deg
   );
+
+  @include hover {
+    background-color: var(--accents-2);
+  }
 
   &.download {
   }

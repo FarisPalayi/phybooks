@@ -3,7 +3,7 @@
 .footer {
   --waves-height: max(100px, 17vw); // no upper limit, maybe use diff img in desktop
   position: relative;
-  color: #c5c5c5;
+  color: var(--accents-6);
   padding: 0 rem(20);
   text-align: center;
   margin-top: var(--waves-height);
@@ -51,5 +51,5 @@
   font-size: rem(11.11);
   line-height: rem(24);
   letter-spacing: 0.00831rem;
-  color: #636363;
+  color: var(--accents-4);
 }

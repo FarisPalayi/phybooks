@@ -50,7 +50,7 @@
 }
 
 .book__date {
-  color: #ced5d691;
+  color: var(--accents-5);
   font-size: rem(13.3);
   font-weight: 400;
   line-height: 1.5rem;
@@ -70,7 +70,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  color: #c6c6c6;
+  color: var(--accents-6);
 
   &__btn {
     @include flex-column-center;
@@ -79,8 +79,8 @@
     padding: rem(10);
     transition: color 150ms;
 
-    &:hover {
-      color: lighten(#c6c6c6, 10%);
+    @include hover {
+      color: var(--accents-7);
     }
   }
 
