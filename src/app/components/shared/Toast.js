@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styles from "../../styles/components/Toast.module.scss";
 
-export default function Toast({ state = "Error", info }) {
+export default function Toast({ state = "Warning", info }) {
   if (state !== "Success" && state !== "Warning" && state !== "Error")
     state = "Warning";
 
