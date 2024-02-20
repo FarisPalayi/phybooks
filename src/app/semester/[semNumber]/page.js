@@ -90,11 +90,8 @@ export default function Page({ params }) {
       <h1 className={styles.books__header}>
         {semesterName} <span>Textbooks</span>
       </h1>
-      <Breadcrumb variant="Secondary" />
+      <Breadcrumb variant="Secondary" pathnames={[semesterName]} />
       <section className={styles.books__grid}>
-        {placeholderBooks.map((book) => (
-          <BookCard key={book.id} book={book} />
-        ))}
         {placeholderBooks.map((book) => (
           <DarkCard key={book.id} book={book} />
         ))}

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ActionButton({ variant, text }) {
   const iconPath =
-    variant === "read" ? "images/book-open.svg" : "images/download.svg";
+    variant === "read" ? "/images/book-open.svg" : "/images/download.svg";
 
   return (
     <Link href="#" className={styles.btn + " " + styles[variant]}>

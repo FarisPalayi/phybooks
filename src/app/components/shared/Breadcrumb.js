@@ -1,9 +1,8 @@
 import Link from "next/link";
 import styles from "../../styles/components/Breadcrumb.module.scss";
 
-export default function Breadcrumb({ variant }) {
-  const pathnames = ["Semester 5"];
-
+//* currently, links only work for the first level of the path
+export default function Breadcrumb({ variant, pathnames }) {
   if (variant !== "Primary" && variant !== "Secondary") variant = "Primary";
 
   return (
@@ -13,18 +12,19 @@ export default function Breadcrumb({ variant }) {
           <Link href="/">Home</Link>
         </li>
 
-        {pathnames.map((item, index) => {
-          const isLast = index === pathnames.length - 1;
-          return (
-            <li
-              key={index}
-              className={styles.breadcrumb__item}
-              aria-current={isLast ? "page" : ""}
-            >
-              {isLast ? item : <Link href="/">{item}</Link>}
-            </li>
-          );
-        })}
+        {pathnames &&
+          pathnames.map((item, index) => {
+            const isLast = index === pathnames.length - 1;
+            return (
+              <li
+                key={index}
+                className={styles.breadcrumb__item}
+                aria-current={isLast ? "page" : ""}
+              >
+                {isLast ? item : <Link href={`/${item}`}>{item}</Link>}
+              </li>
+            );
+          })}
       </ol>
     </nav>
   );
