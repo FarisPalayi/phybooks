@@ -58,8 +58,8 @@ const placeholderBooks = [
   },
   {
     id: 3,
-    title: "Electronics",
-    author: "Prof. Inasu CA",
+    title: "Relativistic Mechanics and Astrophysics",
+    author: "Dr. P Sethumadhavan",
     published: "August 29, 2021",
     image: {
       url: "/images/books/relativity.jpg",
