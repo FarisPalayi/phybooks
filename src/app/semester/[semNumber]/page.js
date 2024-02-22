@@ -14,6 +14,7 @@ const placeholderBooks = [
       width: 126,
       height: 165,
     },
+    filepath: "/images/books/relativity.jpg",
     chapters: [
       {
         title: "Transistors and Diodes",
@@ -39,6 +40,7 @@ const placeholderBooks = [
       width: 126,
       height: 165,
     },
+    filepath: "/chapters/chapter-1.pdf",
     chapters: [
       {
         title: "Transistors and Diodes",
@@ -64,6 +66,7 @@ const placeholderBooks = [
       width: 126,
       height: 165,
     },
+    filepath: "/chapters/chapter-1.pdf",
     chapters: [
       {
         title: "Transistors and Diodes",

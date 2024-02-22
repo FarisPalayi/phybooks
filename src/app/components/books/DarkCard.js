@@ -4,7 +4,7 @@ import Image from "next/image";
 import ActionButton from "../shared/ActionButton";
 
 export default function DarkCard({ book }) {
-  const { title, author, image, published, chapters, id } = book;
+  const { title, author, image, published, chapters, id, filepath } = book;
 
   return (
     <article className={styles.darkCard}>
@@ -25,8 +25,18 @@ export default function DarkCard({ book }) {
         </ul>
       </div>
       <div className={styles.darkCard__btnGroup}>
-        <ActionButton text="Download" variant="download" />
-        <ActionButton text="Read Online" variant="read" />
+        <ActionButton
+          text="Download"
+          variant="download"
+          link={filepath}
+          name={title}
+        />
+        <ActionButton
+          text="Read Online"
+          variant="read"
+          link={filepath}
+          name={title}
+        />
       </div>
     </article>
   );
