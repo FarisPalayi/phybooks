@@ -12,7 +12,7 @@ export default function DarkCard({ book }) {
       <div className={styles.darkCard__image}>
         <Image
           src={image.url}
-          alt=""
+          alt={title}
           width={image.width}
           height={image.height}
           priority

@@ -54,10 +54,13 @@
 }
 
 .darkCard__image {
+  background-color: #ffffff1c;
+  border-radius: rem(1.5);
+
   & img {
-    border-radius: rem(1.5);
+    border-radius: inherit;
     margin: 0 auto;
-    filter: brightness(0.9);
+    filter: brightness(0.99);
   }
 }
 
