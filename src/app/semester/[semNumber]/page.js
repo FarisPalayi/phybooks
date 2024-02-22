@@ -6,7 +6,7 @@ import DarkCard from "../../components/books/DarkCard";
 const placeholderBooks = [
   {
     id: 1,
-    title: "Electronics",
+    title: "Computational Physics",
     author: "Prof. Inasu CA",
     published: "August 29, 2021",
     image: {
