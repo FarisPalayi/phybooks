@@ -2,13 +2,16 @@
 import styles from "../../styles/components/DarkCard.module.scss";
 import Image from "next/image";
 import ActionButton from "../shared/ActionButton";
+import { setCharLimit } from "@/app/lib/utils";
 
 export default function DarkCard({ book }) {
   const { title, author, image, published, chapters, id, filepath } = book;
+  const shortTitle = setCharLimit(title, 40);
+  console.log(shortTitle);
 
   return (
     <article className={styles.darkCard}>
-      <h3 className={styles.darkCard__title}>{title}</h3>
+      <h3 className={styles.darkCard__title}>{shortTitle}</h3>
       <div className={styles.darkCard__image}>
         <Image
           src={image.url}
