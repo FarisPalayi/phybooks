@@ -59,7 +59,7 @@ const placeholderBooks = [
     author: "Prof. Inasu CA",
     published: "August 29, 2021",
     image: {
-      url: "/images/book-cover.png",
+      url: "/images/book/relativity.jpg",
       width: 126,
       height: 165,
     },
