@@ -36,9 +36,9 @@ const placeholderBooks = [
     author: "Dr. P Sethumadhavan",
     published: "September 2, 2022",
     image: {
-      url: "/images/book-cover-material-science.jpg",
+      url: "/images/books/material-science-1.jpg",
       width: 126,
-      height: 165,
+      height: 185,
     },
     filepath: "/chapters/chapter-1.pdf",
     chapters: [
