@@ -3,12 +3,15 @@ import styles from "../../styles/components/DarkCard.module.scss";
 import Image from "next/image";
 import ActionButton from "../shared/ActionButton";
 import { setCharLimit } from "@/app/lib/utils";
+import Toast from "../shared/Toast";
+import { useState } from "react";
 
 export default function DarkCard({ book }) {
   const { title, author, image, published, chapters, id, filepath } = book;
   const shortTitle = setCharLimit(title, 40);
-  console.log(shortTitle);
 
+  const [showToast, setShowToast] = useState(true);
+  const closeToast = () => setShowToast(false);
   return (
     <article className={styles.darkCard}>
       <h3 className={styles.darkCard__title}>{shortTitle}</h3>
@@ -41,6 +44,12 @@ export default function DarkCard({ book }) {
           name={title}
         />
       </div>
+      <Toast
+        info="Download started..."
+        state="Success"
+        onClose={closeToast}
+        show={showToast}
+      />
     </article>
   );
 }
