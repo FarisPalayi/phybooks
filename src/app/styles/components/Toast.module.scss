@@ -28,6 +28,7 @@
   padding: 0.4rem 1rem;
   border-radius: rem(3);
   overflow: auto;
+  animation: toast-show 0.3s ease-in-out;
 
   &Success {
     background-color: var(--success);
@@ -52,4 +53,15 @@
 
 .toast__close {
   border-color: rgb(255, 94, 255);
+}
+
+@keyframes toast-show {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
