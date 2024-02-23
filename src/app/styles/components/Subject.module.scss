@@ -31,7 +31,7 @@
   &::after {
     content: "";
     flex: 1;
-    height: 1px;
+    height: rem(1);
     background: var(--purple-pink-grad);
   }
 }

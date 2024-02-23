@@ -6,5 +6,4 @@ function getBooksBySemester(books, semester) {
   return books.filter((book) => book.semester === semester);
 }
 
-
 export { setCharLimit, getBooksBySemester };

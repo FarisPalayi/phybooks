@@ -5,7 +5,6 @@
   @include flex-column-center;
   gap: rem(25);
   width: 100%;
-  min-width: rem(279); //! hardcoded value, should be changed
   max-width: rem(310);
   padding: rem(30);
 
@@ -13,10 +12,9 @@
   background: linear-gradient(180deg, #171b25, #090a0c 65.62%);
   border-radius: rem(12);
   text-align: center;
-  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.02), 0 4px 6px rgba(0, 0, 0, 0.02),
-    inset 0 0 0 6px #090a0c;
+  box-shadow: 0 rem(1) 0 rem(1) rgba(0, 0, 0, 0.02), 0 rem(4) rem(6) rgba(0, 0, 0, 0.02),
+    inset 0 0 0 rem(6) #090a0c;
   transition: background 0.15s ease;
-  // background: linear-gradient(180deg,#242424,#121212 65.62%);
 
   &::before {
     --card-border-color: #181c27;
@@ -25,7 +23,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    padding: 1.2px;
+    padding: rem(1.2);
 
     background: conic-gradient(
       from 180deg at 50% 50%,

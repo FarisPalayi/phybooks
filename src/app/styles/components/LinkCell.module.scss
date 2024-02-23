@@ -25,7 +25,7 @@
     padding: rem(22);
 
     @include border-grad(
-      $border-width: 0.5px,
+      $border-width: rem(0.5),
       $grad-color: $rose-pink-grad-border,
       $grad-dir: 90deg
     );

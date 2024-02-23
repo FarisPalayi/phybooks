@@ -12,7 +12,7 @@
   line-height: rem(24);
   letter-spacing: rem(0.133);
   color: var(--foreground);
-  border: solid 2px var(--accents-2);
+  border: solid rem(2) var(--accents-2);
   border-radius: rem(54);
   padding: rem(10) rem(20);
   transition: border-color 200ms;
