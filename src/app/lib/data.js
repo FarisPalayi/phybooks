@@ -6,7 +6,7 @@ const books = [
     publishedDate: "29-08-2021",
     semester: 5,
     subject: "Electronics",
-    path: "assets/pdf/electronics.pdf",
+    filepath: "assets/pdf/electronics.pdf",
     image: {
       url: "/images/books/electronics.jpg",
       width: 126,
@@ -17,3 +17,4 @@ const books = [
     pages: 195,
   },
 ];
+

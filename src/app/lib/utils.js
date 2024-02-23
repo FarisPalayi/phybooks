@@ -1,5 +1,10 @@
 function setCharLimit(str, limit) {
-  return str.length > limit ? str.substring(0, limit) + '...' : str;
+  return str.length > limit ? str.substring(0, limit) + "..." : str;
 }
 
-export { setCharLimit };
+function getBooksBySemester(books, semester) {
+  return books.filter((book) => book.semester === semester);
+}
+
+
+export { setCharLimit, getBooksBySemester };
