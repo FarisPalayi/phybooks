@@ -4,14 +4,22 @@ import Image from "next/image";
 import ActionButton from "../shared/ActionButton";
 import { setCharLimit } from "@/app/lib/utils";
 import Toast from "../shared/Toast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function DarkCard({ book }) {
   const { title, author, image, published, chapters, id, filepath } = book;
   const shortTitle = setCharLimit(title, 40);
 
-  const [showToast, setShowToast] = useState(true);
+  const [showToast, setShowToast] = useState(false);
   const closeToast = () => setShowToast(false);
+  const closeDelay = 30000;
+
+  useEffect(() => {
+    if (!showToast) return;
+    const timer = setTimeout(() => setShowToast(false), closeDelay);
+    return () => clearTimeout(timer);
+  }, [showToast]);
+
   return (
     <article className={styles.darkCard}>
       <h3 className={styles.darkCard__title}>{shortTitle}</h3>
@@ -36,6 +44,7 @@ export default function DarkCard({ book }) {
           variant="download"
           link={filepath}
           name={title}
+          onClick={() => setShowToast(true)}
         />
         <ActionButton
           text="Read Online"
