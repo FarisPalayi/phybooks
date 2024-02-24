@@ -6,7 +6,7 @@ function getBooksBySemester(books, semester) {
   return books.filter((book) => book.semester === semester);
 }
 
-function getBooksBuySubject(books, subject) {
+function getBooksBySubject(books, subject) {
   return books.filter((book) => book.subject.includes(subject));
 }
 
@@ -16,4 +16,4 @@ function title() {
 
 String.prototype.title = title; // monkey patching
 
-export { setCharLimit, getBooksBySemester, getBooksBuySubject };
+export { setCharLimit, getBooksBySemester, getBooksBySubject };
