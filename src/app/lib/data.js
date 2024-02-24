@@ -5,7 +5,7 @@ const books = [
     author: "Prof. Inasu A",
     publishedDate: "29-08-2021",
     semester: 5,
-    subject: "Electronics",
+    subject: ["electronics"], // can have more than one value for reference books
     filepath: "assets/pdf/electronics.pdf",
     image: {
       url: "/images/books/electronics.jpg",
