@@ -1,15 +1,15 @@
 import styles from "../../styles/components/Button.module.scss";
 
-export default function Button({ btnText, btnType, btnLink, glow = false }) {
+export default function Button({ btnText, btnType, btnLink, glow: shadow = false }) {
   !["primary", "secondary"].includes(btnType) && (btnType = "secondary");
-  const glowClass = glow ? styles.glow : "";
+  const shadowClass = shadow ? styles.shadow : "";
 
   return (
     <a
       href={btnLink}
-      className={`${styles.btn} ${styles[btnType]} ${glowClass}`}
+      className={`${styles.btn} ${styles[btnType]} ${shadowClass}`}
     >
-      {glow && (
+      {shadow && (
         <>
           <span className={`${styles.gradShadow} ${styles.grad1}`}></span>
           <span className={`${styles.gradShadow} ${styles.grad2}`}></span>

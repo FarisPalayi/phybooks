@@ -1,19 +1,18 @@
 @use "../abstracts/" as *;
 
 .btn {
-  @include reset-button;
+  // @include reset-button;
   position: relative;
   @include flex-center;
   width: 100%;
   text-align: center;
   border-radius: rem(6);
-  padding: rem(10) rem(20);
   font-size: rem(15);
   transition: box-shadow 0.15s ease;
 
   &.primary {
     position: relative;
-    background: var(--accents-8);
+    background-color: var(--accents-8);
     color: var(--background);
 
     &::before {
@@ -24,14 +23,13 @@
   }
 
   &.secondary {
-    background: var(--background);
     // @include border-grad;
   }
 }
 
 .gradShadow {
-  position: absolute;
   @include flex-center;
+  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: inherit;
@@ -45,30 +43,35 @@
     height: 100%;
     background-clip: padding-box;
     background-image: linear-gradient(165deg, var(--start), var(--end));
+    opacity: .8;
 
-    z-index: -1;
     border-radius: inherit;
     border: 12px solid transparent;
+    z-index: -1;
 
-    filter: blur(36px);
+    filter: blur(36px); // for shadow
   }
 }
 
-.glow .content {
+.content {
+  padding: rem(10) rem(20);
+}
+
+.shadow .content {
+  
   @include flex-center;
   width: 100%;
-  height: 100%;
-
-  background-color: #000;
+  
+  background-color: var(--background);
   background-clip: padding-box;
   border: 1px solid transparent;
-  border-radius: 8px;
-  color: #fff;
+  border-radius: inherit;
+  color: var(--foreground);
   transition: color 0.15s ease, background-color 0.15s ease;
+  z-index: 0;
 }
 
 .gradShadow.grad1 {
-  color: red;
   --start: #007cf0;
   --end: #00dfd8;
   animation: grad-1-anim 8s infinite;
