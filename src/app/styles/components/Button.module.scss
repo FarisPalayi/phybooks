@@ -20,6 +20,10 @@
       content: url("/images/triangle-down.svg");
       margin-right: rem(10);
     }
+
+    & .content {
+      padding: 0.625rem 0;
+    }
   }
 
   &.secondary {
@@ -43,7 +47,7 @@
     height: 100%;
     background-clip: padding-box;
     background-image: linear-gradient(165deg, var(--start), var(--end));
-    opacity: .8;
+    opacity: 0.8;
 
     border-radius: inherit;
     border: 12px solid transparent;
@@ -58,10 +62,9 @@
 }
 
 .shadow .content {
-  
   @include flex-center;
   width: 100%;
-  
+
   background-color: var(--background);
   background-clip: padding-box;
   border: 1px solid transparent;
