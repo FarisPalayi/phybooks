@@ -24,6 +24,7 @@ export default function Intro() {
           btnText="Browse by semester"
           btnType="secondary"
           btnLink="#semester"
+          glow={true}
         />
       </div>
     </section>
