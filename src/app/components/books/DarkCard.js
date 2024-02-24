@@ -12,7 +12,7 @@ export default function DarkCard({ book }) {
 
   const [showToast, setShowToast] = useState(false);
   const closeToast = () => setShowToast(false);
-  const closeDelay = 3000;
+  const closeDelay = 300000;
 
   useEffect(() => {
     if (!showToast) return;
