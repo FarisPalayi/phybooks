@@ -77,3 +77,15 @@
     }
   }
 }
+
+@mixin tablet {
+  @media (min-width: 600px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
