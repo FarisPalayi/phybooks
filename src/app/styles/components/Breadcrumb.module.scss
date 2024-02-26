@@ -34,9 +34,11 @@
     );
   }
 
-  > a:hover {
-    text-decoration: underline;
-    text-underline-offset: rem(2);
+  > a {
+    @include hover {
+      text-decoration: underline;
+      text-underline-offset: rem(2);
+    }
   }
 }
 
