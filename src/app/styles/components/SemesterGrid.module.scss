@@ -1,6 +1,9 @@
 @use "../abstracts/" as *;
 
 .semester {
+  @include tablet {
+    padding-inline: min(rem(158), 10vw);
+  }
 }
 
 .semester__title {

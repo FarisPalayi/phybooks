@@ -21,8 +21,8 @@
 
     @include tablet {
       @include border-grad($border-width: rem(1)) {
-      border-image: linear-gradient($black-blue-grad-border);
-    }
+        border-image: linear-gradient($black-blue-grad-border);
+      }
     }
   }
 
@@ -38,10 +38,10 @@
 
     @include tablet {
       @include border-grad(
-      $border-width: rem(1),
-      $grad-color: $rose-pink-grad-border,
-      $grad-dir: 90deg
-    );
+        $border-width: rem(1),
+        $grad-color: $rose-pink-grad-border,
+        $grad-dir: 90deg
+      );
     }
   }
 }
