@@ -27,7 +27,11 @@
   }
 
   &.secondary {
-    // @include border-grad;
+    @include border-grad;
+
+    & .gradShadow {
+      display: none;
+    }
   }
 }
 
