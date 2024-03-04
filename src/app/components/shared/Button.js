@@ -2,7 +2,7 @@ import styles from "../../styles/components/Button.module.scss";
 
 export default function Button({ btnText, btnType, btnLink, glow: shadow = false }) {
   !["primary", "secondary"].includes(btnType) && (btnType = "secondary");
-  const shadowClass = shadow ? styles.shadow : "";
+  const shadowClass = shadow ? styles.shadow : styles.notShadow;
 
   return (
     <a

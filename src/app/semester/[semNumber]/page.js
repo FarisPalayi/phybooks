@@ -42,7 +42,6 @@ export default function Page({ params }) {
                     btnText="Go Back"
                     btnLink="/"
                     btnType="secondary"
-                    glow={true}
                   />
                 </div>
               </div>
