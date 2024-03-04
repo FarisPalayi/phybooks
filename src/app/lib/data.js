@@ -2,7 +2,7 @@ const textbooks = [
   {
     id: 1,
     title: "Thermodynamics",
-    author: "Prof. Inasu A",
+    author: "Dr. P. Sethumadhavan",
     publishedDate: "29-08-2021",
     semester: 6,
     subject: ["thermodynamics"], // can have more than one value for reference books
@@ -29,11 +29,14 @@ const textbooks = [
       width: 126,
       height: 165,
     },
+    isReference: false,
+    category: [""],
+    pages: 195,
   },
   {
     id: 3,
     title: "Relativistic Mechanics and Astrophysics",
-    author: "Prof. Inasu CA",
+    author: "Dr. P. Sethumadhavan",
     publishedDate: "August 29, 2021",
     semester: 6,
     subject: ["Relativistic Mechanics and astrophysics"],
@@ -43,6 +46,26 @@ const textbooks = [
       width: 126,
       height: 165,
     },
+    isReference: false,
+    category: [""],
+    pages: 195,
+  },
+  {
+    id: 4,
+    title: "Nuclear Physics and Particle Physics",
+    author: "Dr. P. Sethumadhavan",
+    publishedDate: "August 29, 2021",
+    semester: 6,
+    subject: ["Nuclear Physics and Particle Physics"],
+    filepath: "/textbooks/semester-6/nuclear-physics/nuclear-physics.pdf",
+    image: {
+      url: "/textbooks/semester-6/nuclear-physics/cover/nuclear-physics.jpg",
+      width: 126,
+      height: 165,
+    },
+    isReference: false,
+    category: [""],
+    pages: 195,
   },
 ];
 

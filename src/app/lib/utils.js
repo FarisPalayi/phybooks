@@ -14,6 +14,15 @@ function title() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-String.prototype.title = title; // monkey patching
+function sortBookByTitle() {
+  return this.sort((a, b) => a.title.localeCompare(b.title));
+}
 
-export { setCharLimit, getBooksBySemester, getBooksBySubject };
+String.prototype.title = title; // monkey patching
+Array.prototype.sortBooksByTitle = sortBookByTitle; // monkey patching
+
+export {
+  setCharLimit,
+  getBooksBySemester,
+  getBooksBySubject,
+};
