@@ -67,6 +67,23 @@ const textbooks = [
     category: [""],
     pages: 195,
   },
+  {
+    id: 5,
+    title: "Statistical Physics Solid State Physics and Photonics",
+    author: "Dr. P. Sethumadhavan",
+    publishedDate: "August 29, 2021",
+    semester: 6,
+    subject: ["Statistical Physics Solid State Physics and Photonics"],
+    filepath: "/textbooks/semester-6/statistical-physics/statistical-physics.pdf",
+    image: {
+      url: "/textbooks/semester-6/statistical-physics/cover/statistical-physics.jpg",
+      width: 126,
+      height: 165,
+    },
+    isReference: false,
+    category: [""],
+    pages: 195,
+  },
 ];
 
 export { textbooks };
