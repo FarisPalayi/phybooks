@@ -21,9 +21,13 @@ export default function Page({ params }) {
         </h1>
         <Breadcrumb variant="Secondary" pathnames={[semesterName]} />
         <section className={styles.books__grid}>
-          {booksFilteredBySemester.map((book) => (
-            <DarkCard key={book.id} book={book} />
-          ))}
+          {booksFilteredBySemester.length > 0 ? (
+            booksFilteredBySemester.map((book) => (
+              <DarkCard key={book.id} book={book} />
+            ))
+          ) : (
+            <h1>Sorry, Not data found</h1>
+          )}
         </section>
       </div>
     </main>
