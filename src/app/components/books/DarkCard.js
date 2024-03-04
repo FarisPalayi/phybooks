@@ -7,7 +7,7 @@ import Toast from "../shared/Toast";
 import { useEffect, useState } from "react";
 
 export default function DarkCard({ book }) {
-  const { title, author, image, published, chapters, id, filepath } = book;
+  const { title, author, image, publishedDate, chapters, id, filepath } = book;
   const shortTitle = setCharLimit(title, 40);
 
   const [showToast, setShowToast] = useState(false);
@@ -35,7 +35,7 @@ export default function DarkCard({ book }) {
       <div className={styles.darkCard__info}>
         <ul>
           <li className={styles.darkCard__author}>Author: {author}</li>
-          <li className={styles.darkCard__date}>{published}</li>
+          <li className={styles.darkCard__date}>{publishedDate}</li>
         </ul>
       </div>
       <div className={styles.darkCard__btnGroup}>

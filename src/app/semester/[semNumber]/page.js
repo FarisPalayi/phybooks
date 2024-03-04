@@ -2,87 +2,7 @@ import Breadcrumb from "../../components/shared/Breadcrumb";
 import BookCard from "../../components/books/BookCard";
 import styles from "../../styles/components/Books.module.scss";
 import DarkCard from "../../components/books/DarkCard";
-
-const placeholderBooks = [
-  {
-    id: 1,
-    title: "Computational Physics",
-    author: "Prof. Inasu CA",
-    published: "August 29, 2021",
-    image: {
-      url: "/images/book-cover.png",
-      width: 126,
-      height: 165,
-    },
-    filepath: "/images/books/relativity.jpg",
-    chapters: [
-      {
-        title: "Transistors and Diodes",
-        pdf: "/chapters/chapter-1.pdf",
-      },
-      {
-        title: "Semiconductors",
-        pdf: "/chapters/chapter-2.pdf",
-      },
-      {
-        title: "Integrated Circuits",
-        pdf: "/chapters/chapter-3.pdf",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Material Science",
-    author: "Dr. P Sethumadhavan",
-    published: "September 2, 2022",
-    image: {
-      url: "/images/books/material-science.jpg",
-      width: 126,
-      height: 185,
-    },
-    filepath: "/chapters/chapter-1.pdf",
-    chapters: [
-      {
-        title: "Transistors and Diodes",
-        pdf: "/chapters/chapter-1.pdf",
-      },
-      {
-        title: "Semiconductors",
-        pdf: "/chapters/chapter-2.pdf",
-      },
-      {
-        title: "Integrated Circuits",
-        pdf: "/chapters/chapter-3.pdf",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Relativistic Mechanics and Astrophysics",
-    author: "Dr. P Sethumadhavan",
-    published: "August 29, 2021",
-    image: {
-      url: "/images/books/relativity.jpg",
-      width: 126,
-      height: 165,
-    },
-    filepath: "/chapters/chapter-1.pdf",
-    chapters: [
-      {
-        title: "Transistors and Diodes",
-        pdf: "/chapters/chapter-1.pdf",
-      },
-      {
-        title: "Semiconductors",
-        pdf: "/chapters/chapter-2.pdf",
-      },
-      {
-        title: "Integrated Circuits",
-        pdf: "/chapters/chapter-3.pdf",
-      },
-    ],
-  },
-];
+import { textbooks } from "@/app/lib/data";
 
 export default function Page({ params }) {
   const semesterNumber = params.semNumber;
@@ -95,7 +15,7 @@ export default function Page({ params }) {
       </h1>
       <Breadcrumb variant="Secondary" pathnames={[semesterName]} />
       <section className={styles.books__grid}>
-        {placeholderBooks.map((book) => (
+        {textbooks.map((book) => (
           <DarkCard key={book.id} book={book} />
         ))}
       </section>

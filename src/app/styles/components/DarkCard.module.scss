@@ -35,10 +35,7 @@
     );
 
     border-radius: inherit;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
   }
@@ -60,6 +57,7 @@
     border-radius: inherit;
     margin: 0 auto;
     filter: brightness(0.99);
+    font-size: .6rem; // for alt attribute
   }
 }
 

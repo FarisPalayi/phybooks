@@ -3,7 +3,7 @@ import styles from "../../styles/components/BookCard.module.scss";
 import ActionButton from "../shared/ActionButton";
 
 export default function BookCard({ book }) {
-  const { title, author, image, published, chapters, id } = book;
+  const { title, author, image, publishedDate, chapters, id } = book;
 
   return (
     <article className={styles.book__card}>
@@ -19,7 +19,7 @@ export default function BookCard({ book }) {
       </div>
       <div className={styles.book__info}>
         <p className={styles.book__author}>Author: {author}</p>
-        <p className={styles.book__date}>{published}</p>
+        <p className={styles.book__date}>{publishedDate}</p>
       </div>
       <div className={styles.btnGroup}>
         <ActionButton text="Download" variant="download" />
