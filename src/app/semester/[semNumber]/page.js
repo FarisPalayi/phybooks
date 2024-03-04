@@ -9,16 +9,18 @@ export default function Page({ params }) {
   const semesterName = `Semester ${semesterNumber}`;
 
   return (
-    <main className={`main ${styles.books}`}>
-      <h1 className={styles.books__header}>
-        {semesterName} <span>Textbooks</span>
-      </h1>
-      <Breadcrumb variant="Secondary" pathnames={[semesterName]} />
-      <section className={styles.books__grid}>
-        {textbooks.map((book) => (
-          <DarkCard key={book.id} book={book} />
-        ))}
-      </section>
+    <main className="container">
+      <div class={`main ${styles.books}`}>
+        <h1 className={styles.books__header}>
+          {semesterName} <span>Textbooks</span>
+        </h1>
+        <Breadcrumb variant="Secondary" pathnames={[semesterName]} />
+        <section className={styles.books__grid}>
+          {textbooks.map((book) => (
+            <DarkCard key={book.id} book={book} />
+          ))}
+        </section>
+      </div>
     </main>
   );
 }

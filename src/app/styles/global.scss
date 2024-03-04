@@ -5,6 +5,7 @@
   --black-blue-grad: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%);
   --purple-pink-grad: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%);
   --bg-color-book-card: #12151c;
+  --max-width: 1440px;
 }
 
 :root {
@@ -84,7 +85,21 @@ h2 {
 .main {
   @include flex-column;
   gap: rem(136);
-  margin: 0 rem(27);
+  padding: 0 rem(27);
   flex: 1;
   margin-top: var(--header-height);
+}
+
+.container {
+  width: 100%;
+  @include flex-column-center;
+
+  &.row {
+    @include flex-row-center;
+  }
+
+  & > * {
+    width: 100%;
+    max-width: var(--max-width);
+  }
 }

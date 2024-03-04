@@ -7,12 +7,14 @@ import Toast from "../shared/Toast";
 
 export default function Main() {
   return (
-    <main className="main">
-      <Intro />
-      <SemesterGrid />
-      <Subject />
-      <CatalogLink />
-      <Toast />
+    <main className="container">
+      <div className="main">
+        <Intro />
+        <SemesterGrid />
+        <Subject />
+        <CatalogLink />
+        <Toast />
+      </div>
     </main>
   );
 }
