@@ -10,6 +10,7 @@ pnpm install
 # or
 bun install
 ```
+
 then, run the development server:
 
 ```bash
