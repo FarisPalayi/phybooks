@@ -29,7 +29,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 
-## Followed Conventions
+## class naming method of components 
 
 The naming of classes for styling is a hybrid of the BEM methodology and camelCase:
 
