@@ -2,9 +2,11 @@ import Breadcrumb from "../../components/shared/Breadcrumb";
 import styles from "../../styles/components/Books.module.scss";
 import DarkCard from "../../components/books/DarkCard";
 import { textbooks } from "@/app/lib/data";
+import { getBooksBySubject } from "@/app/lib/utils";
 
 export default function Page({ params }) {
-  const subject = params.subName;
+  const subject = decodeURIComponent(params.subName);
+  const booksBySubject = getBooksBySubject(textbooks, subject);
 
   return (
     <main className="container">
@@ -14,7 +16,7 @@ export default function Page({ params }) {
         </h1>
         <Breadcrumb variant="Secondary" pathnames={[subject]} />
         <section className={styles.books__grid}>
-          {textbooks.map((book) => (
+          {booksBySubject.map((book) => (
             <DarkCard key={book.id} book={book} />
           ))}
         </section>

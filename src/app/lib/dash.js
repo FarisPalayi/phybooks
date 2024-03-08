@@ -1,7 +1,7 @@
 const textbooks = [
   {
     id: 1,
-    title: "thermodynamics",
+    title: "Thermodynamics",
     author: "Dr. P. Sethumadhavan",
     publishedDate: "29-08-2021",
     semester: 6,
@@ -18,7 +18,7 @@ const textbooks = [
   },
   {
     id: 2,
-    title: "material science",
+    title: "Material Science",
     author: "Dr. P Sethumadhavan",
     publishedDate: "September 2, 2022",
     semester: 6,
@@ -35,11 +35,11 @@ const textbooks = [
   },
   {
     id: 3,
-    title: "relativistic mechanics and astrophysics",
+    title: "Relativistic Mechanics and Astrophysics",
     author: "Dr. P. Sethumadhavan",
     publishedDate: "August 29, 2021",
     semester: 6,
-    subject: ["relativistic mechanics and astrophysics"],
+    subject: ["Relativistic Mechanics and astrophysics"],
     filepath: "/textbooks/semester-6/relativity/relativity.pdf",
     image: {
       url: "/textbooks/semester-6/relativity/cover/relativity.jpg",
@@ -52,11 +52,11 @@ const textbooks = [
   },
   {
     id: 4,
-    title: "nuclear physics and particle physics",
+    title: "Nuclear Physics and Particle Physics",
     author: "Dr. P. Sethumadhavan",
     publishedDate: "August 29, 2021",
     semester: 6,
-    subject: ["nuclear physics and particle physics"],
+    subject: ["Nuclear Physics and Particle Physics"],
     filepath: "/textbooks/semester-6/nuclear-physics/nuclear-physics.pdf",
     image: {
       url: "/textbooks/semester-6/nuclear-physics/cover/nuclear-physics.jpg",
@@ -69,11 +69,11 @@ const textbooks = [
   },
   {
     id: 5,
-    title: "statistical physics solid state physics and photonics",
+    title: "Statistical Physics Solid State Physics And Photonics",
     author: "Dr. P. Sethumadhavan",
     publishedDate: "August 29, 2021",
     semester: 6,
-    subject: ["statistical physics solid state physics and photonics"],
+    subject: ["Statistical Physics Solid State Physics And Photonics"],
     filepath:
       "/textbooks/semester-6/statistical-physics/statistical-physics.pdf",
     image: {
@@ -87,4 +87,15 @@ const textbooks = [
   },
 ];
 
-export { textbooks };
+function getBooksBySubject(books, subject) {
+  return books.filter((book) => book.subject.includes(subject.toLowerCase()));
+}
+
+const booksBySubject = getBooksBySubject(
+  textbooks,
+  decodeURIComponent(
+    
+  )
+);
+
+console.log(booksBySubject);

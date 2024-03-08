@@ -7,11 +7,11 @@ function getBooksBySemester(books, semester) {
 }
 
 function getBooksBySubject(books, subject) {
-  return books.filter((book) => book.subject.includes(subject));
+  return books.filter((book) => book.subject.includes(subject.toLowerCase()));
 }
 
 function getBookTitles(books) {
-  return books.map((book) => book.title);
+  return books.map((book) => book.title.toLowerCase());
 }
 
 function title() {

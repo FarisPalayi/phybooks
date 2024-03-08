@@ -7,7 +7,7 @@ import { getBooksBySemester } from "@/app/lib/utils";
 import Button from "@/app/components/shared/Button";
 
 export default function Page({ params }) {
-  const semesterNumber = params.semNumber;
+  const semesterNumber = decodeURIComponent(params.semNumber);
   const semesterName = `Semester ${semesterNumber}`;
   const booksFilteredBySemester = getBooksBySemester(
     textbooks,
