@@ -2,7 +2,7 @@ const textbooks = [
   {
     id: 1,
     title: "thermodynamics",
-    author: "Dr. P. Sethumadhavan",
+    author: "dr. p. sethumadhavan",
     publishedDate: "29-08-2021",
     semester: 6,
     subject: ["thermodynamics"], // can have more than one value for reference books
@@ -19,7 +19,7 @@ const textbooks = [
   {
     id: 2,
     title: "material science",
-    author: "Dr. P Sethumadhavan",
+    author: "dr. p. sethumadhavan",
     publishedDate: "September 2, 2022",
     semester: 6,
     subject: ["material science"],
@@ -36,7 +36,7 @@ const textbooks = [
   {
     id: 3,
     title: "relativistic mechanics and astrophysics",
-    author: "Dr. P. Sethumadhavan",
+    author: "dr. p. sethumadhavan",
     publishedDate: "August 29, 2021",
     semester: 6,
     subject: ["relativistic mechanics and astrophysics"],
@@ -53,7 +53,7 @@ const textbooks = [
   {
     id: 4,
     title: "nuclear physics and particle physics",
-    author: "Dr. P. Sethumadhavan",
+    author: "dr. p. sethumadhavan",
     publishedDate: "August 29, 2021",
     semester: 6,
     subject: ["nuclear physics and particle physics"],
@@ -70,7 +70,7 @@ const textbooks = [
   {
     id: 5,
     title: "statistical physics solid state physics and photonics",
-    author: "Dr. P. Sethumadhavan",
+    author: "dr. p. sethumadhavan",
     publishedDate: "August 29, 2021",
     semester: 6,
     subject: ["statistical physics solid state physics and photonics"],
