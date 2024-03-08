@@ -10,6 +10,10 @@ function getBooksBySubject(books, subject) {
   return books.filter((book) => book.subject.includes(subject));
 }
 
+function getBookTitles(books) {
+  return books.map((book) => book.title);
+}
+
 function title() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
@@ -21,8 +25,4 @@ function sortBookByTitle() {
 String.prototype.title = title; // monkey patching
 Array.prototype.sortBooksByTitle = sortBookByTitle; // monkey patching
 
-export {
-  setCharLimit,
-  getBooksBySemester,
-  getBooksBySubject,
-};
+export { setCharLimit, getBooksBySemester, getBooksBySubject, getBookTitles };

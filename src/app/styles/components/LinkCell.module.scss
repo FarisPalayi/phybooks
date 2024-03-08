@@ -43,5 +43,9 @@
         $grad-dir: 90deg
       );
     }
+
+    @include desktop {
+      width: fit-content;
+    }
   }
 }

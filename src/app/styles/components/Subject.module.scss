@@ -1,6 +1,9 @@
 @use "../abstracts/" as *;
 
 .subject {
+  @include tablet {
+    padding-inline: min(rem(158), 10vw);
+  }
 }
 
 .subject__title {
@@ -17,6 +20,13 @@
   font-size: rem(16);
   word-wrap: break-word;
   isolation: isolate;
+
+  @include desktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: rem(24);
+    justify-content: center;
+  }
 }
 
 .showMore {
