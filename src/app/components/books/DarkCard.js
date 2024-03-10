@@ -32,7 +32,7 @@ export default function DarkCard({ book }) {
       <div className={styles.darkCard__image}>
         <Image
           src={image.url}
-          alt={title}
+          alt={`${title.title()} book cover image`}
           width={image.width}
           height={image.height}
           priority

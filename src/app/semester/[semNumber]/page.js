@@ -38,15 +38,12 @@ export default function Page({ params }) {
                 }}
               >
                 <div style={{ width: "fit-content" }}>
-                  <Button
-                    btnText="Go Back"
-                    btnLink="/"
-                    btnType="secondary"
-                  />
+                  <Button btnText="Go Back" btnLink="/" btnType="secondary" />
                 </div>
               </div>
             </>
           )}
+          {/* add reference books here */}
         </section>
       </div>
     </main>
