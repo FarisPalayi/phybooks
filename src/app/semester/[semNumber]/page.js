@@ -1,5 +1,4 @@
 import Breadcrumb from "../../components/shared/Breadcrumb";
-import BookCard from "../../components/books/BookCard";
 import styles from "../../styles/components/Books.module.scss";
 import DarkCard from "../../components/books/DarkCard";
 import { textbooks } from "@/app/lib/data";
