@@ -14,7 +14,7 @@ const textbooks = [
     },
     isReference: false,
     category: [""],
-    pages: 195,
+    pages: 255,
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ const textbooks = [
     },
     isReference: false,
     category: [""],
-    pages: 195,
+    pages: 263,
   },
   {
     id: 4,
@@ -65,7 +65,7 @@ const textbooks = [
     },
     isReference: false,
     category: [""],
-    pages: 195,
+    pages: 232,
   },
   {
     id: 5,
@@ -78,6 +78,24 @@ const textbooks = [
       "/textbooks/semester-6/statistical-physics/statistical-physics.pdf",
     image: {
       url: "/textbooks/semester-6/statistical-physics/cover/statistical-physics.jpg",
+      width: 126,
+      height: 165,
+    },
+    isReference: false,
+    category: [""],
+    pages: 231,
+  },
+  {
+    id: 5,
+    title: "experimental physics",
+    author: "dr. p. sethumadhavan, prof. k.c abraham, prof. sunil john",
+    publishedDate: "August 29, 2021",
+    semester: 6,
+    subject: ["experimental physics"],
+    filepath:
+      "/textbooks/semester-6/statistical-physics/experimental-physics.pdf",
+    image: {
+      url: "/textbooks/semester-6/experimental-physics/cover/experimental-physics.jpg",
       width: 126,
       height: 165,
     },
