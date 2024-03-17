@@ -10,6 +10,7 @@
   font-size: rem(27.5);
   font-weight: 500;
   letter-spacing: -0.05rem;
+  line-height: 1.25;
 
   > span {
     @include grad-text;
