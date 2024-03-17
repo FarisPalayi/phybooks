@@ -8,8 +8,10 @@ import { useEffect, useState } from "react";
 
 export default function DarkCard({ book }) {
   const { title, author, image, publishedDate, chapters, id, filepath } = book;
-  const charLimit = 40;
-  const shortTitle = setCharLimit(title, charLimit);
+  const titleCharLimit = 40;
+  const authorCharLimit = 22;
+  const shortTitle = setCharLimit(title, titleCharLimit);
+  const shortAuthor = setCharLimit(author, authorCharLimit);
 
   const [showToast, setShowToast] = useState(false);
   const closeToast = () => setShowToast(false);
@@ -25,7 +27,7 @@ export default function DarkCard({ book }) {
     <article className={styles.darkCard}>
       <h3
         className={styles.darkCard__title}
-        title={shortTitle.length > charLimit ? title : null}
+        title={shortTitle.length > titleCharLimit ? title.title() : null}
       >
         {shortTitle}
       </h3>
@@ -40,7 +42,12 @@ export default function DarkCard({ book }) {
       </div>
       <div className={styles.darkCard__info}>
         <ul>
-          <li className={styles.darkCard__author}>Author: {author.title()}</li>
+          <li
+            className={styles.darkCard__author}
+            title={shortAuthor.length > authorCharLimit ? author.title() : null}
+          >
+            Author: {shortAuthor.title()}
+          </li>
           <li className={styles.darkCard__date}>{publishedDate}</li>
         </ul>
       </div>
