@@ -21,7 +21,7 @@ export default function Subject() {
           />
         ))}
       </div>
-      <button className={styles.showMore}>show more</button>
+      {/* <button className={styles.showMore}>show more</button> */}
     </section>
   );
 }
