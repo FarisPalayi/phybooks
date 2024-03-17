@@ -4,6 +4,10 @@
 .books {
   gap: rem(40);
   padding-block: rem(55);
+
+  @include tablet {
+    padding-bottom: rem(100);
+  }
 }
 
 .books__header {
