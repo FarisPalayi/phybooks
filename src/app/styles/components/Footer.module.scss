@@ -13,6 +13,7 @@
 
   @include tablet {
     background-color: var(--accents-1);
+    margin-top: 0;
   }
 
   &::before {
