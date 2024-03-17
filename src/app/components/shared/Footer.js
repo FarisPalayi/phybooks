@@ -4,7 +4,6 @@ import Image from "next/image";
 
 export default function Footer() {
   const navItems = ["Privacy Policy", "Terms & Conditions", "About Us"];
-  //! deal with the background image
   return (
     <footer className={styles.footer}>
       <div className="container">
