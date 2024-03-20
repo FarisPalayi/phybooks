@@ -20,7 +20,7 @@ export default function Footer() {
           <ul className={styles.footer__list}>
             {navItems.map((item, index) => (
               <li className={styles.footer__item} key={index}>
-                <Link href={item} className={styles.footer__link}>
+                <Link href={`/${item}`} className={styles.footer__link}>
                   {item}
                 </Link>
               </li>
