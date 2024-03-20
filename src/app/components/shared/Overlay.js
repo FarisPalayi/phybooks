@@ -21,7 +21,7 @@ export default function Overlay({ isSidebarOpen, onClick }) {
         height: "100vh",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         overflowY: "hidden",
-        zIndex: -1,
+        zIndex: 1,
       }}
     ></div>
   );
