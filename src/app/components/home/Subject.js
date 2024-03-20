@@ -4,7 +4,7 @@ import { getBookTitles, getBooksBySubject } from "@/app/lib/utils";
 import { textbooks } from "@/app/lib/data";
 
 export default function Subject() {
-  const bookTitles = getBookTitles(textbooks);
+  const bookTitles = getBookTitles(textbooks.sortBooksByTitle());
 
   return (
     <section className={styles.subject} id="subject">

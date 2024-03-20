@@ -20,11 +20,11 @@ function title() {
   });
 }
 
-function sortBookByTitle() {
+function sortBooksByTitle() {
   return this.sort((a, b) => a.title.localeCompare(b.title));
 }
 
 String.prototype.title = title; // monkey patching
-Array.prototype.sortBooksByTitle = sortBookByTitle; // monkey patching
+Array.prototype.sortBooksByTitle = sortBooksByTitle; // monkey patching
 
 export { setCharLimit, getBooksBySemester, getBooksBySubject, getBookTitles };
