@@ -93,7 +93,7 @@ const textbooks = [
     semester: 6,
     subject: ["experimental physics"],
     filepath:
-      "/textbooks/semester-6/statistical-physics/experimental-physics.pdf",
+      "/textbooks/semester-6/experimental-physics/experimental-physics.pdf",
     image: {
       url: "/textbooks/semester-6/experimental-physics/cover/experimental-physics.jpg",
       width: 126,

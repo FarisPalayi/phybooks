@@ -56,14 +56,13 @@ export default function DarkCard({ book }) {
           text="Download"
           variant="download"
           link={filepath}
-          name={title}
+          downloadName={title}
           onClick={() => setShowToast(true)}
         />
         <ActionButton
           text="Read Online"
           variant="read"
           link={filepath}
-          name={title}
         />
       </div>
       <Toast
