@@ -11,11 +11,10 @@ import { textbooks } from "@/app/lib/data";
 
 export default function Header() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [displaySearchList, setDisplaySearchList]  = useState(false) 
+  const [displaySearchList, setDisplaySearchList] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
-  const showSearchList = () => setDisplaySearchList(true);
-  const closeSearchList = () => setDisplaySearchList(false);
+  const toggleSearchList = () => setDisplaySearchList(!displaySearchList);
 
   return (
     <header className="container">
@@ -30,12 +29,15 @@ export default function Header() {
           />
         </Link>
         <div className={header.iconContainer}>
-          <button aria-label="search" title="search" onClick={showSearchList}>
+          <button aria-label="search" title="search" onClick={toggleSearchList}>
             <Image src="/images/search.svg" alt="" width={24} height={24} />
           </button>
 
           {displaySearchList && (
-            <Search data={textbooks} onClick={closeSearchList}/>
+            <>
+              <Search data={textbooks} onClick={toggleSearchList} />
+              <Overlay onClick={toggleSearchList} isOpen={true} />
+            </>
           )}
 
           <button
@@ -50,7 +52,7 @@ export default function Header() {
       </div>
 
       <Sidebar isSidebarOpen={isSidebarOpen} />
-      <Overlay isSidebarOpen={isSidebarOpen} onClick={toggleSidebar} />
+      <Overlay isOpen={isSidebarOpen} onClick={toggleSidebar} />
     </header>
   );
 }

@@ -2,19 +2,19 @@
 
 import { useEffect } from "react";
 
-export default function Overlay({ isSidebarOpen, onClick }) {
+export default function Overlay({ isOpen, onClick }) {
   useEffect(() => {
-    isSidebarOpen && typeof window !== "undefined"
+    isOpen && typeof window !== "undefined"
       ? (document.body.style.overflowY = "hidden")
       : (document.body.style.overflowY = "auto");
-  }, [isSidebarOpen]);
+  }, [isOpen]);
 
   return (
     <div
-      className={isSidebarOpen ? "overlay" : ""}
+      className={isOpen ? "overlay" : ""}
       onClick={onClick}
       style={{
-        display: isSidebarOpen ? "block" : "none",
+        display: isOpen ? "block" : "none",
         position: "fixed",
         inset: 0,
         width: "100%",

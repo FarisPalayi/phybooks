@@ -39,7 +39,13 @@ export default function Search({ data, onClick }) {
     <div className={styles.container}>
       <div className={styles.search}>
         <div className={styles.search__bar}>
-          <Image src="/images/search.svg" alt="" width={24} height={24} />
+          <Image
+            src="/images/search.svg"
+            className={styles.search__icon}
+            alt=""
+            width={24}
+            height={24}
+          />
           <input
             type="search"
             className={styles.search__input}
