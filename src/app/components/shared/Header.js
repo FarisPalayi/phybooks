@@ -6,11 +6,16 @@ import Link from "next/link";
 import MenuIcon from "../icons/MenuIcon.js";
 import Sidebar from "./Sidebar";
 import Overlay from "./Overlay";
+import Search from "./Search";
+import { textbooks } from "@/app/lib/data";
 
 export default function Header() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [displaySearchList, setDisplaySearchList]  = useState(false) 
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
+  const showSearchList = () => setDisplaySearchList(true);
+  const closeSearchList = () => setDisplaySearchList(false);
 
   return (
     <header className="container">
@@ -25,9 +30,14 @@ export default function Header() {
           />
         </Link>
         <div className={header.iconContainer}>
-          <button aria-label="search" title="search">
+          <button aria-label="search" title="search" onClick={showSearchList}>
             <Image src="/images/search.svg" alt="" width={24} height={24} />
           </button>
+
+          {displaySearchList && (
+            <Search data={textbooks} onClick={closeSearchList}/>
+          )}
+
           <button
             onClick={toggleSidebar}
             className={isSidebarOpen ? header.closeMenu : undefined}

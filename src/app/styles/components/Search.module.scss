@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+
+.container {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.29);
+  height: 100dvh;
+  max-width: rem(768);
+}
+
+.search {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: orange;
+}
+
+.search__bar {
+  --search-input-height: 2rem;
+
+  @include flex-row;
+  position: relative;
+  padding-block: calc((var(--header-height) - var(--search-input-height)) / 2);
+  background-color: cyan;
+}
+
+.search__input {
+  width: 100%;
+}
