@@ -14,6 +14,12 @@ function getBookTitles(books) {
   return books.map((book) => book.title.toLowerCase());
 }
 
+function titleCase(str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
 function title() {
   return this.replace(/\w\S*/g, function (txt) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -27,4 +33,4 @@ function sortBooksByTitle() {
 String.prototype.title = title; // monkey patching
 Array.prototype.sortBooksByTitle = sortBooksByTitle; // monkey patching
 
-export { setCharLimit, getBooksBySemester, getBooksBySubject, getBookTitles };
+export { setCharLimit, getBooksBySemester, getBooksBySubject, getBookTitles, titleCase };

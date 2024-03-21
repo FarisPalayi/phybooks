@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/components/Search.module.scss";
 import { useDebouncedCallback } from "use-debounce";
+import { titleCase } from "@/app/lib/utils";
 
 export default function Search({ data, onClick }) {
   const [query, setQuery] = useState("");
@@ -24,7 +25,7 @@ export default function Search({ data, onClick }) {
 
   useEffect(() => {
     if (query.trim() === "") {
-      setSearchResults([]);
+      setSearchResults(data);
       return;
     }
 
@@ -39,7 +40,7 @@ export default function Search({ data, onClick }) {
     <div className={styles.container}>
       <div className={styles.search}>
         <div className={styles.search__bar}>
-          <label for="search">
+          <label htmlFor="search">
             <Image
               src="/images/search.svg"
               className={styles.search__icon}
@@ -63,7 +64,7 @@ export default function Search({ data, onClick }) {
           {searchResults.map((item, i) => (
             <li key={i} className={styles.search__item}>
               <Link href={`/subject/${item.title}`} onClick={onClick}>
-                {item.title}
+                {titleCase(item.title)}
               </Link>
             </li>
           ))}
