@@ -25,7 +25,6 @@
   padding: calc((var(--header-height) - var(--search-input-height)) / 2);
   padding: rem(25);
   background-color: var(--background);
-  background-color: var(--accents-1);
 }
 
 .search__icon,
@@ -36,7 +35,6 @@
 .search__input {
   width: 100%;
   background-color: var(--background);
-  background-color: var(--accents-1);
   border: none;
   border-bottom: solid var(--cyan) 2px;
   outline: transparent;
@@ -50,7 +48,6 @@
   padding-inline: rem(56);
   padding-block: rem(10);
   background-color: var(--background);
-  background-color: var(--accents-1);
   height: calc(100dvh - var(--header-height));
 }
 
