@@ -39,19 +39,25 @@ export default function Search({ data, onClick }) {
     <div className={styles.container}>
       <div className={styles.search}>
         <div className={styles.search__bar}>
-          <Image
-            src="/images/search.svg"
-            className={styles.search__icon}
-            alt=""
-            width={24}
-            height={24}
-          />
+          <label for="search">
+            <Image
+              src="/images/search.svg"
+              className={styles.search__icon}
+              alt=""
+              width={24}
+              height={24}
+            />
+          </label>
           <input
             type="search"
+            id="search"
             className={styles.search__input}
             onChange={handleSearch}
             ref={inputRef}
           />
+          <button onClick={onClick} className={styles.search__close}>
+            <Image src="/images/x.svg" alt="" width={24} height={24} />
+          </button>
         </div>
         <ul className={styles.search__list}>
           {searchResults.map((item, i) => (
