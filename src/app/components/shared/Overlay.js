@@ -4,10 +4,15 @@ import { useEffect } from "react";
 
 export default function Overlay({ isOpen, onClick }) {
   useEffect(() => {
-    isOpen && typeof window !== "undefined"
-      ? (document.body.style.overflowY = "hidden")
-      : (document.body.style.overflowY = "auto");
+    if (isOpen && typeof window !== "undefined")
+      document.body.style.overflowY = "hidden";
   }, [isOpen]);
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflowY = "auto"; // run when overlay unmounted
+    };
+  }, []);
 
   return (
     <div

@@ -50,9 +50,12 @@ export default function Header() {
           </button>
         </div>
       </div>
-
-      <Sidebar isSidebarOpen={isSidebarOpen} />
-      <Overlay isOpen={isSidebarOpen} onClick={toggleSidebar} />
+      {isSidebarOpen && (
+        <>
+          <Sidebar isSidebarOpen={isSidebarOpen} />
+          <Overlay isOpen={isSidebarOpen} onClick={toggleSidebar} />
+        </>
+      )}
     </header>
   );
 }
