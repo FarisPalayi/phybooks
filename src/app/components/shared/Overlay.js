@@ -10,7 +10,7 @@ export default function Overlay({ isOpen, onClick }) {
 
   useEffect(() => {
     return () => {
-      document.body.style.overflowY = "auto"; // run when overlay unmounted
+      document.body.style.overflowY = "auto"; // run when overlay gets unmounted
     };
   }, []);
 

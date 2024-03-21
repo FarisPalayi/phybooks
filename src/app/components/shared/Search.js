@@ -45,7 +45,7 @@ export default function Search({ data, onClick }) {
               src="/images/search.svg"
               className={styles.search__icon}
               alt=""
-              width={24}
+              width={25}
               height={24}
             />
           </label>
