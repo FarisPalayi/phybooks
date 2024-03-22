@@ -55,19 +55,28 @@ export default function Search({ data, onClick }) {
             className={styles.search__input}
             onChange={handleSearch}
             ref={inputRef}
+            placeholder="Search books..."
           />
           <button onClick={onClick} className={styles.search__close}>
             <Image src="/images/x.svg" alt="" width={24} height={24} />
           </button>
         </div>
         <ul className={styles.search__list}>
-          {searchResults.map((item, i) => (
-            <li key={i} className={styles.search__item}>
-              <Link href={`/subject/${item.title}`} onClick={onClick}>
-                {titleCase(item.title)}
-              </Link>
-            </li>
-          ))}
+          {searchResults.length > 0 ? (
+            searchResults.map((item, i) => (
+              <li key={i} className={styles.search__item}>
+                <Link
+                  href={`/subject/${item.title}`}
+                  className={styles.search__link}
+                  onClick={onClick}
+                >
+                  {titleCase(item.title)}
+                </Link>
+              </li>
+            ))
+          ) : (
+            <p className={styles.search__fallback}>No books are found</p>
+          )}
         </ul>
       </div>
     </div>

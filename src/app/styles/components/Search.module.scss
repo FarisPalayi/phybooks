@@ -1,6 +1,8 @@
 @use "../abstracts/" as *;
 
 .container {
+  --search-bg: var(--background);
+
   position: fixed;
   inset: 0px;
   max-height: 100dvh;
@@ -8,6 +10,11 @@
   max-width: rem(768);
   margin: auto;
   background-color: var(--accents-1);
+
+  @include desktop {
+    --search-bg: var(--accents-1);
+    margin-top: calc(var(--header-height) + rem(32));
+  }
 }
 
 .search {
@@ -22,9 +29,8 @@
   @include flex-row;
   gap: rem(10);
   position: relative;
-  padding: calc((var(--header-height) - var(--search-input-height)) / 2);
   padding: rem(25);
-  background-color: var(--background);
+  background-color: var(--search-bg);
 }
 
 .search__icon,
@@ -34,7 +40,7 @@
 
 .search__input {
   width: 100%;
-  background-color: var(--background);
+  background-color: var(--search-bg);
   border: none;
   border-bottom: solid var(--cyan) 2px;
   outline: transparent;
@@ -45,12 +51,33 @@
 }
 
 .search__list {
-  padding-inline: rem(56);
-  padding-block: rem(10);
-  background-color: var(--background);
+  padding-inline: rem(51);
+  padding-block: rem(10) rem(35);
+  background-color: var(--search-bg);
   height: calc(100dvh - var(--header-height));
+
+  @include desktop {
+    height: auto;
+  }
 }
 
 .search__item {
-  padding-block: rem(8);
+  padding-block: rem(3);
+}
+
+.search__link {
+  width: 100%;
+  color: var(--foreground);
+  border-radius: rem(2);
+  transition: background-color 130ms ease-out;
+  padding-block: rem(5);
+  padding-inline: rem(5);
+
+  @include hover {
+    background-color: var(--accents-3);
+  }
+}
+
+.search__fallback {
+  color: var(--accents-6);
 }
