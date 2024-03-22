@@ -62,7 +62,7 @@ export default function DarkCard({ book }) {
         <ActionButton
           text="Read Online"
           variant="read"
-          link={filepath}
+          link={`/read/${title}`}
         />
       </div>
       <Toast
