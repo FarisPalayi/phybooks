@@ -1,5 +1,44 @@
 @use "../abstracts/" as *;
 
+.documentContainer {
+  
+}
+
+
+.document {
+  @include desktop {
+    @include flex-row;
+    gap: rem(100);
+  }
+}
+
 .index {
   padding-block: rem(30);
+
+  & a {
+    margin-bottom: rem(4);
+  }
+}
+
+.pageNumber {
+  text-align: center;
+  margin-block: rem(10);
+}
+
+.navBtns {
+  @include flex-center;
+  gap: rem(10);
+  
+  .nav__previous, .nav__next {
+    flex-basis: 50%;
+    padding: rem(6);
+    text-align: center;
+    border-radius: rem(2);
+    background-color: var(--accents-1);
+    transition: background-color 150ms;
+
+    @include hover {
+      background-color: var(--accents-2);
+    }
+  }
 }

@@ -56,43 +56,50 @@ export default function ReadOnline({ file }) {
   }
 
   return (
-    <div className="Example">
-      <div className="Example__container">
-        <div className="Example__container__document" ref={setContainerRef}>
-          <Document
-            file={file}
-            onLoadSuccess={onDocumentLoadSuccess}
-            options={options}
-          >
+    <div>
+      <div className={styles.documentContainer} ref={setContainerRef}>
+        <Document
+          file={file}
+          onLoadSuccess={onDocumentLoadSuccess}
+          options={options}
+          className={styles.document}
+        >
+          <div className={styles.TOC}>
             <h2 className={styles.index__title}>Index</h2>
-            <Outline onItemClick={onItemClick} className={styles.index}/>
+            <Outline onItemClick={onItemClick} className={styles.index} />
+          </div>
+          <div>
             <Page
               pageNumber={pageNumber || 1}
               width={
                 containerWidth ? Math.min(containerWidth, maxWidth) : maxWidth
               }
             />
-          </Document>
-          <div>
-            <p>
-              Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
-            </p>
-            <button
-              type="button"
-              disabled={pageNumber <= 1}
-              onClick={previousPage}
-            >
-              Previous
-            </button>
-            <button
-              type="button"
-              disabled={pageNumber >= numPages}
-              onClick={nextPage}
-            >
-              Next
-            </button>
+            <div>
+              <p className={styles.pageNumber}>
+                Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
+              </p>
+              <div className={styles.navBtns}>
+                <button
+                  type="button"
+                  disabled={pageNumber <= 1}
+                  onClick={previousPage}
+                  className={styles.nav__previous}
+                >
+                  Previous
+                </button>
+                <button
+                  type="button"
+                  disabled={pageNumber >= numPages}
+                  onClick={nextPage}
+                  className={styles.nav__next}
+                >
+                  Next
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </Document>
       </div>
     </div>
   );
