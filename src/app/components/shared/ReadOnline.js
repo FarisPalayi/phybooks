@@ -24,6 +24,10 @@ export default function ReadOnline({ file }) {
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
 
+  const pageWidth = containerWidth
+    ? Math.min(containerWidth, maxWidth)
+    : maxWidth;
+
   const onResize = useCallback((entries) => {
     const [entry] = entries;
 
@@ -69,12 +73,12 @@ export default function ReadOnline({ file }) {
             <Outline onItemClick={onItemClick} className={styles.index} />
           </div>
           <div>
-            <Page
-              pageNumber={pageNumber || 1}
-              width={
-                containerWidth ? Math.min(containerWidth, maxWidth) : maxWidth
-              }
-            />
+            <div
+              class={styles.page__backdrop}
+              style={{ width: pageWidth, height: pageWidth * 1.41 }}
+            >
+              <Page pageNumber={pageNumber || 1} width={pageWidth} />
+            </div>
             <div>
               <p className={styles.pageNumber}>
                 Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
