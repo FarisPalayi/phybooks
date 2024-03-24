@@ -30,6 +30,7 @@ export default function ReadOnline({ file }) {
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
   const [scale, setScale] = useState(1.0);
+  const [swiperReady, setSwiperReady] = useState(false);
   const swiperRef = useRef(null);
 
   const pageWidth = containerWidth
@@ -48,6 +49,13 @@ export default function ReadOnline({ file }) {
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
+  useEffect(() => {
+    if (swiperRef.current) {
+      // Swiper instance is available, set swiperReady to true
+      setSwiperReady(true);
+    }
+  }, [swiperRef]);
+
   //* functions:
 
   function onDocumentLoadSuccess({ numPages: nextNumPages }) {
@@ -57,20 +65,30 @@ export default function ReadOnline({ file }) {
 
   // navigation
 
-  const changePage = (offset) =>
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
+  const changePage = (offset) => {
+    const newPage = pageNumber + offset;
+    if (newPage >= 1 && newPage <= numPages) {
+      setPageNumber(newPage);
+      if (swiperReady) {
+        swiperRef.current.slideTo(newPage - 1);
+      }
+    }
+  };
 
   const previousPage = () => changePage(-1);
   const nextPage = () => changePage(1);
 
-  const onItemClick = ({ pageNumber: itemPageNumber }) =>
+  const onItemClick = ({ pageNumber: itemPageNumber }) => {
     setPageNumber(itemPageNumber);
+    if (swiperReady) {
+      swiperRef.current.slideTo(itemPageNumber - 1);
+    }
+  };
 
   // zoom
 
   const handleZoomIn = () => setScale(scale + 0.1);
   const handleZoomOut = () => setScale(scale - 0.1);
-  
 
   return (
     <div>
@@ -93,10 +111,13 @@ export default function ReadOnline({ file }) {
             </div>
 
             <div
-              className={`${styles.page__backdrop} swiper-container`}
+              className={styles.page__backdrop}
               style={{ width: pageWidth, height: pageWidth * 1.41 }}
             >
               <Swiper
+                ref={(ref) => {
+                  swiperRef.current = ref;
+                }}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
@@ -106,12 +127,14 @@ export default function ReadOnline({ file }) {
               >
                 {[...Array(numPages).keys()].map((pageIndex) => (
                   <SwiperSlide key={pageIndex}>
-                    <Page
-                      pageNumber={pageIndex + 1}
-                      width={pageWidth}
-                      scale={scale}
-                      className={styles.page}
-                    />
+                    {pageIndex + 1 === pageNumber && ( // Ensure to render the Page component only when its page number matches the current pageNumber
+                      <Page
+                        pageNumber={pageIndex + 1}
+                        width={pageWidth}
+                        scale={scale}
+                        className={styles.page}
+                      />
+                    )}
                   </SwiperSlide>
                 ))}
               </Swiper>
