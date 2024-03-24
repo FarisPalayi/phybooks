@@ -29,3 +29,12 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+
+.books__main {
+  margin-top: 2rem;
+  
+  @include desktop {
+    min-height: 50dvh;
+  }
+}

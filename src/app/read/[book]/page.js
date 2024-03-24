@@ -24,7 +24,9 @@ export default function Page({ params }) {
           ]}
         />
         {/* assuming books have unique titles */}
-        <ReadOnline file={bookByTitle[0].filepath} />
+        <section className={styles.books__main}>
+          <ReadOnline file={bookByTitle[0].filepath} />
+        </section>
       </div>
     </main>
   );

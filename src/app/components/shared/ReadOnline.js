@@ -7,7 +7,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import styles from "@/app/styles/components/ReadOnline.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Zoom, Pagination, Navigation } from "swiper/modules";
+import { Keyboard, Zoom, Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/zoom";
@@ -92,28 +92,31 @@ export default function ReadOnline({ file }) {
               style={{ width: pageWidth, height: pageWidth * 1.41 }}
             >
               <Swiper
+                zoom={true}
                 navigation={true}
                 style={{
                   "--swiper-navigation-color": "#fff",
                   "--swiper-pagination-color": "#fff",
                 }}
-                zoom={true}
                 pagination={{
                   type: "progressbar",
                   clickable: true,
                 }}
-                modules={[Zoom, Navigation, Pagination]}
+                keyboard={{
+                  enabled: true,
+                }}
+                modules={[Keyboard, Zoom, Navigation, Pagination]}
                 className="mySwiper"
               >
                 {[...Array(numPages).keys()].map((pageIndex) => (
                   <SwiperSlide key={pageIndex}>
                     {/* {pageIndex + 1 === pageNumber && ( */}
-                      <Page
-                        pageNumber={pageIndex + 1}
-                        width={pageWidth}
-                        scale={scale}
-                        className={styles.page}
-                      />
+                    <Page
+                      pageNumber={pageIndex + 1}
+                      width={pageWidth}
+                      scale={scale}
+                      className={styles.page}
+                    />
                     {/* )} */}
                   </SwiperSlide>
                 ))}
