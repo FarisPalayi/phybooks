@@ -14,7 +14,7 @@ export default function Page({ params }) {
         <h1 className={styles.books__header}>
           {subject} <span>Textbooks</span>
         </h1>
-        <Breadcrumb variant="Secondary" pathnames={[subject]} />
+        <Breadcrumb variant="Secondary" pathnames={[{name: subject, path: subject}]} />
         <section className={styles.books__grid}>
           {booksBySubject.map((book) => (
             <DarkCard key={book.id} book={book} />

@@ -19,7 +19,7 @@ export default function Page({ params }) {
         <h1 className={styles.books__header}>
           {semesterName} <span>Textbooks</span>
         </h1>
-        <Breadcrumb variant="Secondary" pathnames={[semesterName]} />
+        <Breadcrumb variant="Secondary" pathnames={[{name: semesterName, path: semesterName}]} />
         <section className={styles.books__grid}>
           {booksFilteredBySemester.length > 0 ? (
             booksFilteredBySemester.map((book) => (

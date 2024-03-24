@@ -3,6 +3,7 @@ import styles from "../../styles/components/Breadcrumb.module.scss";
 import { setCharLimit } from "@/app/lib/utils";
 
 //* currently, links only work for the first level of the path
+// const pathnames = [  { name: "", path: "" }, { name: "", path: "" },];
 export default function Breadcrumb({ variant, pathnames }) {
   if (variant !== "Primary" && variant !== "Secondary") variant = "Primary";
 
@@ -16,7 +17,8 @@ export default function Breadcrumb({ variant, pathnames }) {
         {pathnames &&
           pathnames.map((pathname, index) => {
             const isLast = index === pathnames.length - 1;
-            pathname = setCharLimit(pathname, 20);
+            const pathnameLimitedChar = setCharLimit(pathname.name, 20);
+
             return (
               <li
                 key={index}
@@ -24,9 +26,9 @@ export default function Breadcrumb({ variant, pathnames }) {
                 aria-current={isLast ? "page" : ""}
               >
                 {isLast ? (
-                  pathname
+                  pathnameLimitedChar
                 ) : (
-                  <Link href={`/${pathname}`}>{pathname}</Link>
+                  <Link href={`/${pathname.path}`}>{pathnameLimitedChar}</Link>
                 )}
               </li>
             );
