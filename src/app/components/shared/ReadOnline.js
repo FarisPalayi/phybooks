@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useCallback, useState } from "react";
+import { useRef, useCallback, useState, useEffect } from "react";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -31,6 +31,15 @@ export default function ReadOnline({ file }) {
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
   const [scale, setScale] = useState(1.0);
+  const [swiperReady, setSwiperReady] = useState(false);
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      // Swiper instance is available, set swiperReady to true
+      setSwiperReady(true);
+    }
+  }, [swiperRef]);
 
   const pageWidth = containerWidth
     ? Math.min(containerWidth, maxWidth)
@@ -53,14 +62,38 @@ export default function ReadOnline({ file }) {
 
   // navigation
 
-  const changePage = (offset) =>
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
+  const updateSwiperIndex = (index) => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.activeIndex = index;
+      swiperRef.current.swiper.update();
+    }
+  };
+
+  const changePage = (offset) => {
+    const newPage = pageNumber + offset;
+    if (newPage >= 1 && newPage <= numPages) {
+      let newPageIndex = null;
+
+      setPageNumber((prevPageNumber) => {
+        newPageIndex = prevPageNumber + offset;
+        return newPageIndex;
+      });
+
+      updateSwiperIndex(newPageIndex -1);
+
+      if (swiperReady) swiperRef.current.slideTo(newPage - 1); //! doesn't work
+    }
+  };
 
   const previousPage = () => changePage(-1);
   const nextPage = () => changePage(1);
 
-  const onItemClick = ({ pageNumber: itemPageNumber }) =>
+  const onItemClick = ({ pageNumber: itemPageNumber }) => {
     setPageNumber(itemPageNumber);
+    updateSwiperIndex(itemPageNumber-1);
+
+    if (swiperReady) swiperRef.current.slideTo(itemPageNumber - 1); //! doesn't work
+  };
 
   // zoom
 
@@ -68,7 +101,7 @@ export default function ReadOnline({ file }) {
   const handleZoomOut = () => setScale(scale - 0.1);
 
   return (
-    <div>
+    <article>
       <div className={styles.documentContainer} ref={setContainerRef}>
         <Document
           file={file}
@@ -92,11 +125,15 @@ export default function ReadOnline({ file }) {
               style={{ width: pageWidth, height: pageWidth * 1.41 }}
             >
               <Swiper
+                ref={swiperRef}
+                onSlideChange={(swiper) =>
+                  setPageNumber(swiper.activeIndex + 1)
+                }
                 zoom={true}
                 navigation={true}
                 style={{
                   "--swiper-navigation-color": "#fff",
-                  "--swiper-pagination-color": "#fff",
+                  "--swiper-pagination-color": "var(--cyan)",
                 }}
                 pagination={{
                   type: "progressbar",
@@ -112,7 +149,7 @@ export default function ReadOnline({ file }) {
                   <SwiperSlide key={pageIndex}>
                     {/* {pageIndex + 1 === pageNumber && ( */}
                     <Page
-                      pageNumber={pageIndex + 1}
+                      pageNumber={pageNumber || 1}
                       width={pageWidth}
                       scale={scale}
                       className={styles.page}
@@ -150,6 +187,6 @@ export default function ReadOnline({ file }) {
           </div>
         </Document>
       </div>
-    </div>
+    </article>
   );
 }
