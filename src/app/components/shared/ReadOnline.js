@@ -1,11 +1,17 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import styles from "@/app/styles/components/ReadOnline.module.scss";
+
+import SwiperCore, { Navigation } from "swiper/core";
+import "swiper/swiper-bundle.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+SwiperCore.use([Navigation]);
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -23,10 +29,14 @@ export default function ReadOnline({ file }) {
   const [pageNumber, setPageNumber] = useState(1);
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
+  const [scale, setScale] = useState(1.0);
+  const swiperRef = useRef(null);
 
   const pageWidth = containerWidth
     ? Math.min(containerWidth, maxWidth)
     : maxWidth;
+
+  //* hooks
 
   const onResize = useCallback((entries) => {
     const [entry] = entries;
@@ -38,26 +48,29 @@ export default function ReadOnline({ file }) {
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
+  //* functions:
+
   function onDocumentLoadSuccess({ numPages: nextNumPages }) {
     setNumPages(nextNumPages);
     setPageNumber(1);
   }
 
-  function changePage(offset) {
+  // navigation
+
+  const changePage = (offset) =>
     setPageNumber((prevPageNumber) => prevPageNumber + offset);
-  }
 
-  function previousPage() {
-    changePage(-1);
-  }
+  const previousPage = () => changePage(-1);
+  const nextPage = () => changePage(1);
 
-  function nextPage() {
-    changePage(1);
-  }
-
-  function onItemClick({ pageNumber: itemPageNumber }) {
+  const onItemClick = ({ pageNumber: itemPageNumber }) =>
     setPageNumber(itemPageNumber);
-  }
+
+  // zoom
+
+  const handleZoomIn = () => setScale(scale + 0.1);
+  const handleZoomOut = () => setScale(scale - 0.1);
+  
 
   return (
     <div>
@@ -72,12 +85,36 @@ export default function ReadOnline({ file }) {
             <h2 className={styles.index__title}>Index</h2>
             <Outline onItemClick={onItemClick} className={styles.index} />
           </div>
+
           <div>
+            <div>
+              <button onClick={handleZoomIn}>Zoom In +</button>
+              <button onClick={handleZoomOut}>Zoom Out -</button>
+            </div>
+
             <div
-              class={styles.page__backdrop}
+              className={`${styles.page__backdrop} swiper-container`}
               style={{ width: pageWidth, height: pageWidth * 1.41 }}
             >
-              <Page pageNumber={pageNumber || 1} width={pageWidth} />
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation
+                onSlideChange={(swiper) =>
+                  setPageNumber(swiper.activeIndex + 1)
+                }
+              >
+                {[...Array(numPages).keys()].map((pageIndex) => (
+                  <SwiperSlide key={pageIndex}>
+                    <Page
+                      pageNumber={pageIndex + 1}
+                      width={pageWidth}
+                      scale={scale}
+                      className={styles.page}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
             <div>
               <p className={styles.pageNumber}>
