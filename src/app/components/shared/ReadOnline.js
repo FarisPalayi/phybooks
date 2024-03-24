@@ -1,17 +1,18 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef, useCallback, useState } from "react";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import styles from "@/app/styles/components/ReadOnline.module.scss";
-
-import SwiperCore, { Navigation } from "swiper/core";
-import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Zoom, Pagination, Navigation } from "swiper/modules";
 
-SwiperCore.use([Navigation]);
+import "swiper/css";
+import "swiper/css/zoom";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -22,7 +23,7 @@ const options = {
 
 const resizeObserverOptions = {};
 
-const maxWidth = 800;
+const maxWidth = 400;
 
 export default function ReadOnline({ file }) {
   const [numPages, setNumPages] = useState();
@@ -30,14 +31,10 @@ export default function ReadOnline({ file }) {
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
   const [scale, setScale] = useState(1.0);
-  const [swiperReady, setSwiperReady] = useState(false);
-  const swiperRef = useRef(null);
 
   const pageWidth = containerWidth
     ? Math.min(containerWidth, maxWidth)
     : maxWidth;
-
-  //* hooks
 
   const onResize = useCallback((entries) => {
     const [entry] = entries;
@@ -49,15 +46,6 @@ export default function ReadOnline({ file }) {
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
-  useEffect(() => {
-    if (swiperRef.current) {
-      // Swiper instance is available, set swiperReady to true
-      setSwiperReady(true);
-    }
-  }, [swiperRef]);
-
-  //* functions:
-
   function onDocumentLoadSuccess({ numPages: nextNumPages }) {
     setNumPages(nextNumPages);
     setPageNumber(1);
@@ -65,25 +53,14 @@ export default function ReadOnline({ file }) {
 
   // navigation
 
-  const changePage = (offset) => {
-    const newPage = pageNumber + offset;
-    if (newPage >= 1 && newPage <= numPages) {
-      setPageNumber(newPage);
-      if (swiperReady) {
-        swiperRef.current.slideTo(newPage - 1);
-      }
-    }
-  };
+  const changePage = (offset) =>
+    setPageNumber((prevPageNumber) => prevPageNumber + offset);
 
   const previousPage = () => changePage(-1);
   const nextPage = () => changePage(1);
 
-  const onItemClick = ({ pageNumber: itemPageNumber }) => {
+  const onItemClick = ({ pageNumber: itemPageNumber }) =>
     setPageNumber(itemPageNumber);
-    if (swiperReady) {
-      swiperRef.current.slideTo(itemPageNumber - 1);
-    }
-  };
 
   // zoom
 
@@ -115,34 +92,39 @@ export default function ReadOnline({ file }) {
               style={{ width: pageWidth, height: pageWidth * 1.41 }}
             >
               <Swiper
-                ref={(ref) => {
-                  swiperRef.current = ref;
+                navigation={true}
+                style={{
+                  "--swiper-navigation-color": "#fff",
+                  "--swiper-pagination-color": "#fff",
                 }}
-                spaceBetween={50}
-                slidesPerView={1}
-                navigation
-                onSlideChange={(swiper) =>
-                  setPageNumber(swiper.activeIndex + 1)
-                }
+                zoom={true}
+                pagination={{
+                  type: "progressbar",
+                  clickable: true,
+                }}
+                modules={[Zoom, Navigation, Pagination]}
+                className="mySwiper"
               >
                 {[...Array(numPages).keys()].map((pageIndex) => (
                   <SwiperSlide key={pageIndex}>
-                    {pageIndex + 1 === pageNumber && ( // Ensure to render the Page component only when its page number matches the current pageNumber
+                    {/* {pageIndex + 1 === pageNumber && ( */}
                       <Page
                         pageNumber={pageIndex + 1}
                         width={pageWidth}
                         scale={scale}
                         className={styles.page}
                       />
-                    )}
+                    {/* )} */}
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
+
             <div>
               <p className={styles.pageNumber}>
                 Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
               </p>
+
               <div className={styles.navBtns}>
                 <button
                   type="button"
