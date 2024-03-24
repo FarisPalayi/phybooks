@@ -1,5 +1,5 @@
 import ReadOnline from "@/app/components/shared/ReadOnline";
-import styles from "../../styles/components/Books.module.scss";
+import styles from "@/app/styles/components/Books.module.scss";
 import { textbooks } from "@/app/lib/data";
 import { getBookByTitle } from "@/app/lib/utils";
 
