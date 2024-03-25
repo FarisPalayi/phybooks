@@ -109,10 +109,6 @@ export default function ReadOnline({ file }) {
           </div>
 
           <div>
-            <div>
-              <button onClick={handleZoomIn}>Zoom In +</button>
-              <button onClick={handleZoomOut}>Zoom Out -</button>
-            </div>
 
             <div
               className={styles.page__backdrop}
