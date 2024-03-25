@@ -1,14 +1,14 @@
 "use client";
 
-import { useRef, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
-import styles from "@/app/styles/components/ReadOnline.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Zoom, Pagination, Navigation } from "swiper/modules";
+import { Virtual, Keyboard, Zoom, Pagination, Navigation } from "swiper/modules";
 
+import styles from "@/app/styles/components/ReadOnline.module.scss";
 import "swiper/css";
 import "swiper/css/zoom";
 import "swiper/css/pagination";
@@ -18,7 +18,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 const resizeObserverOptions = {};
 
-const maxWidth = 400;
+const MAX_WIDTH = 400;
 
 export default function ReadOnline({ file }) {
   const [numPages, setNumPages] = useState();
@@ -28,8 +28,8 @@ export default function ReadOnline({ file }) {
   const [swiperRef, setSwiperRef] = useState(null);
 
   const pageWidth = containerWidth
-    ? Math.min(containerWidth, maxWidth)
-    : maxWidth;
+    ? Math.min(containerWidth, MAX_WIDTH)
+    : MAX_WIDTH;
 
   const onResize = useCallback((entries) => {
     const [entry] = entries;
@@ -39,8 +39,8 @@ export default function ReadOnline({ file }) {
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
-  function onDocumentLoadSuccess({ numPages: nextNumPages }) {
-    setNumPages(nextNumPages);
+  function onDocumentLoadSuccess({ numPages: totalNumPages }) {
+    setNumPages(totalNumPages);
     setPageNumber(1);
   }
 
@@ -109,9 +109,10 @@ export default function ReadOnline({ file }) {
                   type: "progressbar",
                   clickable: true,
                 }}
-                modules={[Zoom, Navigation, Pagination, Keyboard]}
+                modules={[Virtual, Zoom, Navigation, Pagination, Keyboard]}
                 className="mySwiper"
                 onSwiper={setSwiperRef}
+                virtual
               >
                 {[...Array(numPages).keys()].map((pageIndex) => (
                   <SwiperSlide key={pageIndex}>
@@ -131,8 +132,6 @@ export default function ReadOnline({ file }) {
               <p className={styles.pageNumber}>
                 Page {pageNumber || (numPages ? 1 : "--")} of {numPages || "--"}
               </p>
-
-              <button onClick={() => slideTo(15)}>jump to 15</button>
 
               <div className={styles.navBtns}>
                 <button
