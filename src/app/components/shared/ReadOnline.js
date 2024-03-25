@@ -30,7 +30,6 @@ export default function ReadOnline({ file }) {
   const [pageNumber, setPageNumber] = useState(1);
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
-  const [scale, setScale] = useState(1.0);
   const [swiperReady, setSwiperReady] = useState(false);
   const swiperRef = useRef(null);
 
@@ -79,7 +78,7 @@ export default function ReadOnline({ file }) {
         return newPageIndex;
       });
 
-      updateSwiperIndex(newPageIndex -1);
+      updateSwiperIndex(newPageIndex - 1);
 
       if (swiperReady) swiperRef.current.slideTo(newPage - 1); //! doesn't work
     }
@@ -90,15 +89,10 @@ export default function ReadOnline({ file }) {
 
   const onItemClick = ({ pageNumber: itemPageNumber }) => {
     setPageNumber(itemPageNumber);
-    updateSwiperIndex(itemPageNumber-1);
+    updateSwiperIndex(itemPageNumber - 1);
 
     if (swiperReady) swiperRef.current.slideTo(itemPageNumber - 1); //! doesn't work
   };
-
-  // zoom
-
-  const handleZoomIn = () => setScale(scale + 0.1);
-  const handleZoomOut = () => setScale(scale - 0.1);
 
   return (
     <article>
@@ -151,7 +145,6 @@ export default function ReadOnline({ file }) {
                     <Page
                       pageNumber={pageNumber || 1}
                       width={pageWidth}
-                      scale={scale}
                       className={styles.page}
                     />
                     {/* )} */}
