@@ -10,6 +10,10 @@
   }
 }
 
+.TOC__fullView {
+  padding: var(--main-padding);
+}
+
 .index {
   padding-block: rem(30);
 
@@ -23,9 +27,6 @@
       background-color: var(--accents-2);
     }
   }
-}
-
-.page {
 }
 
 .page__backdrop {

@@ -8,6 +8,15 @@
   @include tablet {
     padding-bottom: rem(100);
   }
+
+  // to show full width pdf
+  &.readOnline__fullView {
+    padding-inline: 0;
+
+    & > :not(.readOnline__section) {
+      padding: var(--main-padding);
+    }
+  }
 }
 
 .books__header {
@@ -30,10 +39,9 @@
   justify-content: center;
 }
 
-
-.books__main {
+.readOnline__section {
   margin-top: 2rem;
-  
+
   @include desktop {
     min-height: 60dvh;
   }

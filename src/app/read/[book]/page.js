@@ -9,10 +9,15 @@ export default function Page({ params }) {
   const bookByTitle = getBookByTitle(textbooks, bookName);
   const bookSemester = `semester ${bookByTitle[0].semester}`;
   const bookSemesterPath = `semester/${bookByTitle[0].semester}`;
+  const isFullView = false;
 
   return (
     <main className="container">
-      <div className={`main ${styles.books}`}>
+      <div
+        className={`main ${styles.books} ${
+          isFullView ? styles.readOnline__fullView : null
+        }`}
+      >
         <h1 className={styles.books__header}>
           <span>{bookName}</span>
         </h1>
@@ -24,8 +29,8 @@ export default function Page({ params }) {
           ]}
         />
         {/* assuming books have unique titles */}
-        <section className={styles.books__main}>
-          <ReadOnline file={bookByTitle[0].filepath} />
+        <section className={styles.readOnline__section}>
+          <ReadOnline file={bookByTitle[0].filepath} isFullView={isFullView} />
         </section>
       </div>
     </main>

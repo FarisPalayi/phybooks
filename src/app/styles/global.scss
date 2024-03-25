@@ -6,6 +6,7 @@
   --purple-pink-grad: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%);
   --bg-color-book-card: #12151c;
   --max-width: 1440px;
+  --main-padding: 0 1.6875rem;
 }
 
 :root {
@@ -92,7 +93,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .main {
   @include flex-column;
   gap: rem(136);
-  padding: 0 rem(27);
+  padding: var(--main-padding);
   flex: 1;
   margin-top: var(--header-height);
 }
@@ -111,6 +112,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-.react-pdf__message.react-pdf__message--loading {
-  color: red;
-}
+// .react-pdf__message.react-pdf__message--loading {
+//   color: red;
+// }
