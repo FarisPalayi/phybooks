@@ -49,7 +49,7 @@ export default function ReadOnline({ file, isFullView }) {
       if (entry.contentRect.width > PDF_BREAKPOINT) setSliderView(2);
       else setSliderView(1);
     }
-  }, []);
+  }, [PDF_BREAKPOINT]);
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
