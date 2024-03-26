@@ -31,9 +31,11 @@ export default function ReadOnline({ file, isFullView }) {
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
   const [swiperRef, setSwiperRef] = useState(null);
+  const [sliderView, setSliderView] = useState(1); // either 1 or 2
 
   const MAX_WIDTH = 800;
-  const PDF_BREAKPOINT = 600;
+  const BUFFER_WIDTH = 51; // padding and stuff
+  const PDF_BREAKPOINT = 600 - BUFFER_WIDTH; // 600px vw
 
   const pageWidth = containerWidth
     ? Math.min(containerWidth, MAX_WIDTH)
@@ -42,7 +44,11 @@ export default function ReadOnline({ file, isFullView }) {
   const onResize = useCallback((entries) => {
     const [entry] = entries;
 
-    if (entry) setContainerWidth(entry.contentRect.width);
+    if (entry) {
+      setContainerWidth(entry.contentRect.width);
+      if (entry.contentRect.width > PDF_BREAKPOINT) setSliderView(2);
+      else setSliderView(1);
+    }
   }, []);
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
@@ -71,17 +77,15 @@ export default function ReadOnline({ file, isFullView }) {
     slideTo(pageNumber + offset);
   };
 
-  const previousPage = () => changePage(-1);
-  const nextPage = () => changePage(1);
+  const previousPage = () => changePage(-1 * sliderView);
+  const nextPage = () => changePage(1 * sliderView);
 
   const onIndexNav = ({ pageNumber: indexPageNumber }) => {
     setPageNumber(indexPageNumber);
     slideTo(indexPageNumber);
   };
 
-  const handleSlideChange = (swiper) => {
-    setPageNumber(swiper.activeIndex + 1);
-  };
+  const handleSlideChange = (swiper) => setPageNumber(swiper.activeIndex + 1);
 
   return (
     <div className={styles.documentContainer} ref={setContainerRef}>
@@ -102,11 +106,15 @@ export default function ReadOnline({ file, isFullView }) {
         <div className={styles.page__section}>
           <div
             className={styles.page__backdrop}
-            style={{ width: pageWidth, height: (pageWidth * 1.41) / 2 }}
+            style={{
+              width: pageWidth,
+              height:
+                sliderView === 1 ? pageWidth * 1.41 : (pageWidth * 1.41) / 2,
+            }}
           >
             <Swiper
               style={{
-                "--swiper-navigation-color": "#fff",
+                "--swiper-navigation-color": "var(--foreground)",
                 "--swiper-pagination-color": "var(--cyan)",
               }}
               zoom={true}
@@ -115,19 +123,10 @@ export default function ReadOnline({ file, isFullView }) {
               onSlideChange={handleSlideChange}
               centeredSlides={false}
               grabCursor={true}
-              keyboard={{
-                enabled: true,
-              }}
-              pagination={{
-                type: "progressbar",
-                clickable: true,
-              }}
-              breakpoints={{
-                [PDF_BREAKPOINT]: {
-                  slidesPerView: 2,
-                  slidesPerGroup: 2,
-                },
-              }}
+              keyboard={{ enabled: true }}
+              pagination={{ type: "progressbar", clickable: true }}
+              slidesPerView={sliderView}
+              slidesPerGroup={sliderView}
               modules={[Zoom, Virtual, Navigation, Pagination, Keyboard]}
               className="mySwiper"
               onSwiper={setSwiperRef}
@@ -138,7 +137,7 @@ export default function ReadOnline({ file, isFullView }) {
                   <div className="swiper-zoom-container">
                     <Page
                       pageNumber={pageIndex + 1}
-                      width={pageWidth / 2}
+                      width={sliderView === 1 ? pageWidth : pageWidth / 2}
                       className={styles.page}
                     />
                   </div>
