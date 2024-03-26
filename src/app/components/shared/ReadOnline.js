@@ -25,14 +25,15 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 const resizeObserverOptions = {};
 
-const MAX_WIDTH = 400;
-
 export default function ReadOnline({ file, isFullView }) {
   const [numPages, setNumPages] = useState();
   const [pageNumber, setPageNumber] = useState(1);
   const [containerRef, setContainerRef] = useState(null);
   const [containerWidth, setContainerWidth] = useState();
   const [swiperRef, setSwiperRef] = useState(null);
+
+  const MAX_WIDTH = 800;
+  const PDF_BREAKPOINT = 600;
 
   const pageWidth = containerWidth
     ? Math.min(containerWidth, MAX_WIDTH)
@@ -101,7 +102,7 @@ export default function ReadOnline({ file, isFullView }) {
         <div className={styles.page__section}>
           <div
             className={styles.page__backdrop}
-            style={{ width: pageWidth, height: pageWidth * 1.41 }}
+            style={{ width: pageWidth, height: (pageWidth * 1.41) / 2 }}
           >
             <Swiper
               style={{
@@ -112,12 +113,20 @@ export default function ReadOnline({ file, isFullView }) {
               ref={swiperRef}
               navigation={true}
               onSlideChange={handleSlideChange}
+              centeredSlides={false}
+              grabCursor={true}
               keyboard={{
                 enabled: true,
               }}
               pagination={{
                 type: "progressbar",
                 clickable: true,
+              }}
+              breakpoints={{
+                [PDF_BREAKPOINT]: {
+                  slidesPerView: 2,
+                  slidesPerGroup: 2,
+                },
               }}
               modules={[Zoom, Virtual, Navigation, Pagination, Keyboard]}
               className="mySwiper"
@@ -129,7 +138,7 @@ export default function ReadOnline({ file, isFullView }) {
                   <div className="swiper-zoom-container">
                     <Page
                       pageNumber={pageIndex + 1}
-                      width={pageWidth}
+                      width={pageWidth / 2}
                       className={styles.page}
                     />
                   </div>
