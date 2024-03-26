@@ -7,17 +7,18 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
+  Zoom,
   Virtual,
   Keyboard,
-  Zoom,
   Pagination,
   Navigation,
 } from "swiper/modules";
 
 import styles from "@/app/styles/components/ReadOnline.module.scss";
+
 import "swiper/css";
-import "swiper/css/zoom";
 import "swiper/css/pagination";
+import "swiper/css/zoom";
 import "swiper/css/navigation";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
@@ -88,7 +89,11 @@ export default function ReadOnline({ file, isFullView }) {
         onLoadSuccess={onDocumentLoadSuccess}
         className={styles.document}
       >
-        <div className={`${styles.TOC} ${isFullView ? styles.TOC__fullView : null}`}>
+        <div
+          className={`${styles.TOC} ${
+            isFullView ? styles.TOC__fullView : null
+          }`}
+        >
           <h2 className={styles.index__title}>Index</h2>
           <Outline onItemClick={onIndexNav} className={styles.index} />
         </div>
@@ -99,14 +104,14 @@ export default function ReadOnline({ file, isFullView }) {
             style={{ width: pageWidth, height: pageWidth * 1.41 }}
           >
             <Swiper
-              ref={swiperRef}
-              navigation={true}
-              onSlideChange={handleSlideChange}
               style={{
                 "--swiper-navigation-color": "#fff",
                 "--swiper-pagination-color": "var(--cyan)",
               }}
               zoom={true}
+              ref={swiperRef}
+              navigation={true}
+              onSlideChange={handleSlideChange}
               keyboard={{
                 enabled: true,
               }}
@@ -114,18 +119,20 @@ export default function ReadOnline({ file, isFullView }) {
                 type: "progressbar",
                 clickable: true,
               }}
-              modules={[Virtual, Zoom, Navigation, Pagination, Keyboard]}
+              modules={[Zoom, Virtual, Navigation, Pagination, Keyboard]}
               className="mySwiper"
               onSwiper={setSwiperRef}
               virtual
             >
               {[...Array(numPages).keys()].map((pageIndex) => (
                 <SwiperSlide key={pageIndex}>
-                  <Page
-                    pageNumber={pageIndex + 1}
-                    width={pageWidth}
-                    className={styles.page}
-                  />
+                  <div className="swiper-zoom-container">
+                    <Page
+                      pageNumber={pageIndex + 1}
+                      width={pageWidth}
+                      className={styles.page}
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
