@@ -6,7 +6,8 @@
   --purple-pink-grad: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%);
   --bg-color-book-card: #12151c;
   --max-width: 1440px;
-  --main-padding: 0 1.6875rem;
+  --main-inline-padding: 1.6875rem;
+  --main-padding: 0 var(--main-inline-padding);
 }
 
 :root {

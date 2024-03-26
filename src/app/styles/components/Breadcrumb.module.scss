@@ -6,6 +6,8 @@
   gap: var(--breadcrumb-gap);
   width: max-content;
   padding: rem(8) rem(15);
+  max-width: calc(100dvw - var(--main-inline-padding));
+  overflow-x: auto;
 
   &Primary {
     padding-left: 0;
@@ -23,6 +25,7 @@
   position: relative;
   font-size: rem(12.8);
   text-transform: capitalize;
+  white-space: nowrap;
 
   &:not(:last-child)::after {
     content: "·";
