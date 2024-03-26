@@ -2,8 +2,7 @@ import Link from "next/link";
 import styles from "../../styles/components/Breadcrumb.module.scss";
 import { setCharLimit } from "@/app/lib/utils";
 
-//* currently, links only work for the first level of the path
-// const pathnames = [  { name: "", path: "" }, { name: "", path: "" },];
+// pathnames schema [  { name: "", path: "" }, { name: "", path: "" }];
 export default function Breadcrumb({ variant, pathnames }) {
   if (variant !== "Primary" && variant !== "Secondary") variant = "Primary";
 
