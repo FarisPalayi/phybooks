@@ -113,6 +113,6 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-// .react-pdf__message.react-pdf__message--loading {
-//   color: red;
-// }
+.react-pdf__message.react-pdf__message--loading {
+  color: var(--cyan);
+}

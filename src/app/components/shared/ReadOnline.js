@@ -32,6 +32,7 @@ export default function ReadOnline({ file, isFullView }) {
   const [containerWidth, setContainerWidth] = useState();
   const [swiperRef, setSwiperRef] = useState(null);
   const [sliderView, setSliderView] = useState(1); // either 1 or 2
+  const [showSliderIndex, setShowSliderIndex] = useState(true);
 
   const MAX_WIDTH = 800;
   const BUFFER_WIDTH = 51; // padding and stuff
@@ -41,15 +42,18 @@ export default function ReadOnline({ file, isFullView }) {
     ? Math.min(containerWidth, MAX_WIDTH)
     : MAX_WIDTH;
 
-  const onResize = useCallback((entries) => {
-    const [entry] = entries;
+  const onResize = useCallback(
+    (entries) => {
+      const [entry] = entries;
 
-    if (entry) {
-      setContainerWidth(entry.contentRect.width);
-      if (entry.contentRect.width > PDF_BREAKPOINT) setSliderView(2);
-      else setSliderView(1);
-    }
-  }, [PDF_BREAKPOINT]);
+      if (entry) {
+        setContainerWidth(entry.contentRect.width);
+        if (entry.contentRect.width > PDF_BREAKPOINT) setSliderView(2);
+        else setSliderView(1);
+      }
+    },
+    [PDF_BREAKPOINT]
+  );
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
@@ -72,6 +76,11 @@ export default function ReadOnline({ file, isFullView }) {
     }
   };
 
+  const changePageTo = (page) => {
+    setPageNumber(page);
+    slideTo(page);
+  };
+
   const changePage = (offset) => {
     setPageNumber((prevPageNumber) => prevPageNumber + offset);
     slideTo(pageNumber + offset);
@@ -86,6 +95,11 @@ export default function ReadOnline({ file, isFullView }) {
   };
 
   const handleSlideChange = (swiper) => setPageNumber(swiper.activeIndex + 1);
+
+  const toggleSliderIndex = (indexPageNumber) => {
+    onIndexNav(indexPageNumber);
+    setShowSliderIndex(!showSliderIndex);
+  };
 
   return (
     <div className={styles.documentContainer} ref={setContainerRef}>
@@ -143,6 +157,22 @@ export default function ReadOnline({ file, isFullView }) {
                   </div>
                 </SwiperSlide>
               ))}
+
+              <div
+                className={styles.mySwiper__indexContainer}
+                style={{ visibility: showSliderIndex ? "visible" : "hidden" }}
+              >
+                <Outline
+                  onItemClick={toggleSliderIndex}
+                  className={styles.mySwiper__index}
+                />
+              </div>
+              <button
+                className={styles.mySwiper__index__toggleBtn}
+                onClick={() => setShowSliderIndex(!showSliderIndex)}
+              >
+                toggle
+              </button>
             </Swiper>
           </div>
 
@@ -153,7 +183,6 @@ export default function ReadOnline({ file, isFullView }) {
 
             <div className={styles.navBtns}>
               <button
-                type="button"
                 disabled={pageNumber <= 1}
                 onClick={previousPage}
                 className={styles.nav__previous}
@@ -161,7 +190,6 @@ export default function ReadOnline({ file, isFullView }) {
                 Previous
               </button>
               <button
-                type="button"
                 disabled={pageNumber >= numPages}
                 onClick={nextPage}
                 className={styles.nav__next}

@@ -41,6 +41,11 @@
 
 .readOnline__section {
   margin-top: 2rem;
+  min-height: 10dvh;
+
+  @include tablet {
+    min-height: 30dvh;
+  }
 
   @include desktop {
     min-height: 60dvh;

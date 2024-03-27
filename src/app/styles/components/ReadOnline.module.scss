@@ -29,6 +29,35 @@
   }
 }
 
+.mySwiper {
+  position: relative;
+  z-index: 0;
+}
+
+.mySwiper__indexContainer {
+  @include flex-center;
+  position: absolute;
+  inset: 0;
+  background: var(--accents-2);
+  z-index: 10;
+}
+
+.mySwiper__index {
+  text-align: left;
+
+  & a {
+    margin-bottom: rem(15);
+  }
+}
+
+.mySwiper__index__toggleBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  color: var(--cyan);
+}
+
 .page__backdrop {
   overflow: hidden;
   background: var(--foreground);
