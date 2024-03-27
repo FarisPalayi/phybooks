@@ -90,7 +90,7 @@ export default function ReadOnline({ file, isFullView }) {
   const onIndexNav = (indexPageNumber) => {
     setPageNumber(indexPageNumber);
     slideTo(indexPageNumber);
-    setShowSliderIndex(!showSliderIndex);
+    setShowSliderIndex(false);
   };
 
   return (
