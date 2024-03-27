@@ -3,6 +3,21 @@
 :root {
   --header-height: 66px; // update this value if necessary
   --black-blue-grad: linear-gradient(92deg, #007cf0 -2.85%, #00dfd8 84.03%);
+  --black-blue-grad-scroll: linear-gradient(
+    0deg,
+    #007cf0 -2.85%,
+    #00dfd8 84.03%
+  );
+  --black-blue-grad-scroll-hover: linear-gradient(
+    0deg,
+    #0571d7 -2.85%,
+    #03c4bd 84.03%
+  );
+  --black-blue-grad-scroll-active: linear-gradient(
+    0deg,
+    #0365c0 -2.85%,
+    #02a09b 84.03%
+  );
   --purple-pink-grad: linear-gradient(90deg, #7928ca 5.26%, #ff0080 78.18%);
   --bg-color-book-card: #12151c;
   --max-width: 1440px;
@@ -110,6 +125,33 @@ input[type="search"]::-webkit-search-results-decoration {
   & > * {
     width: 100%;
     max-width: var(--max-width);
+  }
+}
+
+// scroll
+
+@include tablet {
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--accents-1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--cyan);
+  background-image: var(--black-blue-grad-scroll);
+
+  &:hover {
+    background-color: darken(#61dafb, 12%);
+    background-image: var(--black-blue-grad-scroll-hover);
+  }
+  &:active {
+    background-color: darken(#61dafb, 18%);
+    background-image: var(--black-blue-grad-scroll-active);
   }
 }
 
