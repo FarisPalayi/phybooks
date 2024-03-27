@@ -9,7 +9,7 @@ export default function Page({ params }) {
   const bookByTitle = getBookByTitle(textbooks, bookName);
   const bookSemester = `semester ${bookByTitle[0].semester}`;
   const bookSemesterPath = `semester/${bookByTitle[0].semester}`;
-  const isFullView = false;
+  const isFullView = true;
 
   return (
     <main className="container">

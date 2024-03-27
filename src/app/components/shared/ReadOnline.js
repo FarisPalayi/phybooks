@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import Image from "next/image";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -162,6 +163,7 @@ export default function ReadOnline({ file, isFullView }) {
                 className={styles.mySwiper__indexContainer}
                 style={{ visibility: showSliderIndex ? "visible" : "hidden" }}
               >
+                <h3>Table of contents</h3>
                 <Outline
                   onItemClick={toggleSliderIndex}
                   className={styles.mySwiper__index}
@@ -171,7 +173,12 @@ export default function ReadOnline({ file, isFullView }) {
                 className={styles.mySwiper__index__toggleBtn}
                 onClick={() => setShowSliderIndex(!showSliderIndex)}
               >
-                toggle
+                <Image
+                  src="/images/list.svg"
+                  alt="toggle index"
+                  width={24}
+                  height={24}
+                />
               </button>
             </Swiper>
           </div>

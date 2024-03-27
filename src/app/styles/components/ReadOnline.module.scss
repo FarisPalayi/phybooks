@@ -35,7 +35,9 @@
 }
 
 .mySwiper__indexContainer {
-  @include flex-center;
+  @include flex-column-center;
+  justify-content: center;
+  gap: rem(30);
   position: absolute;
   inset: 0;
   background: var(--accents-2);
@@ -57,10 +59,12 @@
   bottom: 0;
   z-index: 11;
   color: var(--cyan);
+  padding: rem(10);
 }
 
 .page__backdrop {
   overflow: hidden;
+  // overflow-y: auto; // for index to be scrollable
   background: var(--foreground);
 }
 
