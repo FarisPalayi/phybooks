@@ -32,7 +32,7 @@ export default function ReadOnline({ file, isFullView }) {
   const [containerWidth, setContainerWidth] = useState();
   const [swiperRef, setSwiperRef] = useState(null);
   const [sliderView, setSliderView] = useState(1); // either 1 or 2
-  const [showSliderIndex, setShowSliderIndex] = useState(true);
+  const [showSliderIndex, setShowSliderIndex] = useState(false);
 
   const MAX_WIDTH = 800;
   const BUFFER_WIDTH = 51; // padding and stuff
