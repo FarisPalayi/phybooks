@@ -12,6 +12,11 @@
 
 .TOC__fullView {
   padding: var(--main-padding);
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
 }
 
 .index {
