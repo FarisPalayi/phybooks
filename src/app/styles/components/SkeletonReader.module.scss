@@ -1,0 +1,46 @@
+@use "../abstracts/" as *;
+
+.skeleton {
+  position: relative;
+  min-height: 5px;
+  min-width: 5px;
+  border-radius: 0.25rem;
+  background-color: hsl(240 5% 34%);
+  overflow: hidden;
+  background-color: #202020;
+}
+
+.skeleton::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, #202020, #444, #202020);
+  transform: translateX(-100%);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton__navBtns {
+  @include flex-center;
+  gap: rem(10);
+  margin-block: rem(20);
+
+  .skeleton__nav__previous,
+  .skeleton__nav__next {
+    flex-basis: 50%;
+    border-radius: rem(2);
+
+    & > div {
+      height: 36px;
+    }
+  }
+}

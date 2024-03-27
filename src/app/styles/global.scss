@@ -113,6 +113,8 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
+// other
+
 .react-pdf__message.react-pdf__message--loading {
-  color: var(--cyan);
+  color: transparent;
 }

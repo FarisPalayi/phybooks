@@ -14,9 +14,9 @@ import {
   Pagination,
   Navigation,
 } from "swiper/modules";
+import SkeletonReader from "./SkeletonReader";
 
 import styles from "@/app/styles/components/ReadOnline.module.scss";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/zoom";
@@ -34,6 +34,7 @@ export default function ReadOnline({ file, isFullView }) {
   const [swiperRef, setSwiperRef] = useState(null);
   const [sliderView, setSliderView] = useState(1); // either 1 or 2
   const [showSliderIndex, setShowSliderIndex] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const MAX_WIDTH = 800;
   const BUFFER_WIDTH = 51; // padding and stuff
@@ -61,6 +62,7 @@ export default function ReadOnline({ file, isFullView }) {
   function onDocumentLoadSuccess({ numPages: totalNumPages }) {
     setNumPages(totalNumPages);
     setPageNumber(1);
+    setIsLoading(false);
   }
 
   // navigation
@@ -68,13 +70,6 @@ export default function ReadOnline({ file, isFullView }) {
   const slideTo = (index) => {
     setPageNumber(index);
     swiperRef.slideTo(index - 1, 0);
-  };
-
-  const updateSwiperIndex = (index) => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.activeIndex = index;
-      swiperRef.current.swiper.update();
-    }
   };
 
   const changePageTo = (page) => {
@@ -90,29 +85,25 @@ export default function ReadOnline({ file, isFullView }) {
   const previousPage = () => changePage(-1 * sliderView);
   const nextPage = () => changePage(1 * sliderView);
 
-  const onIndexNav = ({ pageNumber: indexPageNumber }) => {
-    setPageNumber(indexPageNumber);
-    slideTo(indexPageNumber);
-  };
-
   const handleSlideChange = (swiper) => setPageNumber(swiper.activeIndex + 1);
 
-  const toggleSliderIndex = (indexPageNumber) => {
-    onIndexNav(indexPageNumber);
+  const onIndexNav = (indexPageNumber) => {
+    setPageNumber(indexPageNumber);
+    slideTo(indexPageNumber);
     setShowSliderIndex(!showSliderIndex);
   };
 
   return (
     <div className={styles.documentContainer} ref={setContainerRef}>
+      {isLoading && <SkeletonReader />}
+
       <Document
         file={file}
         onLoadSuccess={onDocumentLoadSuccess}
         className={styles.document}
       >
         <div
-          className={`${styles.TOC} ${
-            isFullView ? styles.TOC__fullView : null
-          }`}
+          className={`${styles.TOC} ${isFullView ? styles.TOC__fullView : ""}`}
         >
           <h2 className={styles.index__title}>Index</h2>
           <Outline onItemClick={onIndexNav} className={styles.index} />
@@ -165,7 +156,7 @@ export default function ReadOnline({ file, isFullView }) {
               >
                 <h3>Table of contents</h3>
                 <Outline
-                  onItemClick={toggleSliderIndex}
+                  onItemClick={onIndexNav}
                   className={styles.mySwiper__index}
                 />
               </div>
@@ -178,6 +169,7 @@ export default function ReadOnline({ file, isFullView }) {
                   alt="toggle index"
                   width={24}
                   height={24}
+                  className={styles.mySwiper__index__toggleIcon}
                 />
               </button>
             </Swiper>

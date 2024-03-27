@@ -67,6 +67,10 @@
   padding: rem(10);
 }
 
+.mySwiper__index__toggleIcon {
+  filter: drop-shadow(1px 1px 0px var(--background));
+}
+
 .page__backdrop {
   overflow: hidden;
   // overflow-y: auto; // for index to be scrollable
