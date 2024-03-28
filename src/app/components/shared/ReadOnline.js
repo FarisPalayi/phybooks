@@ -87,7 +87,7 @@ export default function ReadOnline({ file, isFullView }) {
 
   const handleSlideChange = (swiper) => setPageNumber(swiper.activeIndex + 1);
 
-  const onIndexNav = (indexPageNumber) => {
+  const onIndexNav = ({ pageNumber: indexPageNumber }) => {
     setPageNumber(indexPageNumber);
     slideTo(indexPageNumber);
     setShowSliderIndex(false);
