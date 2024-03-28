@@ -1,22 +1,19 @@
 import Image from "next/image";
 import styles from "../../styles/components/CatalogLink.module.scss";
 import Link from "next/link";
+import ChevronRightIcon from "../icons/ChevronRightIcon";
+import BookIcon from "../icons/BookIcon";
 
 export default function CatalogLink() {
   return (
     <div className={styles.catalog}>
       <Link href="/catalog" className={styles.catalog__link}>
         <span className={styles.bookIcon}>
-          <Image src={"/images/book.svg"} width={13} height={13} alt="" />
+          <BookIcon />
         </span>
         View book catalog
         <span className={styles.nextIcon}>
-          <Image
-            src={"/images/chevron-right.svg"}
-            width={18}
-            height={18}
-            alt=""
-          />
+          <ChevronRightIcon />
         </span>
       </Link>
     </div>
