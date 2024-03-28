@@ -101,6 +101,8 @@ export default function ReadOnline({ file, isFullView }) {
         file={file}
         onLoadSuccess={onDocumentLoadSuccess}
         className={styles.document}
+        onLoadStart={() => setIsLoading(true)}
+        onLoadError={() => setIsLoading(false)}
       >
         <div
           className={`${styles.TOC} ${isFullView ? styles.TOC__fullView : ""}`}
