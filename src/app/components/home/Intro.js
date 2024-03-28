@@ -7,13 +7,13 @@ export default function Intro() {
     <section className={styles.intro}>
       <h1 className={styles.intro__title}>
         <span className={styles.intro__titlePart1} data-content="Explore.">
-          Explore.
+          <span className={styles.intro__titleText1}>Explore.</span>
         </span>
         <span className={styles.intro__titlePart2} data-content="Read.">
-          Read.
+          <span className={styles.intro__titleText2}>Read.</span>
         </span>
         <span className={styles.intro__titlePart3} data-content="Learn.">
-          Learn.
+          <span className={styles.intro__titleText3}>Learn.</span>
         </span>
       </h1>
 
