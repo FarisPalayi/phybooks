@@ -1,6 +1,6 @@
 import styles from "../../styles/components/Footer.module.scss";
 import Link from "next/link";
-import Image from "next/image";
+import LogoIcon from "../icons/LogoIcon";
 
 export default function Footer() {
   const navItems = ["Privacy Policy", "Terms & Conditions", "About Us"];
@@ -9,13 +9,7 @@ export default function Footer() {
       <div className="container">
         <div className={styles.footer__content}>
           <Link href="/" className={styles.footer__logo}>
-            <Image
-              src="/images/logo.svg"
-              alt="PhyBooks"
-              width={130}
-              height={25}
-              priority
-            />
+            <LogoIcon height={25} />
           </Link>
           <ul className={styles.footer__list}>
             {navItems.map((item, index) => (
