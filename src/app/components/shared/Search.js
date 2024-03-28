@@ -57,9 +57,10 @@ export default function Search({ data, onClick }) {
             <CloseIcon />
           </button>
         </div>
+
         <ul className={styles.search__list}>
           {searchResults.length > 0 ? (
-            searchResults.map((item, i) => (
+            searchResults.slice(0, 5).map((item, i) => (
               <li key={i} className={styles.search__item}>
                 <Link
                   href={`/subject/${item.title}`}
