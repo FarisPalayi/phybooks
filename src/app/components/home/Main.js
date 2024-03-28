@@ -8,7 +8,7 @@ import Toast from "../shared/Toast";
 export default function Main() {
   return (
     <main className="container">
-      <div className="main">
+      <div className="main home">
         <Intro />
         <SemesterGrid />
         <Subject />
