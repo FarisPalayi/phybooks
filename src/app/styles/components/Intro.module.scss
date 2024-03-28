@@ -5,7 +5,17 @@
   gap: rem(65);
   width: 100%;
   min-height: min(calc(100vh - var(--header-height)), rem(715));
-  max-height: rem(715); //* wrap it in mobile view media query if necessary
+  max-height: rem(715); // fallback
+
+  @include tablet {
+    min-height: min(calc(100vh - var(--header-height)), rem(640));
+    max-height: rem(640); // fallback
+  }
+
+  @include desktop {
+    min-height: min(calc(100vh - var(--header-height)), rem(560));
+    max-height: rem(560); // fallback
+  }
 }
 
 .intro__title {

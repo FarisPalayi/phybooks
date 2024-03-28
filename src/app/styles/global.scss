@@ -103,6 +103,10 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
+main.container {
+  flex: 1 1; // for footer to stick to the bottom
+}
+
 .container {
   width: 100%;
   @include flex-column-center;

@@ -1,7 +1,14 @@
 import styles from "../../styles/components/ActionButton.module.scss";
-import Image from "next/image";
+import BookOpenIcon from "../icons/BookOpenIcon";
+import DownloadIcon from "../icons/DownloadIcon";
 
-export default function ActionButton({ variant, text, link, downloadName, onClick }) {
+export default function ActionButton({
+  variant,
+  text,
+  link,
+  downloadName,
+  onClick,
+}) {
   const iconPath =
     variant === "read" ? "/images/book-open.svg" : "/images/download.svg";
 
@@ -12,7 +19,11 @@ export default function ActionButton({ variant, text, link, downloadName, onClic
       download={downloadName}
       onClick={onClick}
     >
-      <Image src={iconPath} alt="" width={12} height={12} />
+      {variant === "read" ? (
+        <BookOpenIcon />
+      ) : (
+        <DownloadIcon />
+      )}
       <span>{text}</span>
     </a>
   );

@@ -1,12 +1,13 @@
 import styles from "../../styles/components/Header.module.scss";
 
-const MenuIcon = () => (
+const MenuIcon = (props) => (
   <svg
     width={30}
     height={30}
     viewBox="0 0 30 30"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <path
       className={styles.menu__topLine}
