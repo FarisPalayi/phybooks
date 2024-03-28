@@ -24,7 +24,7 @@ export default function Header() {
             src="/images/logo.svg"
             alt="PhyBooks"
             width={130}
-            height={27}
+            height={28}
             priority
           />
         </Link>
