@@ -4,6 +4,11 @@ import { textbooks } from "@/app/lib/data";
 import { getBookByTitle } from "@/app/lib/utils";
 import Breadcrumb from "@/app/components/shared/Breadcrumb";
 
+export async function generateMetadata({ params }) {
+  const title = decodeURIComponent(params.book).title();
+  return { title };
+}
+
 export default function Page({ params }) {
   const bookName = decodeURIComponent(params.book);
   const bookByTitle = getBookByTitle(textbooks, bookName);

@@ -4,6 +4,11 @@ import DarkCard from "../../components/books/DarkCard";
 import { textbooks } from "@/app/lib/data";
 import { getBooksBySubject } from "@/app/lib/utils";
 
+export async function generateMetadata({ params }) {
+  const title = decodeURIComponent(params.subName).title();
+  return { title };
+}
+
 export default function Page({ params }) {
   const subject = decodeURIComponent(params.subName);
   const booksBySubject = getBooksBySubject(textbooks, subject);
