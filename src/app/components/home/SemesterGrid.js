@@ -2,7 +2,7 @@ import styles from "../../styles/components/SemesterGrid.module.scss";
 import LinkCell from "../shared/LinkCell";
 
 export default function SemesterGrid() {
-  const semesterInRoman = [1, 2, 3, 4, 5, 6];
+  const semesters = [1, 2, 3, 4, 5, 6];
 
   return (
     <section className={styles.semester} id="semester">
@@ -10,7 +10,7 @@ export default function SemesterGrid() {
         Browse by <span>Semester</span>
       </h2>
       <div className={styles.semester__grid}>
-        {semesterInRoman.map((semNum, i) => (
+        {semesters.map((semNum, i) => (
           <LinkCell
             link={`/semester/${semNum}`}
             key={i}

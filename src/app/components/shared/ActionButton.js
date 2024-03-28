@@ -9,9 +9,6 @@ export default function ActionButton({
   downloadName,
   onClick,
 }) {
-  const iconPath =
-    variant === "read" ? "/images/book-open.svg" : "/images/download.svg";
-
   return (
     <a
       href={link}
@@ -19,11 +16,7 @@ export default function ActionButton({
       download={downloadName}
       onClick={onClick}
     >
-      {variant === "read" ? (
-        <BookOpenIcon />
-      ) : (
-        <DownloadIcon />
-      )}
+      {variant === "read" ? <BookOpenIcon /> : <DownloadIcon />}
       <span>{text}</span>
     </a>
   );

@@ -1,7 +1,3 @@
-"use client";
-
-import styles from "./styles/components/NotFound.module.scss";
-
 export default function NotFound() {
   return (
     <div
@@ -14,11 +10,12 @@ export default function NotFound() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        color: "#fff",
+        background: "#000",
       }}
     >
       <div style={{ display: "flex" }}>
         <h1
-          className={styles["next-error-h1"]}
           style={{
             display: "inlineBlock",
             margin: "0px 20px 0px 0px",
@@ -27,6 +24,7 @@ export default function NotFound() {
             fontWeight: 500,
             verticalAlign: "top",
             lineHeight: "49px",
+            borderRight: "1px solid rgba(255, 255, 255, 0.3)",
           }}
         >
           404

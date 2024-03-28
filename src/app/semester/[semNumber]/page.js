@@ -35,7 +35,7 @@ export default function Page({ params }) {
             ))
           ) : (
             <>
-              <h1>Sorry, No data is found</h1>
+              <h2>Sorry, No data is found</h2>
               <div
                 style={{
                   width: "100%",

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "../../styles/components/Sidebar.module.scss";
-import Overlay from "./Overlay";
 
 export default function Sidebar({ isSidebarOpen }) {
   const navItems = [

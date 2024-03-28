@@ -1,5 +1,4 @@
 import styles from "@/app/styles/components/SkeletonReader.module.scss";
-import read from "@/app/styles/components/ReadOnline.module.scss";
 
 export default function SkeletonReader() {
   return (

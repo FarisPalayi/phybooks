@@ -4,6 +4,7 @@ import LogoIcon from "../icons/LogoIcon";
 
 export default function Footer() {
   const navItems = ["Privacy Policy", "Terms & Conditions", "About Us"];
+
   return (
     <footer className={styles.footer}>
       <div className="container">
@@ -21,6 +22,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+
         <div className={styles.footer__copy}>
           © Copyright 2023 - Muhammed Faris P
         </div>

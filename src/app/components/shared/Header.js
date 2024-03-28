@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import header from "../../styles/components/Header.module.scss";
 import { useState } from "react";
 import Link from "next/link";

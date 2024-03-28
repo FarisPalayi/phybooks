@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "../../styles/components/CatalogLink.module.scss";
 import Link from "next/link";
 import ChevronRightIcon from "../icons/ChevronRightIcon";
