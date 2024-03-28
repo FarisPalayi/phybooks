@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import Image from "next/image";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -21,6 +20,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/zoom";
 import "swiper/css/navigation";
+import ListIcon from "../icons/ListIcon";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -164,13 +164,7 @@ export default function ReadOnline({ file, isFullView }) {
                 className={styles.mySwiper__index__toggleBtn}
                 onClick={() => setShowSliderIndex(!showSliderIndex)}
               >
-                <Image
-                  src="/images/list.svg"
-                  alt="toggle index"
-                  width={24}
-                  height={24}
-                  className={styles.mySwiper__index__toggleIcon}
-                />
+                <ListIcon className={styles.mySwiper__index__toggleIcon} />
               </button>
             </Swiper>
           </div>

@@ -62,9 +62,11 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  z-index: 11;
   color: var(--cyan);
-  padding: rem(10);
+  padding: rem(10) rem(10) rem(2) rem(10);
+  background: #00000045;
+  border-top-left-radius: rem(5);
+  z-index: 11;
 }
 
 .mySwiper__index__toggleIcon {
