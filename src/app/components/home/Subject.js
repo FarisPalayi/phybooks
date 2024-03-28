@@ -7,7 +7,9 @@ import { textbooks } from "@/app/lib/data";
 import { useEffect, useState } from "react";
 
 export default function Subject() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(
+    (window && window.innerWidth) || 375
+  );
   const [initialMaxBooks, setInitialMaxBooks] = useState(5);
   const [maxBooks, setMaxBooks] = useState(initialMaxBooks);
   const bookTitles = getBookTitles(textbooks.sortBooksByTitle());
@@ -16,6 +18,8 @@ export default function Subject() {
   const breakpoint = 600;
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleWindowResize = () => {
       setInitialMaxBooks(windowWidth > breakpoint ? 9 : 5);
       setWindowWidth(window.innerWidth);
