@@ -9,6 +9,7 @@ import Overlay from "./Overlay";
 import Search from "./Search";
 import { textbooks } from "@/app/lib/data";
 import LogoIcon from "../icons/LogoIcon";
+import SearchIcon from "../icons/SearchIcon";
 
 export default function Header() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function Header() {
         </Link>
         <div className={header.iconContainer}>
           <button aria-label="search" title="search" onClick={toggleSearchList}>
-            <Image src="/images/search.svg" alt="" width={24} height={24} />
+            <SearchIcon />
           </button>
 
           {displaySearchList && (

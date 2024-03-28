@@ -33,9 +33,12 @@
   background-color: var(--search-bg);
 }
 
-.search__icon,
 .search__close {
   padding-top: rem(5);
+}
+
+.search__icon {
+  transform: scale(0.82) translate(rem(3), rem(3));
 }
 
 .search__input {
@@ -45,9 +48,6 @@
   border-bottom: solid var(--cyan) 2px;
   outline: transparent;
   color: var(--foreground);
-}
-
-.search__close {
 }
 
 .search__list {

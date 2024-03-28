@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "../../styles/components/Search.module.scss";
 import { useDebouncedCallback } from "use-debounce";
 import { titleCase } from "@/app/lib/utils";
+import SearchIcon from "../icons/SearchIcon";
 
 export default function Search({ data, onClick }) {
   const [query, setQuery] = useState("");
@@ -41,13 +42,7 @@ export default function Search({ data, onClick }) {
       <div className={styles.search}>
         <div className={styles.search__bar}>
           <label htmlFor="search">
-            <Image
-              src="/images/search.svg"
-              className={styles.search__icon}
-              alt=""
-              width={25}
-              height={24}
-            />
+            <SearchIcon className={styles.search__icon} />
           </label>
           <input
             type="search"
