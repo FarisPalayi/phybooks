@@ -8,6 +8,9 @@
   --max-width: 1440px;
   --main-inline-padding: 1.6875rem;
   --main-padding: 0 var(--main-inline-padding);
+  --overlay-z-index: 2;
+  --sidebar-z-index: calc(var(--overlay-z-index) + 1);
+  --search-z-index: calc(var(--sidebar-z-index) + 1);
 }
 
 :root {

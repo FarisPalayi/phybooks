@@ -26,7 +26,7 @@ export default function Overlay({ isOpen, onClick }) {
         height: "100vh",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         overflowY: "hidden",
-        zIndex: 1,
+        zIndex: "var(--overlay-z-index)",
       }}
     ></div>
   );

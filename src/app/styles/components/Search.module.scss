@@ -6,7 +6,7 @@
   position: fixed;
   inset: 0px;
   max-height: 100dvh;
-  z-index: 2;
+  z-index: var(--search-z-index);
   max-width: rem(768);
   margin: auto;
   background-color: var(--accents-1);

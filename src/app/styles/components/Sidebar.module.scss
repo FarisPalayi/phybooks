@@ -5,10 +5,11 @@
   inset: var(--header-height) 0 0 auto;
   background-color: var(--accents-1);
   min-width: rem(200);
-  width: fit-content;
+  width: fit-content !important; // to prevent `.container > *` selector conflict
   height: calc(100vh - var(--header-height));
   padding: rem(20);
-  z-index: 2;
+  z-index: var(--sidebar-z-index);
+  isolation: isolate;
 
   &Hidden {
     display: none; // add !important if necessary
@@ -25,11 +26,6 @@
   @include flex-column;
   gap: var(--nav-spacing);
 }
-
-// .nav__list {
-//   .nav__item {
-//   }
-// }
 
 .nav__sublist {
   .nav__subitem {
