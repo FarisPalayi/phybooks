@@ -15,12 +15,6 @@
     background-color: var(--accents-8);
     color: var(--background);
 
-    &::before {
-      display: inline-block;
-      content: url("/images/triangle-down.svg");
-      margin-right: rem(10);
-    }
-
     & .content {
       padding: 0.625rem 0;
     }
@@ -31,6 +25,11 @@
     background-color: var(--background);
     color: var(--foreground);
   }
+}
+
+.triangleIcon {
+  display: inline-block;
+  margin-right: rem(10);
 }
 
 .gradShadow {

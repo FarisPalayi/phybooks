@@ -1,5 +1,6 @@
 import styles from "../../styles/components/Button.module.scss";
 import Link from "next/link";
+import TriangleIcon from "../icons/TriangleIcon";
 
 export default function Button({
   btnText,
@@ -13,6 +14,7 @@ export default function Button({
   const shadowClass = glow ? styles.shadow : styles.notShadow;
   const contentJSX = (
     <>
+      {btnType === "primary" && <TriangleIcon className={styles.triangleIcon} />}
       {glow && (
         <>
           <span className={`${styles.gradShadow} ${styles.grad1}`}></span>
