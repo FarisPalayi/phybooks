@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function Subject() {
   const [windowWidth, setWindowWidth] = useState(
-    (window && window.innerWidth) || 375
+    (typeof window !== "undefined" && window.innerWidth) || 375
   );
   const [initialMaxBooks, setInitialMaxBooks] = useState(5);
   const [maxBooks, setMaxBooks] = useState(initialMaxBooks);
