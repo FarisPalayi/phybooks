@@ -5,6 +5,7 @@ import styles from "../../styles/components/Search.module.scss";
 import { useDebouncedCallback } from "use-debounce";
 import { titleCase } from "@/app/lib/utils";
 import SearchIcon from "../icons/SearchIcon";
+import CloseIcon from "../icons/CloseIcon";
 
 export default function Search({ data, onClick }) {
   const [query, setQuery] = useState("");
@@ -53,7 +54,7 @@ export default function Search({ data, onClick }) {
             placeholder="Search books..."
           />
           <button onClick={onClick} className={styles.search__close}>
-            <Image src="/images/x.svg" alt="" width={24} height={24} />
+            <CloseIcon />
           </button>
         </div>
         <ul className={styles.search__list}>
