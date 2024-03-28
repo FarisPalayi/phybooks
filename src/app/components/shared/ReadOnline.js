@@ -72,14 +72,12 @@ export default function ReadOnline({ file, isFullView }) {
     swiperRef.slideTo(index - 1, 0);
   };
 
-  const changePageTo = (page) => {
-    setPageNumber(page);
-    slideTo(page);
-  };
-
   const changePage = (offset) => {
-    setPageNumber((prevPageNumber) => prevPageNumber + offset);
-    slideTo(pageNumber + offset);
+    const newPageNumber = pageNumber + offset;
+    if (newPageNumber <= numPages && newPageNumber > 0) {
+      setPageNumber((prevPageNumber) => prevPageNumber + offset);
+      slideTo(pageNumber + offset);
+    }
   };
 
   const previousPage = () => changePage(-1 * sliderView);
@@ -184,14 +182,14 @@ export default function ReadOnline({ file, isFullView }) {
 
             <div className={styles.navBtns}>
               <button
-                disabled={pageNumber <= 1}
+                disabled={pageNumber + -1 * sliderView < 1}
                 onClick={previousPage}
                 className={styles.nav__previous}
               >
                 Previous
               </button>
               <button
-                disabled={pageNumber >= numPages}
+                disabled={pageNumber + 1 * sliderView > numPages}
                 onClick={nextPage}
                 className={styles.nav__next}
               >
