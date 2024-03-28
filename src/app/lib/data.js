@@ -85,24 +85,24 @@ const textbooks = [
     category: [""],
     pages: 231,
   },
-  {
-    id: 5,
-    title: "experimental physics",
-    author: "dr. p. sethumadhavan, prof. k.c abraham, prof. sunil john",
-    publishedDate: "August 29, 2021",
-    semester: 6,
-    subject: ["experimental physics"],
-    filepath:
-      "/textbooks/semester-6/experimental-physics/experimental-physics.pdf",
-    image: {
-      url: "/textbooks/semester-6/experimental-physics/cover/experimental-physics.jpg",
-      width: 126,
-      height: 165,
-    },
-    isReference: false,
-    category: [""],
-    pages: 195,
-  },
+  // {
+  //   id: 5,
+  //   title: "experimental physics",
+  //   author: "dr. p. sethumadhavan, prof. k.c abraham, prof. sunil john",
+  //   publishedDate: "August 29, 2021",
+  //   semester: 6,
+  //   subject: ["experimental physics"],
+  //   filepath:
+  //     "/textbooks/semester-6/experimental-physics/experimental-physics.pdf",
+  //   image: {
+  //     url: "/textbooks/semester-6/experimental-physics/cover/experimental-physics.jpg",
+  //     width: 126,
+  //     height: 165,
+  //   },
+  //   isReference: false,
+  //   category: [""],
+  //   pages: 195,
+  // },
 ];
 
 export { textbooks };
