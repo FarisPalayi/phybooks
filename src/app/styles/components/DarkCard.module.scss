@@ -44,14 +44,14 @@
     &::before {
       --glow-color: var(--purple);
 
-      background: conic-gradient(
-        from 0deg at 50% 50%,
-        var(--card-border-color) 0deg,
-        var(--card-border-color) 3deg,
-        var(--card-border-color) 328deg,
-        var(--purple) 349deg,
-        var(--card-border-color) 1turn
-      );
+      // background: conic-gradient(
+      //   from 0deg at 50% 50%,
+      //   var(--card-border-color) 0deg,
+      //   var(--card-border-color) 3deg,
+      //   var(--card-border-color) 328deg,
+      //   var(--purple) 349deg,
+      //   var(--card-border-color) 1turn
+      // );
     }
   }
 }
