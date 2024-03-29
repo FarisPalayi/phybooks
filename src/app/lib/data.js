@@ -15,6 +15,7 @@ const textbooks = [
     isReference: false,
     category: [""],
     pages: 255,
+    size: 30.5,
   },
   {
     id: 2,
@@ -32,6 +33,7 @@ const textbooks = [
     isReference: false,
     category: [""],
     pages: 195,
+    size: 26,
   },
   {
     id: 3,
@@ -49,6 +51,7 @@ const textbooks = [
     isReference: false,
     category: [""],
     pages: 263,
+    size: 42,
   },
   {
     id: 4,
@@ -66,6 +69,7 @@ const textbooks = [
     isReference: false,
     category: [""],
     pages: 232,
+    size: 31,
   },
   {
     id: 5,
@@ -84,6 +88,7 @@ const textbooks = [
     isReference: false,
     category: [""],
     pages: 231,
+    size: 27,
   },
   // {
   //   id: 5,
@@ -119,6 +124,7 @@ const textbooks = [
     isReference: true,
     category: [""],
     pages: 566,
+    size: 22,
   },
 ];
 

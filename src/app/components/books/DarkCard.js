@@ -7,7 +7,7 @@ import Toast from "../shared/Toast";
 import { useEffect, useState } from "react";
 
 export default function DarkCard({ book, isSecondary = false }) {
-  const { title, author, image, publishedDate, chapters, id, filepath } = book;
+  const { title, author, image, publishedDate, chapters, id, size, filepath } = book;
   const titleCharLimit = 40;
   const authorCharLimit = 22;
   const shortTitle = setCharLimit(title, titleCharLimit);
@@ -50,7 +50,7 @@ export default function DarkCard({ book, isSecondary = false }) {
           >
             Author: {shortAuthor.title()}
           </li>
-          <li className={styles.darkCard__date}>{publishedDate}</li>
+          <li className={styles.darkCard__date}>File size: {size}MB</li>
         </ul>
       </div>
       <div className={styles.darkCard__btnGroup}>
