@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -21,6 +21,7 @@ import "swiper/css/pagination";
 import "swiper/css/zoom";
 import "swiper/css/navigation";
 import ListIcon from "../icons/ListIcon";
+import Toast from "./Toast";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -35,6 +36,14 @@ export default function ReadOnline({ file, isFullView }) {
   const [sliderView, setSliderView] = useState(1); // either 1 or 2
   const [showSliderIndex, setShowSliderIndex] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showToast, setShowToast] = useState(false);
+  const closeDelay = 3000;
+
+  useEffect(() => {
+    if (!showToast) return;
+    const timer = setTimeout(() => setShowToast(false), closeDelay);
+    return () => clearTimeout(timer);
+  }, [showToast]);
 
   const MAX_WIDTH = 800;
   const BUFFER_WIDTH = 51; // padding and stuff
@@ -100,7 +109,10 @@ export default function ReadOnline({ file, isFullView }) {
         onLoadSuccess={onDocumentLoadSuccess}
         className={styles.document}
         onLoadStart={() => setIsLoading(true)}
-        onLoadError={() => setIsLoading(false)}
+        onLoadError={() => {
+          setIsLoading(false);
+          setShowToast(true);
+        }}
       >
         <div
           className={`${styles.TOC} ${isFullView ? styles.TOC__fullView : ""}`}
@@ -193,6 +205,14 @@ export default function ReadOnline({ file, isFullView }) {
           </div>
         </div>
       </Document>
+      {showToast && (
+        <Toast
+          info="Error loading pdf. Please try again"
+          state="Error"
+          onClose={() => setShowToast(false)}
+          show={showToast}
+        />
+      )}
     </div>
   );
 }
