@@ -102,7 +102,7 @@ export default function ReadOnline({ file, isFullView }) {
 
   return (
     <div className={styles.documentContainer} ref={setContainerRef}>
-      {true && <SkeletonReader />}
+      {isLoading && <SkeletonReader />}
 
       <Document
         file={file}
