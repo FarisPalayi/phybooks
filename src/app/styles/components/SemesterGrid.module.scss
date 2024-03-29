@@ -4,6 +4,9 @@
   @include tablet {
     padding-inline: min(rem(158), 10vw);
   }
+  @include desktop {
+    padding-inline: max(15rem, 17vw);
+  }
 }
 
 .semester__title {
@@ -18,7 +21,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   // grid-template-columns: repeat(auto-fit, minmax(rem(145), 1fr));
-  
+
   gap: rem(24);
   grid-auto-rows: max-content;
 
