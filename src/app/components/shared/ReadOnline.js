@@ -212,7 +212,7 @@ export default function ReadOnline({ file, isFullView }) {
 
       {showToast && (
         <Toast
-          info="Error loading pdf. Please try again"
+          info="Error loading pdf"
           state="Error"
           onClose={() => setShowToast(false)}
           show={showToast}
