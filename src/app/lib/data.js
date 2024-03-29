@@ -103,6 +103,23 @@ const textbooks = [
   //   category: [""],
   //   pages: 195,
   // },
+  {
+    id: 6,
+    title: "modern physics",
+    author: "Kenneth Krane",
+    publishedDate: "August 29, 2021",
+    semester: 6,
+    subject: ["modern physics"],
+    filepath: "/textbooks/semester-6/reference-books/modern-physics.pdf",
+    image: {
+      url: "/textbooks/semester-6/reference-books/covers/modern-physics.png",
+      width: 126,
+      height: 157,
+    },
+    isReference: true,
+    category: [""],
+    pages: 566,
+  },
 ];
 
 export { textbooks };
