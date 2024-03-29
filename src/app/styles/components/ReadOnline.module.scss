@@ -10,6 +10,11 @@
   }
 }
 
+.TOC {
+  margin-bottom: rem(30);
+  overflow-y: auto;
+}
+
 .TOC__fullView {
   padding: var(--main-padding);
   display: none;
@@ -41,11 +46,13 @@
 
 .mySwiper__indexContainer {
   @include flex-column-center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: rem(40);
   gap: rem(30);
   position: absolute;
   inset: 0;
-  background: var(--accents-2);
+  background: var(--accents-1);
+  overflow-y: auto; // for index to be scrollable
   z-index: 10;
 }
 
@@ -75,8 +82,7 @@
 
 .page__backdrop {
   overflow: hidden;
-  // overflow-y: auto; // for index to be scrollable
-  background: var(--foreground);
+  overflow-y: auto; // for index to be scrollable
 }
 
 .pageNumber {

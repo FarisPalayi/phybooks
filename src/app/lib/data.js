@@ -91,7 +91,7 @@ const textbooks = [
     size: 27,
   },
   {
-    id: 5,
+    id: 6,
     title: "experimental physics",
     author: "dr. p. sethumadhavan, prof. k.c abraham, prof. sunil john",
     publishedDate: "August 29, 2021",
@@ -109,7 +109,7 @@ const textbooks = [
     pages: 195,
   },
   {
-    id: 6,
+    id: 7,
     title: "modern physics",
     author: "Kenneth Krane",
     publishedDate: "August 29, 2021",

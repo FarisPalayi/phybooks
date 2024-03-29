@@ -116,6 +116,10 @@ export default function ReadOnline({ file, isFullView }) {
       >
         <div
           className={`${styles.TOC} ${isFullView ? styles.TOC__fullView : ""}`}
+          style={{
+            maxHeight:
+              sliderView === 1 ? pageWidth * 1.41 : (pageWidth * 1.41) / 2,
+          }}
         >
           <h2 className={styles.index__title}>Index</h2>
           <Outline onItemClick={onIndexNav} className={styles.index} />
@@ -205,6 +209,7 @@ export default function ReadOnline({ file, isFullView }) {
           </div>
         </div>
       </Document>
+
       {showToast && (
         <Toast
           info="Error loading pdf. Please try again"
