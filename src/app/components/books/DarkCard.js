@@ -50,7 +50,7 @@ export default function DarkCard({ book, isSecondary = false }) {
           >
             Author: {shortAuthor.title()}
           </li>
-          <li className={styles.darkCard__date}>File size: {size}MB</li>
+          <li className={styles.darkCard__date}>File size: {size} MB</li>
         </ul>
       </div>
       <div className={styles.darkCard__btnGroup}>
