@@ -37,6 +37,9 @@ export const metadata = {
     card: "summary_large_image",
     site: "https://phybooks.vercel.app",
   },
+  verification: {
+    google: "n-QPbYVkDi6nv3zP8NRF0zCk8FffQp468Sf31Ak5QHw"
+  }
 };
 
 export const viewport = {
