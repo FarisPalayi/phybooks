@@ -64,7 +64,7 @@ export default function Page({ params }) {
 
         {referenceBooks.length > 0 && (
           <div className={`main ${styles.books}`}>
-            <h1 className={`${styles.books__header}`}>
+            <h1 className={`${styles.books__header} ${styles.secondary}`}>
               {semesterName} <span>reference books</span>
             </h1>
             <section className={styles.books__grid}>
