@@ -2,7 +2,7 @@ import styles from "@/app/styles/components/SkeletonReader.module.scss";
 
 export default function SkeletonReader() {
   return (
-    <div class="container">
+    <div className="container">
       <div className={styles.skeleton__container}>
         <section className={styles.indexSection}>
           <div className={styles.skeleton__indexTitle}>
