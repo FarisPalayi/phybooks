@@ -27,7 +27,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 const resizeObserverOptions = {};
 
-export default function ReadOnline({ file, isFullView }) {
+export default function ReadOnline({ file, isFullView, parentCallback }) {
   const [numPages, setNumPages] = useState();
   const [pageNumber, setPageNumber] = useState(1);
   const [containerRef, setContainerRef] = useState(null);
@@ -37,6 +37,7 @@ export default function ReadOnline({ file, isFullView }) {
   const [showSliderIndex, setShowSliderIndex] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showToast, setShowToast] = useState(false);
+  const [showFullView, setShowFullView] = useState(isFullView);
   const closeDelay = 3000;
 
   useEffect(() => {
@@ -61,9 +62,10 @@ export default function ReadOnline({ file, isFullView }) {
         setContainerWidth(entry.contentRect.width);
         if (entry.contentRect.width > PDF_BREAKPOINT) setSliderView(2);
         else setSliderView(1);
+         parentCallback(showFullView);
       }
     },
-    [PDF_BREAKPOINT]
+    [PDF_BREAKPOINT, showFullView, parentCallback]
   );
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
@@ -154,6 +156,12 @@ export default function ReadOnline({ file, isFullView }) {
               onSwiper={setSwiperRef}
               virtual
             >
+              <button
+                className={styles.mySwiper__index__fullViewBtn}
+                onClick={() => setShowFullView(!showFullView)}
+              >
+                Show {!showFullView ? "Full": "Min"}
+              </button>
               {[...Array(numPages).keys()].map((pageIndex) => (
                 <SwiperSlide key={pageIndex}>
                   <div className="swiper-zoom-container">
@@ -212,7 +220,7 @@ export default function ReadOnline({ file, isFullView }) {
 
       {showToast && (
         <Toast
-          info="Error loading pdf"
+          info="Error loading pdf. Please try again"
           state="Error"
           onClose={() => setShowToast(false)}
           show={showToast}
