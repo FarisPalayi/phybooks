@@ -21,8 +21,6 @@ export default function Page({ params }) {
     books,
     Number(semesterNumber)
   ).sortBooksByTitle();
-  const textBooks = removeReferenceBooks(booksFilteredBySemester);
-  const referenceBooks = getReferenceBooks(booksFilteredBySemester);
 
   return (
     <main className="container">
@@ -35,8 +33,14 @@ export default function Page({ params }) {
           pathnames={[{ name: semesterName, path: semesterName }]}
         />
         <section className={styles.books__grid}>
-          {textBooks.length > 0 ? (
-            textBooks.map((book) => <DarkCard key={book.id} book={book} />)
+          {booksFilteredBySemester.length > 0 ? (
+            booksFilteredBySemester.map((book) => (
+              <DarkCard
+                key={book.id}
+                book={book}
+                isSecondary={book.isReference}
+              />
+            ))
           ) : (
             <>
               <h2>Sorry, No data is found</h2>
@@ -61,19 +65,6 @@ export default function Page({ params }) {
           )}
           {/* add reference books here */}
         </section>
-
-        {referenceBooks.length > 0 && (
-          <div className={`main ${styles.books}`}>
-            <h1 className={`${styles.books__header} ${styles.secondary}`}>
-              {semesterName} <span>reference books</span>
-            </h1>
-            <section className={styles.books__grid}>
-              {referenceBooks.map((book) => (
-                <DarkCard key={book.id} book={book} isSecondary={true} />
-              ))}
-            </section>
-          </div>
-        )}
       </div>
     </main>
   );
