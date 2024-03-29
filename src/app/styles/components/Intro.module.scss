@@ -128,7 +128,7 @@
   @include flex-column-center;
   gap: rem(23);
   width: 100%;
-  padding-inline: 0 max(1.3vw, rem(5));
+  padding-inline: max(1.3vw, rem(5));
 
   @include tablet {
     flex-direction: row;
