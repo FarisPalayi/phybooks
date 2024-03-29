@@ -65,15 +65,25 @@
   }
 }
 
-.mySwiper__index__toggleBtn {
+.mySwiper__index__toggleBtn,
+.mySwiper__index__fullViewBtn {
   position: absolute;
-  right: 0;
-  bottom: 0;
   color: var(--cyan);
   padding: rem(10) rem(10) rem(2) rem(10);
   background: #00000045;
-  border-top-left-radius: rem(5);
   z-index: 11;
+}
+
+.mySwiper__index__fullViewBtn {
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: rem(5);
+}
+
+.mySwiper__index__toggleBtn {
+  border-top-left-radius: rem(5);
+  right: 0;
+  bottom: 0;
 }
 
 .mySwiper__index__toggleIcon {
