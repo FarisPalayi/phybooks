@@ -5,6 +5,7 @@ import LinkCell from "../shared/LinkCell";
 import { getBookTitles } from "@/app/lib/utils";
 import { textbooks } from "@/app/lib/data";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Subject() {
   const [windowWidth, setWindowWidth] = useState(
@@ -42,12 +43,18 @@ export default function Subject() {
       </h2>
       <div className={styles.subject__grid}>
         {bookTitles.slice(0, maxBooks).map((title, i) => (
-          <LinkCell
-            link={`/subject/${title}`}
+          <motion.div
+            whileHover={{ y: -5 }}
             key={i}
-            text={title.title()}
-            variant="Secondary"
-          />
+            style={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: .5 } }}
+          >
+            <LinkCell
+              link={`/subject/${title}`}
+              text={title.title()}
+              variant="Secondary"
+            />
+          </motion.div>
         ))}
       </div>
 
