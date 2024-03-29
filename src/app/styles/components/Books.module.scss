@@ -31,11 +31,8 @@
   }
 
   &.secondary {
-    margin-bottom: 3rem;
-
     & > span {
       @include grad-text(var(--purple-pink-grad));
-
     }
   }
 }
