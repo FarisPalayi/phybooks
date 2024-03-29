@@ -29,6 +29,10 @@
     @include grad-text;
     font-weight: 600;
   }
+
+  &.secondary > span {
+    @include grad-text(var(--purple-pink-grad));
+  }
 }
 
 .books__grid {

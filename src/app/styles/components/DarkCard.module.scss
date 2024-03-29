@@ -12,8 +12,8 @@
   background: linear-gradient(180deg, #171b25, #090a0c 65.62%);
   border-radius: rem(12);
   text-align: center;
-  box-shadow: 0 rem(1) 0 rem(1) rgba(0, 0, 0, 0.02), 0 rem(4) rem(6) rgba(0, 0, 0, 0.02),
-    inset 0 0 0 rem(6) #090a0c;
+  box-shadow: 0 rem(1) 0 rem(1) rgba(0, 0, 0, 0.02),
+    0 rem(4) rem(6) rgba(0, 0, 0, 0.02), inset 0 0 0 rem(6) #090a0c;
   transition: background 0.15s ease;
 
   &::before {
@@ -38,6 +38,12 @@
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     pointer-events: none;
+  }
+
+  &.secondary {
+    &::before {
+      --glow-color: var(--magenta);
+    }
   }
 }
 

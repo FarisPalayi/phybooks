@@ -6,7 +6,7 @@ import { setCharLimit } from "@/app/lib/utils";
 import Toast from "../shared/Toast";
 import { useEffect, useState } from "react";
 
-export default function DarkCard({ book }) {
+export default function DarkCard({ book, isSecondary = false }) {
   const { title, author, image, publishedDate, chapters, id, filepath } = book;
   const titleCharLimit = 40;
   const authorCharLimit = 22;
@@ -24,7 +24,9 @@ export default function DarkCard({ book }) {
   }, [showToast]);
 
   return (
-    <article className={styles.darkCard}>
+    <article
+      className={`${styles.darkCard} ${isSecondary ? styles.secondary : null}`}
+    >
       <h3
         className={styles.darkCard__title}
         title={shortTitle.length > titleCharLimit ? title.title() : null}

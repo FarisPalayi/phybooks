@@ -16,6 +16,14 @@ function getBookByTitle(books, title) {
   );
 }
 
+function getReferenceBooks(books) {
+  return books.filter((book) => book.isReference);
+}
+
+function removeReferenceBooks(books) {
+  return books.filter((book) => !book.isReference);
+}
+
 function getBookTitles(books) {
   return books.map((book) => book.title.toLowerCase());
 }
@@ -46,4 +54,6 @@ export {
   getBookByTitle,
   getBookTitles,
   titleCase,
+  getReferenceBooks,
+  removeReferenceBooks,
 };
