@@ -30,8 +30,13 @@
     font-weight: 600;
   }
 
-  &.secondary > span {
-    @include grad-text(var(--purple-pink-grad));
+  &.secondary {
+    margin-bottom: 3rem;
+
+    & > span {
+      @include grad-text(var(--purple-pink-grad));
+
+    }
   }
 }
 
