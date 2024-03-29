@@ -3,11 +3,24 @@ import styles from "../../styles/components/Sidebar.module.scss";
 
 export default function Sidebar({ isSidebarOpen }) {
   const navItems = [
-    "Favorites",
-    { Settings: ["Theme", "Mode"] },
-    "Contact Us",
+    "Home",
+    // {
+    //   Textbooks: [
+    //     "Semester 1",
+    //     "Semester 2",
+    //     "Semester 3",
+    //     "Semester 4",
+    //     "Semester 5",
+    //     "Semester 6",
+    //   ],
+    // },
+    "Reference Books",
+    // "Favorites",
+    // { Settings: ["Theme", "Mode"] },
     "Source Code",
+    "Design Files",
     "About",
+    "Contact",
   ];
 
   const renderNavItems = (navItems) => {
