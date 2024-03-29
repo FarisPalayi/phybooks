@@ -36,6 +36,7 @@
 
   &Warning {
     background-color: var(--warning);
+    color: #08102b;
   }
 
   &Error {
@@ -45,6 +46,8 @@
 
 .toast__icon {
   border-color: yellow;
+  display: flex;
+  align-items: center;
 }
 
 .toast__text {
@@ -53,6 +56,8 @@
 
 .toast__close {
   border-color: rgb(255, 94, 255);
+  display: flex;
+  align-items: center;
 }
 
 @keyframes toast-show {

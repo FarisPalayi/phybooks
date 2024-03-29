@@ -13,7 +13,7 @@ export default function Main() {
         <SemesterGrid />
         <Subject />
         <CatalogLink />
-        <Toast />
+        {/* <Toast /> */}
       </div>
     </main>
   );
