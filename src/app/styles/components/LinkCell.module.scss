@@ -6,10 +6,17 @@
   color: var(--foreground);
   background-color: var(--background);
   border-radius: rem(7);
-  transition: background-color 200ms;
+  transition: all 300ms;
 
   @include hover {
-    opacity: 0.9;
+    transform: translateY(rem(-5));
+    transition: transform 100ms;
+  }
+
+  &:active {
+    transition: transform 100ms, filter 200ms;
+    transform: translateY(rem(0));
+    filter: brightness(0.9);
   }
 
   &Primary {
