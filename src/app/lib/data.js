@@ -81,7 +81,7 @@ const textbooks = [
     filepath:
       "/textbooks/semester-6/statistical-physics/statistical-physics.pdf",
     image: {
-      url: "/textbooks/semester-6/statistical-physics/cover/statistical-physics.jpg",
+      url: "/textbooks/semester-6/statistical-physics/cover/statistical-physics-1.jpg",
       width: 126,
       height: 165,
     },
