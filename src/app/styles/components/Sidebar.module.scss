@@ -7,7 +7,7 @@
   min-width: rem(200);
   width: fit-content !important; // to prevent `.container > *` selector conflict
   height: calc(100vh - var(--header-height));
-  padding: rem(20);
+  padding-block: rem(20);
   z-index: var(--sidebar-z-index);
   isolation: isolate;
 
@@ -17,14 +17,26 @@
 }
 
 .nav {
-  --nav-spacing: 20px;
+  // --nav-spacing: 20px;
 }
 
 .nav__list,
 .nav__item,
 .nav__sublist {
   @include flex-column;
-  gap: var(--nav-spacing);
+  // gap: var(--nav-spacing);
+}
+
+.nav__item {
+  > a {
+    padding-block: rem(9);
+    padding-inline: rem(22);
+    transition: background-color 150ms;
+
+    @include hover {
+      background-color: var(--accents-2);
+    }
+  }
 }
 
 .nav__sublist {
