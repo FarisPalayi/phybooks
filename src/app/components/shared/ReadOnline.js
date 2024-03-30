@@ -47,21 +47,25 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
 
   // Load last visited page from localStorage
   useEffect(() => {
-    const lastVisitedPage = localStorage.getItem("lastVisitedPage");
-    if (lastVisitedPage.isNumeric()) {
+    const lastVisitedPage = localStorage.getItem(`lastVisitedPage_${file}`);
+    if (lastVisitedPage && lastVisitedPage.isNumeric()) {
       setPageNumber(parseInt(lastVisitedPage));
+      // If swiperRef is available, slide to the last visited page
       if (swiperRef) {
         swiperRef.slideTo(parseInt(lastVisitedPage) - 1, 0);
       }
     }
-  }, [swiperRef]);
+  }, [file, swiperRef]);
 
   // Save current page to localStorage
   useEffect(() => {
     if (!initialLoad.current)
-      localStorage.setItem("lastVisitedPage", JSON.stringify(pageNumber));
+      localStorage.setItem(
+        `lastVisitedPage_${file}`,
+        JSON.stringify(pageNumber)
+      );
     else initialLoad.current = false;
-  }, [pageNumber]);
+  }, [pageNumber, file]);
 
   useEffect(() => {
     if (!showToast) return;
