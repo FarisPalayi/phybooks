@@ -5,7 +5,8 @@ import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
 import { getBookTitles } from "./lib/utils";
 import { textbooks } from "./lib/data";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
