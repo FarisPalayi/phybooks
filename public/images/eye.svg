@@ -1,11 +1,11 @@
-<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1007_1228)">
-<path d="M0.625 7.5C0.625 7.5 3.125 2.5 7.5 2.5C11.875 2.5 14.375 7.5 14.375 7.5C14.375 7.5 11.875 12.5 7.5 12.5C3.125 12.5 0.625 7.5 0.625 7.5Z" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.5 9.375C8.53553 9.375 9.375 8.53553 9.375 7.5C9.375 6.46447 8.53553 5.625 7.5 5.625C6.46447 5.625 5.625 6.46447 5.625 7.5C5.625 8.53553 6.46447 9.375 7.5 9.375Z" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.541992 6.50032C0.541992 6.50032 2.70866 2.16699 6.50033 2.16699C10.292 2.16699 12.4587 6.50032 12.4587 6.50032C12.4587 6.50032 10.292 10.8337 6.50033 10.8337C2.70866 10.8337 0.541992 6.50032 0.541992 6.50032Z" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.5 8.125C7.39746 8.125 8.125 7.39746 8.125 6.5C8.125 5.60254 7.39746 4.875 6.5 4.875C5.60254 4.875 4.875 5.60254 4.875 6.5C4.875 7.39746 5.60254 8.125 6.5 8.125Z" stroke="rgba(255,255,255,0.75)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
 <clipPath id="clip0_1007_1228">
-<rect width="15" height="15" fill="rgba(255,255,255,0.75)"/>
+<rect width="13" height="13" fill="rgba(255,255,255,0.75)"/>
 </clipPath>
 </defs>
 </svg>
