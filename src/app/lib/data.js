@@ -33,7 +33,7 @@ const textbooks = [
     isReference: false,
     category: [""],
     pages: 177,
-    size: 26,
+    size: 23,
   },
   {
     id: 3,
