@@ -80,6 +80,14 @@
   }
 }
 
+@mixin active {
+  @media (hover: hover) and (pointer: fine) {
+    &:active {
+      @content;
+    }
+  }
+}
+
 @mixin tablet {
   @media (min-width: 600px) {
     @content;

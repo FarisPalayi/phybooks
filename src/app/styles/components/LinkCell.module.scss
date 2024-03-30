@@ -12,9 +12,12 @@
     opacity: 0.99999;
   }
 
-  &:active {
-    filter: brightness(0.9);
+  @include active {
+    // &:active {
+      filter: brightness(0.9);
+    // }
   }
+
 
   &Primary {
     padding: rem(25);
