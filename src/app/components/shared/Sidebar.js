@@ -13,7 +13,7 @@ export default function Sidebar({ isSidebarOpen }) {
     ],
     ["Source Code", "/code"],
     ["About", "/about"],
-    ["Contact", "/contact"],
+    ["Contact", "https://github.com/FarisPalayi"],
   ];
 
   const renderNavItems = (navItems) => {
