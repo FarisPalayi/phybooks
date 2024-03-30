@@ -22,6 +22,8 @@ import "swiper/css/zoom";
 import "swiper/css/navigation";
 import ListIcon from "../icons/ListIcon";
 import Toast from "./Toast";
+import MinimizeIcon from "../icons/MinimizeIcon";
+import ExpandIcon from "../icons/ExpandIcon";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -62,7 +64,7 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
         setContainerWidth(entry.contentRect.width);
         if (entry.contentRect.width > PDF_BREAKPOINT) setSliderView(2);
         else setSliderView(1);
-         parentCallback(showFullView);
+        parentCallback(showFullView);
       }
     },
     [PDF_BREAKPOINT, showFullView, parentCallback]
@@ -133,12 +135,12 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
             style={{
               width: pageWidth,
               height:
-                sliderView === 1 ? pageWidth * 1.41 : (pageWidth * 1.41) / 2,
+                sliderView === 1 ? pageWidth * 1.42 : (pageWidth * 1.42) / 2,
             }}
           >
             <Swiper
               style={{
-                "--swiper-navigation-color": "var(--foreground)",
+                "--swiper-navigation-color": "var(--accents-7)",
                 "--swiper-pagination-color": "var(--cyan)",
               }}
               zoom={true}
@@ -160,7 +162,7 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
                 className={styles.mySwiper__index__fullViewBtn}
                 onClick={() => setShowFullView(!showFullView)}
               >
-                Show {!showFullView ? "Full": "Min"}
+                {!showFullView ? <ExpandIcon /> : <MinimizeIcon />}
               </button>
               {[...Array(numPages).keys()].map((pageIndex) => (
                 <SwiperSlide key={pageIndex}>
@@ -181,7 +183,7 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
                 <h3>Table of contents</h3>
                 <Outline
                   onItemClick={onIndexNav}
-                  className={styles.mySwiper__index}
+                  className={`${styles.mySwiper__index} ${styles.index}`}
                 />
               </div>
               <button
@@ -220,7 +222,7 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
 
       {showToast && (
         <Toast
-          info="Error loading pdf. Please try again"
+          info="Error loading pdf!"
           state="Error"
           onClose={() => setShowToast(false)}
           show={showToast}

@@ -72,6 +72,11 @@
   padding: rem(10) rem(10) rem(2) rem(10);
   background: #00000045;
   z-index: 11;
+  transition: background-color 200ms;
+
+  @include hover {
+    background-color: #000000a1;
+  }
 }
 
 .mySwiper__index__fullViewBtn {
