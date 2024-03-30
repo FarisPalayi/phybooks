@@ -5,6 +5,7 @@ import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
 import { getBookTitles } from "./lib/utils";
 import { textbooks } from "./lib/data";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
