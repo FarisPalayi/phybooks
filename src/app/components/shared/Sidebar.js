@@ -11,7 +11,7 @@ export default function Sidebar({ isSidebarOpen }) {
       "Design Files",
       "https://www.figma.com/file/xmcgV2La7Y4FOmmROXjNka/Bsc-physics?type=design&node-id=0%3A1&mode=design&t=aIAHqQmsHp7nal0A-1",
     ],
-    // ["Source Code", "https://github.com/farispalayi/phybooks"],
+    ["Source Code", "/code"],
     ["About", "/about"],
     ["Contact", "/contact"],
   ];
