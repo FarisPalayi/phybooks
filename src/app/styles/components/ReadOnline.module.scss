@@ -58,10 +58,42 @@
 
 .mySwiper__index {
   text-align: left;
+  padding-inline: 1.5rem;
+  padding-top: 0;
 
   & a {
-    margin-bottom: rem(5);
+    position: relative;
     width: 100%;
+    background-color: #ffffff18;
+    padding-inline: 1rem rem(24);
+    margin-bottom: rem(5);
+    border-radius: rem(2);
+
+    @include hover {
+      background-color: var(--accents-3);
+    }
+
+    &::before {
+      display: inline-block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background-image: var(--black-blue-grad);
+    }
+
+    &::after {
+      display: inline-block;
+      content: url("/images/eye.svg");
+      position: absolute;
+      top: 50%;
+      right: rem(10);
+      width: rem(18);
+      height: rem(18);
+      transform: translateY(-50%);
+    }
   }
 }
 
@@ -73,7 +105,7 @@
   background: #00000045;
   z-index: 11;
   transition: background-color 200ms;
-  
+
   @include hover {
     background-color: #000000a1;
   }
@@ -129,7 +161,7 @@
       cursor: not-allowed;
       opacity: 0.5;
 
-      &:hover {
+      @include hover {
         opacity: 0.5;
         background-color: var(--accents-1);
       }
