@@ -44,8 +44,17 @@ function sortBooksByTitle() {
   return this.sort((a, b) => a.title.localeCompare(b.title));
 }
 
+function isNumeric() {
+  if (typeof this != "string") return false; // we only process strings!
+  return (
+    !isNaN(this) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+    !isNaN(parseFloat(this))
+  ); // ...and ensure strings of whitespace fail
+}
+
 String.prototype.title = title; // monkey patching
 Array.prototype.sortBooksByTitle = sortBooksByTitle; // monkey patching
+String.prototype.isNumeric = isNumeric;
 
 export {
   setCharLimit,

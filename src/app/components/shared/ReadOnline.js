@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 import { Document, Page, pdfjs, Outline } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -42,6 +42,27 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
   const [showFullView, setShowFullView] = useState(isFullView);
   const closeDelay = 3000;
 
+  // Ref for checking if it's the initial load
+  const initialLoad = useRef(true);
+
+  // Load last visited page from localStorage
+  useEffect(() => {
+    const lastVisitedPage = localStorage.getItem("lastVisitedPage");
+    if (lastVisitedPage.isNumeric()) {
+      setPageNumber(parseInt(lastVisitedPage));
+      if (swiperRef) {
+        swiperRef.slideTo(parseInt(lastVisitedPage) - 1, 0);
+      }
+    }
+  }, [swiperRef]);
+
+  // Save current page to localStorage
+  useEffect(() => {
+    if (!initialLoad.current)
+      localStorage.setItem("lastVisitedPage", JSON.stringify(pageNumber));
+    else initialLoad.current = false;
+  }, [pageNumber]);
+
   useEffect(() => {
     if (!showToast) return;
     const timer = setTimeout(() => setShowToast(false), closeDelay);
@@ -74,7 +95,9 @@ export default function ReadOnline({ file, isFullView, parentCallback }) {
 
   function onDocumentLoadSuccess({ numPages: totalNumPages }) {
     setNumPages(totalNumPages);
-    setPageNumber(1);
+    const lastVisitedPage = localStorage.getItem("lastVisitedPage");
+    if (lastVisitedPage) setPageNumber(parseInt(lastVisitedPage));
+    else setPageNumber(1);
     setIsLoading(false);
   }
 
