@@ -4,8 +4,8 @@ const ExpandIcon = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={20}
-      height={20}
+      width={17}
+      height={17}
       fill="none"
       {...props}
     >
@@ -14,7 +14,7 @@ const ExpandIcon = (props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
-        d="M12.5 2.5h5v5M7.5 17.5h-5v-5M17.5 2.5l-5.834 5.833M2.5 17.5l5.833-5.833"
+        d="M10.625 2.125h4.25v4.25M6.375 14.875h-4.25v-4.25M14.875 2.125 9.916 7.083M2.125 14.875l4.958-4.958"
       />
     </svg>
   );

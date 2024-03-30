@@ -73,7 +73,7 @@
   background: #00000045;
   z-index: 11;
   transition: background-color 200ms;
-
+  
   @include hover {
     background-color: #000000a1;
   }
@@ -82,6 +82,9 @@
 .mySwiper__index__fullViewBtn {
   top: 0;
   right: 0;
+  padding: rem(5) rem(5) rem(1) rem(5);
+  background: #0000000f;
+  filter: drop-shadow(1px 1px 0px #0000006b);
   border-bottom-left-radius: rem(5);
 }
 

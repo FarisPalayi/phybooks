@@ -4,8 +4,8 @@ const MinimizeIcon = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={20}
-      height={20}
+      width={17}
+      height={17}
       fill="none"
       {...props}
     >
@@ -14,7 +14,7 @@ const MinimizeIcon = (props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={1.5}
-        d="M3.333 11.667h5v5M16.666 8.333h-5v-5M11.666 8.333 17.5 2.5M2.5 17.5l5.833-5.833"
+        d="M2.833 9.917h4.25v4.25M14.166 7.083h-4.25v-4.25M9.916 7.083l4.959-4.958M2.125 14.875l4.958-4.958"
       />
     </svg>
   );
