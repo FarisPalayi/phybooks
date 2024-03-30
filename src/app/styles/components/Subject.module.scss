@@ -44,4 +44,8 @@
     height: rem(1);
     background: var(--purple-pink-grad);
   }
+
+  > svg {
+    transition: transform 150ms;
+  }
 }

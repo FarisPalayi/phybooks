@@ -5,6 +5,7 @@ import LinkCell from "../shared/LinkCell";
 import { getBookTitles } from "@/app/lib/utils";
 import { textbooks } from "@/app/lib/data";
 import { useEffect, useState } from "react";
+import ChevronDownIcon from "../icons/ChevronDownIcon";
 
 export default function Subject() {
   const [windowWidth, setWindowWidth] = useState(
@@ -54,6 +55,11 @@ export default function Subject() {
       {bookTitles.length > initialMaxBooks && (
         <button className={styles.showMore} onClick={handleShow}>
           show {isExpanded ? "less" : "more"}
+          {isExpanded ? (
+            <ChevronDownIcon style={{ transform: "rotate(180deg)" }} />
+          ) : (
+            <ChevronDownIcon />
+          )}
         </button>
       )}
     </section>
