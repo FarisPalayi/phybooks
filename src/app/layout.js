@@ -31,20 +31,13 @@ export const metadata = {
     ...getBookTitles(textbooks),
   ],
   icons: [
+    { rel: "icon", url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
     { rel: "icon", url: "/images/favicon/favicon.ico" },
-    {
-      rel: "icon",
-      url: "/images/favicon/favicon-32x32.png",
-      type: "image/png",
-    },
-    {
-      rel: "icon",
-      url: "/images/favicon/favicon-16x16.png",
-      type: "image/png",
-    },
+    { rel: "icon", url: "/images/favicon/favicon-32x32.png", type: "image/png" },
+    { rel: "icon", url: "/images/favicon/favicon-16x16.png", type: "image/png" },
     {
       rel: "apple-touch-icon",
-      url: "../../public/images/favicon/apple-touch-icon.png",
+      url: "/images/favicon/apple-touch-icon.png",
       sizes: "180x180",
     },
   ],
