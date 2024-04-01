@@ -10,6 +10,13 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
+{
+  /* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest"></link> */
+}
+
 export const metadata = {
   title: {
     template: "PhyBooks | %s",
@@ -23,6 +30,25 @@ export const metadata = {
     "Physics books",
     ...getBookTitles(textbooks),
   ],
+  icons: [
+    { rel: "icon", url: "/images/favicon/favicon.ico" },
+    {
+      rel: "icon",
+      url: "/images/favicon/favicon-32x32.png",
+      type: "image/png",
+    },
+    {
+      rel: "icon",
+      url: "/images/favicon/favicon-16x16.png",
+      type: "image/png",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "../../public/images/favicon/apple-touch-icon.png",
+      sizes: "180x180",
+    },
+  ],
+  manifest: "/site.webmanifest",
   creator: "Muhammed Faris P",
   metadataBase: new URL("https://phybooks.vercel.app"),
   openGraph: {
@@ -40,8 +66,8 @@ export const metadata = {
     site: "https://phybooks.vercel.app",
   },
   verification: {
-    google: "n-QPbYVkDi6nv3zP8NRF0zCk8FffQp468Sf31Ak5QHw"
-  }
+    google: "n-QPbYVkDi6nv3zP8NRF0zCk8FffQp468Sf31Ak5QHw",
+  },
 };
 
 export const viewport = {
