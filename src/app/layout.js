@@ -26,8 +26,16 @@ export const metadata = {
   icons: [
     { rel: "icon", url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
     { rel: "icon", url: "/images/favicon/favicon.ico" },
-    { rel: "icon", url: "/images/favicon/favicon-32x32.png", type: "image/png" },
-    { rel: "icon", url: "/images/favicon/favicon-16x16.png", type: "image/png" },
+    {
+      rel: "icon",
+      url: "/images/favicon/favicon-32x32.png",
+      type: "image/png",
+    },
+    {
+      rel: "icon",
+      url: "/images/favicon/favicon-16x16.png",
+      type: "image/png",
+    },
     {
       rel: "apple-touch-icon",
       url: "/images/favicon/apple-touch-icon.png",
@@ -53,6 +61,9 @@ export const metadata = {
   },
   verification: {
     google: "n-QPbYVkDi6nv3zP8NRF0zCk8FffQp468Sf31Ak5QHw",
+  },
+  alternates: {
+    canonical: "https://phybooks.vercel.app",
   },
 };
 
