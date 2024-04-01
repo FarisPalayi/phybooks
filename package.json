@@ -20,7 +20,6 @@
     "use-debounce": "^10.0.0"
   },
   "devDependencies": {
-    "@types/node": "20.12.2",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "sass": "^1.70.0"
