@@ -24,8 +24,8 @@ export const metadata = {
     ...getBookTitles(textbooks),
   ],
   icons: [
-    { rel: "icon", url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
     { rel: "icon", url: "/images/favicon/favicon.ico" },
+    { rel: "icon", url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
     {
       rel: "icon",
       url: "/images/favicon/favicon-32x32.png",
