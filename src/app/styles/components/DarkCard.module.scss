@@ -15,6 +15,7 @@
   box-shadow: 0 rem(1) 0 rem(1) rgba(0, 0, 0, 0.02),
     0 rem(4) rem(6) rgba(0, 0, 0, 0.02), inset 0 0 0 rem(6) #090a0c;
   transition: background 0.15s ease;
+  justify-content: space-around;
 
   &::before {
     --card-border-color: #181c27;
