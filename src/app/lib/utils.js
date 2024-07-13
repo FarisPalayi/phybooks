@@ -28,6 +28,16 @@ function getBookTitles(books) {
   return books.map((book) => book.title.toLowerCase());
 }
 
+function getBookSubjects(books) {
+  const subjectNames = new Set();
+
+  books.forEach((book) => 
+    book.subject.forEach((subjectName) => subjectNames.add(subjectName))
+  );
+
+  return Array.from(subjectNames); // to convert to an array
+}
+
 function titleCase(str) {
   return str.replace(/\w\S*/g, function (txt) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -62,6 +72,7 @@ export {
   getBooksBySubject,
   getBookByTitle,
   getBookTitles,
+  getBookSubjects,
   titleCase,
   getReferenceBooks,
   removeReferenceBooks,

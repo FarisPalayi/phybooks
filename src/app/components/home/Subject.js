@@ -2,7 +2,7 @@
 
 import styles from "../../styles/components/Subject.module.scss";
 import LinkCell from "../shared/LinkCell";
-import { getBookTitles } from "@/app/lib/utils";
+import { getBookTitles, getBooksBySubject, getBookSubjects } from "@/app/lib/utils";
 import { textbooks } from "@/app/lib/data";
 import { useEffect, useState } from "react";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
@@ -14,7 +14,9 @@ export default function Subject() {
   const [initialMaxBooks, setInitialMaxBooks] = useState(5);
   const [maxBooks, setMaxBooks] = useState(initialMaxBooks);
   const bookTitles = getBookTitles(textbooks.sortBooksByTitle());
+  const bookSubjects = getBookSubjects(textbooks.sortBooksByTitle())
   const [isExpanded, setIsExpanded] = useState(false);
+  console.log(bookSubjects);
 
   const breakpoint = 600;
 
@@ -42,11 +44,11 @@ export default function Subject() {
         Browse by <span>Subject</span>
       </h2>
       <div className={styles.subject__grid}>
-        {bookTitles.slice(0, maxBooks).map((title, i) => (
+        {bookSubjects.slice(0, maxBooks).map((subjectName, i) => (
           <LinkCell
-            link={`/subject/${title}`}
+            link={`/subject/${subjectName}`}
             key={i}
-            text={title.title()}
+            text={subjectName.title()}
             variant="Secondary"
           />
         ))}
