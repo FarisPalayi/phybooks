@@ -62,7 +62,7 @@ export default function Search({ data, onClick }) {
             searchResults.slice(0, 5).map((item, i) => (
               <li key={i} className={styles.search__item}>
                 <Link
-                  href={`/subject/${item.title}`}
+                  href={`/book/${item.title}`}
                   className={styles.search__link}
                   onClick={onClick}
                 >
