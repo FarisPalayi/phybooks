@@ -17,7 +17,7 @@ export default function Page({ params }) {
     <main className="container">
       <div className={`main ${styles.books}`}>
         <h1 className={styles.books__header}>
-          {bookTitle} <span>Textbooks</span>
+          {bookTitle} <span>Textbook</span>
         </h1>
         <Breadcrumb
           variant="Secondary"
