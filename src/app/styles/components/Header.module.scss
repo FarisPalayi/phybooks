@@ -34,6 +34,13 @@
     background: none;
     border: none;
     cursor: pointer;
+    transition: box-shadow 200ms ease-out, background-color 150ms ease-out;
+
+    @include hover {
+      box-shadow: 0 0 3px 0.5px #6161615d;
+      border-radius: 7px;
+      background-color: #6161615d;
+    }
   }
 }
 
