@@ -10,10 +10,19 @@
   font-size: rem(15);
   transition: box-shadow 0.15s ease;
 
+  ::selection {
+    color: var(--foreground);
+    background-color: var(--selection-btn-bg);
+  }
+
   &.primary {
     position: relative;
     background-color: var(--accents-8);
     color: var(--background);
+
+    ::selection {
+      color: var(--background);
+    }
 
     & .content {
       padding: 0.625rem 0;

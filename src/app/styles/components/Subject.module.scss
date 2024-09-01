@@ -1,6 +1,10 @@
 @use "../abstracts/" as *;
 
 .subject {
+  ::selection {
+    background-color: var(--selection-subject-bg);
+  }
+
   @include tablet {
     padding-inline: min(rem(158), 10vw);
   }

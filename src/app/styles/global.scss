@@ -11,6 +11,9 @@
   --overlay-z-index: 2;
   --sidebar-z-index: calc(var(--overlay-z-index) + 1);
   --search-z-index: calc(var(--sidebar-z-index) + 1);
+  --selection-bg: #07d2ff30;
+  --selection-btn-bg: #6d6d6d61;
+  --selection-subject-bg: #ff008030;
 }
 
 :root {
@@ -32,6 +35,11 @@
   --warning-light: #f7b955;
   --error: #ff0000;
   --error-light: #f33;
+}
+
+::selection {
+  color: var(--foreground);
+  background-color: var(--selection-bg);
 }
 
 html {
