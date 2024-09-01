@@ -16,7 +16,6 @@ export default function Subject() {
   const bookTitles = getBookTitles(textbooks.sortBooksByTitle());
   const bookSubjects = getBookSubjects(textbooks.sortBooksByTitle())
   const [isExpanded, setIsExpanded] = useState(false);
-  console.log(bookSubjects);
 
   const breakpoint = 600;
 
