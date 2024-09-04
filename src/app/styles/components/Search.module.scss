@@ -21,6 +21,20 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+
+  opacity: 0;
+  animation: modal-in 300ms forwards;
+}
+
+@keyframes modal-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0%) scale(1);
+  }
 }
 
 .search__bar {
